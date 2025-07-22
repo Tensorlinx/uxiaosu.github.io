@@ -12,7 +12,6 @@ const translations = {
       features: "服务",
       about: "关于我们",
       contact: "联系我们",
-      getStarted: "合作咨询",
     },
     hero: {
       badge: "🏢 领先的AI技术企业",
@@ -22,7 +21,6 @@ const translations = {
       description: "TensorLinx致力于为全球企业提供前沿的人工智能解决方案，通过创新技术推动行业数字化转型",
       cta: {
         primary: "了解更多",
-        secondary: "合作咨询",
       },
       demo: "开源项目展示",
     },
@@ -111,7 +109,6 @@ const translations = {
       features: "Services",
       about: "About Us",
       contact: "Contact",
-      getStarted: "Partnership",
     },
     hero: {
       badge: "🏢 Leading AI Technology Company",
@@ -121,7 +118,6 @@ const translations = {
       description: "TensorLinx is committed to providing cutting-edge artificial intelligence solutions for global enterprises, driving industry digital transformation through innovative technology",
       cta: {
         primary: "Learn More",
-        secondary: "Partnership",
       },
       demo: "Open Source Projects",
     },
@@ -308,7 +304,7 @@ function updateContent() {
   document.querySelector('[data-nav="features"]').textContent = t.nav.features;
   document.querySelector('[data-nav="about"]').textContent = t.nav.about;
   document.querySelector('[data-nav="contact"]').textContent = t.nav.contact;
-  document.querySelector('[data-nav="getStarted"]').textContent = t.nav.getStarted;
+
   
   // 更新语言切换按钮
   document.querySelector('.language-toggle').innerHTML = `
@@ -325,7 +321,7 @@ function updateContent() {
   document.querySelector('[data-cta="primary"]').innerHTML = `
     ${t.hero.cta.primary} ${icons.arrowRight}
   `;
-  document.querySelector('[data-cta="secondary"]').textContent = t.hero.cta.secondary;
+
   
   // 更新核心优势
   document.querySelector('.features h2').textContent = t.features.title;
@@ -652,7 +648,7 @@ function initializePage() {
     <header>
       <nav>
         <a href="#" class="logo">
-          <img src="/images/tensorlinx-logo.png" alt="TensorLinx" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
+          <img src="img/remove.photos-removed-background.png" alt="TensorLinx" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
           <span style="display: none;">TensorLinx</span>
         </a>
         
@@ -661,7 +657,7 @@ function initializePage() {
           <li><a href="#features" data-nav="features">${t.nav.features}</a></li>
           <li><a href="#about" data-nav="about">${t.nav.about}</a></li>
           <li><a href="#contact" data-nav="contact">${t.nav.contact}</a></li>
-          <li><a href="#" data-nav="getStarted" class="btn btn-secondary">${t.nav.getStarted}</a></li>
+
         </ul>
         
         <div style="display: flex; align-items: center; gap: 1rem;">
@@ -682,7 +678,7 @@ function initializePage() {
           <li><a href="#features" data-nav="features" onclick="closeMobileMenu()">${t.nav.features}</a></li>
           <li><a href="#about" data-nav="about" onclick="closeMobileMenu()">${t.nav.about}</a></li>
           <li><a href="#contact" data-nav="contact" onclick="closeMobileMenu()">${t.nav.contact}</a></li>
-          <li><a href="#" data-nav="getStarted" class="btn btn-secondary" onclick="closeMobileMenu()">${t.nav.getStarted}</a></li>
+
         </ul>
       </div>
     </header>
@@ -699,7 +695,7 @@ function initializePage() {
             <a href="#features" class="btn btn-primary" data-cta="primary">
               ${t.hero.cta.primary} ${icons.arrowRight}
             </a>
-            <a href="#contact" class="btn btn-secondary" data-cta="secondary">${t.hero.cta.secondary}</a>
+
           </div>
         </div>
       </section>
@@ -801,7 +797,7 @@ function initializePage() {
         <div class="footer-main">
           <div>
             <div class="footer-brand">
-              <img src="/images/tensorlinx-logo.png" alt="TensorLinx" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
+              <img src="img/remove.photos-removed-background.png" alt="TensorLinx" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
               <span style="display: none; font-size: 1.5rem; font-weight: 800;">TensorLinx</span>
             </div>
             <p class="footer-description">${t.footer.description}</p>

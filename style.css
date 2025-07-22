@@ -266,7 +266,7 @@ nav {
 }
 
 .logo img {
-  height: 2rem;
+  height: 2.5rem;
   width: auto;
   max-width: 400px;
   object-fit: contain;
@@ -1060,7 +1060,7 @@ footer {
   }
   
   .logo img {
-    height: 1.5rem;
+    height: 2rem;
   }
   
   /* 主要内容区域 */
@@ -1137,6 +1137,10 @@ footer {
   .partners-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .footer-brand img {
+    height: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1150,7 +1154,7 @@ footer {
   }
   
   .logo img {
-    height: 1.25rem;
+    height: 1.5rem;
   }
   
   .hero {
@@ -1210,6 +1214,10 @@ footer {
   
   .footer {
     padding: 2rem 0.5rem;
+  }
+  
+  .footer-brand img {
+    height: 1.5rem;
   }
 }
 
