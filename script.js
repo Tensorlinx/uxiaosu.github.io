@@ -994,11 +994,11 @@ function initializePage() {
       
       <div class="mobile-menu" id="mobileMenu">
         <ul class="nav-links">
-          <li><a href="#home" data-nav="home" onclick="closeMobileMenu()">${t.nav.home}</a></li>
-          <li><a href="#about" data-nav="about" onclick="closeMobileMenu()">${t.nav.about}</a></li>
-          <li><a href="products-split.html" onclick="closeMobileMenu()">${t.nav.products}</a></li>
-          <li><a href="#contact" data-nav="contact" onclick="closeMobileMenu()">${t.nav.contact}</a></li>
-        </ul>
+         <li><a href="#home" data-nav="home" onclick="closeMobileMenu()">${t.nav.home}</a></li>
+         <li><a href="#about" data-nav="about" onclick="closeMobileMenu()">${t.nav.about}</a></li>
+         <li><a href="products-split.html" onclick="closeMobileMenu()">${t.nav.products}</a></li>
+         <li><a href="#contact" data-nav="contact" onclick="closeMobileMenu()">${t.nav.contact}</a></li>
+       </ul>
       </div>
     </header>
     
