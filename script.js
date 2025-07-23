@@ -748,22 +748,35 @@ function createBackgroundDecorations() {
     { size: '14rem', pos: 'top: 50%; left: 33%;', anim: 'liquidFlow3', delay: '1s' },
     { size: '10rem', pos: 'top: 10%; right: 33%;', anim: 'liquidFlow2', delay: '3s' },
     { size: '13rem', pos: 'bottom: 20%; left: 50%;', anim: 'liquidFlow1', delay: '1.5s' },
-    { size: '9rem', pos: 'top: 66%; right: 10%;', anim: 'liquidFlow3', delay: '2.5s' }
+    { size: '9rem', pos: 'top: 66%; right: 10%;', anim: 'liquidFlow3', delay: '2.5s' },
+    { size: '22rem', pos: 'top: 15%; right: 15%;', anim: 'liquidFlow4', delay: '0.5s' },
+    { size: '18rem', pos: 'bottom: 30%; left: 20%;', anim: 'liquidFlow5', delay: '1.8s' },
+    { size: '15rem', pos: 'top: 80%; left: 60%;', anim: 'liquidFlow4', delay: '3.2s' },
+    { size: '11rem', pos: 'top: 40%; right: 40%;', anim: 'liquidFlow5', delay: '2.7s' },
+    { size: '19rem', pos: 'bottom: 10%; right: 30%;', anim: 'liquidFlow4', delay: '4s' },
+    { size: '8rem', pos: 'top: 5%; left: 70%;', anim: 'liquidFlow5', delay: '1.2s' }
   ];
   
   extraFlows.forEach((flow, index) => {
     const element = document.createElement('div');
     element.className = `liquid-flow-${flow.anim.slice(-1)}`;
+    const colorVariants = [
+      ['107, 114, 128', '31, 41, 55'],
+      ['55, 65, 81', '0, 0, 0'],
+      ['75, 85, 99', '17, 24, 39'],
+      ['156, 163, 175', '55, 65, 81']
+    ];
+    const colorSet = colorVariants[index % 4];
     element.style.cssText = `
       position: absolute;
       width: ${flow.size};
       height: ${flow.size};
-      background: linear-gradient(135deg, rgba(${index % 2 ? '107, 114, 128' : '55, 65, 81'}, ${0.15 + index * 0.02}), rgba(${index % 2 ? '31, 41, 55' : '0, 0, 0'}, ${0.18 + index * 0.02}));
+      background: linear-gradient(135deg, rgba(${colorSet[0]}, ${0.12 + index * 0.015}), rgba(${colorSet[1]}, ${0.15 + index * 0.015}));
       border-radius: 50%;
-      filter: blur(${index % 2 ? '2rem' : '2.5rem'});
+      filter: blur(${1.5 + (index % 3) * 0.5}rem);
       ${flow.pos}
       animation-delay: ${flow.delay};
-      animation-duration: ${18 + index * 2}s;
+      animation-duration: ${18 + index * 1.5}s;
     `;
     decorations.appendChild(element);
   });
@@ -867,23 +880,70 @@ function createBackgroundDecorations() {
     pointer-events: none;
   `;
   
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 15; i++) {
     const particle = document.createElement('div');
-    particle.className = `liquid-flow-${(i % 3) + 1}`;
+    particle.className = `liquid-flow-${(i % 5) + 1}`;
+    const size = 0.3 + Math.random() * 0.4;
     particle.style.cssText = `
       position: absolute;
-      width: 0.5rem;
-      height: 0.5rem;
-      background: rgba(255, 255, 255, 0.2);
+      width: ${size}rem;
+      height: ${size}rem;
+      background: rgba(255, 255, 255, ${0.15 + Math.random() * 0.1});
       border-radius: 50%;
-      filter: blur(1px);
+      filter: blur(${0.5 + Math.random() * 1}px);
       top: ${Math.random() * 100}%;
       left: ${Math.random() * 100}%;
-      animation-delay: ${i * 2}s;
-      animation-duration: ${18 + i * 2}s;
+      animation-delay: ${i * 1.5}s;
+      animation-duration: ${16 + i * 1.2}s;
     `;
     particles.appendChild(particle);
   }
+  
+  // 螺旋流动元素
+  const spiralElements = [
+    { size: '6rem', pos: 'top: 20%; left: 80%;', delay: '0s' },
+    { size: '8rem', pos: 'bottom: 40%; left: 15%;', delay: '2s' },
+    { size: '5rem', pos: 'top: 70%; right: 20%;', delay: '4s' },
+    { size: '7rem', pos: 'top: 45%; left: 45%;', delay: '1s' }
+  ];
+  
+  spiralElements.forEach((spiral, index) => {
+    const element = document.createElement('div');
+    element.className = 'spiral-flow';
+    element.style.cssText = `
+      position: absolute;
+      width: ${spiral.size};
+      height: ${spiral.size};
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      ${spiral.pos}
+      animation-delay: ${spiral.delay};
+    `;
+    decorations.appendChild(element);
+  });
+  
+  // 变形液态元素
+  const morphingBlobs = [
+    { size: '12rem', pos: 'top: 35%; left: 10%;', delay: '0s' },
+    { size: '16rem', pos: 'bottom: 25%; right: 15%;', delay: '3s' },
+    { size: '10rem', pos: 'top: 60%; left: 75%;', delay: '6s' }
+  ];
+  
+  morphingBlobs.forEach((blob, index) => {
+    const element = document.createElement('div');
+    element.className = 'morphing-blob';
+    element.style.cssText = `
+      position: absolute;
+      width: ${blob.size};
+      height: ${blob.size};
+      background: linear-gradient(45deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
+      filter: blur(2rem);
+      ${blob.pos}
+      animation-delay: ${blob.delay};
+    `;
+    decorations.appendChild(element);
+  });
   
   decorations.appendChild(flow1);
   decorations.appendChild(flow2);

@@ -95,6 +95,39 @@ html {
   50% { transform: translateY(-10px); }
 }
 
+@keyframes liquidFlow4 {
+  0% { transform: translate(-150px, 50px) rotate(0deg) scale(0.9); opacity: 0.6; }
+  20% { transform: translate(100px, -80px) rotate(72deg) scale(1.3); opacity: 0.9; }
+  40% { transform: translate(250px, 120px) rotate(144deg) scale(0.7); opacity: 0.8; }
+  60% { transform: translate(-50px, 200px) rotate(216deg) scale(1.1); opacity: 1; }
+  80% { transform: translate(-200px, -30px) rotate(288deg) scale(1.4); opacity: 0.9; }
+  100% { transform: translate(-150px, 50px) rotate(360deg) scale(0.9); opacity: 0.6; }
+}
+
+@keyframes liquidFlow5 {
+  0% { transform: translate(300px, -50px) rotate(0deg) scale(1.2); opacity: 0.7; }
+  25% { transform: translate(-100px, 150px) rotate(90deg) scale(0.8); opacity: 0.9; }
+  50% { transform: translate(150px, 300px) rotate(180deg) scale(1.5); opacity: 1; }
+  75% { transform: translate(400px, 100px) rotate(270deg) scale(0.6); opacity: 0.8; }
+  100% { transform: translate(300px, -50px) rotate(360deg) scale(1.2); opacity: 0.7; }
+}
+
+@keyframes spiralFlow {
+  0% { transform: translate(0px, 0px) rotate(0deg) scale(1); opacity: 0.5; }
+  25% { transform: translate(50px, -50px) rotate(90deg) scale(1.2); opacity: 0.8; }
+  50% { transform: translate(0px, -100px) rotate(180deg) scale(0.8); opacity: 1; }
+  75% { transform: translate(-50px, -50px) rotate(270deg) scale(1.1); opacity: 0.8; }
+  100% { transform: translate(0px, 0px) rotate(360deg) scale(1); opacity: 0.5; }
+}
+
+@keyframes morphing {
+  0% { border-radius: 50%; transform: scale(1) rotate(0deg); }
+  25% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: scale(1.1) rotate(90deg); }
+  50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; transform: scale(0.9) rotate(180deg); }
+  75% { border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%; transform: scale(1.2) rotate(270deg); }
+  100% { border-radius: 50%; transform: scale(1) rotate(360deg); }
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
@@ -190,13 +223,49 @@ html {
   opacity: 0;
 }
 
+.liquid-flow-4 {
+  animation: liquidFlow4 22s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation-fill-mode: both;
+  animation-play-state: paused;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.liquid-flow-5 {
+  animation: liquidFlow5 28s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-fill-mode: both;
+  animation-play-state: paused;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.spiral-flow {
+  animation: spiralFlow 14s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+  animation-play-state: paused;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.morphing-blob {
+  animation: morphing 20s infinite ease-in-out;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+  will-change: transform, border-radius;
+  opacity: 0;
+}
+
 /* 页面加载后启动动画 */
 .animations-ready .liquid-flow-1,
 .animations-ready .liquid-flow-2,
 .animations-ready .liquid-flow-3,
+.animations-ready .liquid-flow-4,
+.animations-ready .liquid-flow-5,
 .animations-ready .wave-animation,
 .animations-ready .ripple-animation,
-.animations-ready .flow-path-animation {
+.animations-ready .flow-path-animation,
+.animations-ready .spiral-flow,
+.animations-ready .morphing-blob {
   animation-play-state: running;
 }
 
