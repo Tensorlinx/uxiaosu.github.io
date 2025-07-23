@@ -7,6 +7,7 @@ let mousePosition = { x: 0, y: 0 };
 // 翻译数据
 const translations = {
   zh: {
+    title: "TensorLinx - 领先的AI通用应用技术企业",
     nav: {
       home: "首页",
       features: "服务",
@@ -14,7 +15,7 @@ const translations = {
       contact: "联系我们",
     },
     hero: {
-      badge: "🏢 领先的AI技术企业",
+      badge: "🏢BoxUI测试版v.1.0正式发布在GitHub",
       title: "构建智能未来的",
       highlight: "TensorLinx",
       subtitle: "科技公司",
@@ -25,21 +26,22 @@ const translations = {
       demo: "开源项目展示",
     },
     features: {
-      title: "我们的核心服务",
-      subtitle: "为企业提供全方位的AI技术解决方案和专业服务",
-      items: [
-        {
-          title: "AI解决方案",
-          description: "为企业量身定制人工智能解决方案，涵盖机器学习、深度学习、自然语言处理等领域",
-        },
-        {
-          title: "技术咨询",
-          description: "提供专业的AI技术咨询服务，帮助企业制定数字化转型战略和技术路线图",
-        },
-        {
-          title: "系统集成",
-          description: "专业的系统集成服务，确保AI技术与企业现有系统的无缝对接和稳定运行",
-        },
+      title: "我们的产品",
+      subtitle: "为您的业务提供强大的AI技术支持",
+      main: {
+        title: "TensorFlow 全栈版",
+        description: "TensorFlow 全栈版是一个完整的AI开发平台，提供从数据处理到模型部署的全流程支持。",
+        highlights: [
+          { title: "支持多种框架", description: "兼容TensorFlow, PyTorch等多种主流框架" },
+          { title: "企业级安全", description: "内置数据加密和访问控制" },
+          { title: "云端部署", description: "一键部署到云平台" }
+        ],
+        btn: "立即体验"
+      },
+      sidebar: [
+        { title: "TensorFlow 企业版", description: "企业级AI解决方案，支持大规模部署" },
+        { title: "PyTorch 加速器", description: "优化模型训练速度，提升效率" },
+        { title: "AI模型市场", description: "预训练模型一站式平台" }
       ],
     },
     about: {
@@ -104,6 +106,7 @@ const translations = {
     },
   },
   en: {
+    title: "TensorLinx - Leading AI General Application Technology Company",
     nav: {
       home: "Home",
       features: "Services",
@@ -111,7 +114,7 @@ const translations = {
       contact: "Contact",
     },
     hero: {
-      badge: "🏢 Leading AI Technology Company",
+      badge: "🏢BoxUI Beta v.1.0 Released on GitHub",
       title: "Building the Intelligent Future with",
       highlight: "TensorLinx",
       subtitle: "Technology",
@@ -122,20 +125,20 @@ const translations = {
       demo: "Open Source Projects",
     },
     features: {
-      title: "Our Core Services",
-      subtitle: "Providing comprehensive AI technology solutions and professional services for enterprises",
+      title: "Product Showcase",
+      subtitle: "Explore our innovative products that provide powerful technical support for your business",
       items: [
         {
-          title: "AI Solutions",
-          description: "Customized artificial intelligence solutions for enterprises, covering machine learning, deep learning, natural language processing and more",
+          title: "BoxUI Framework",
+          description: "Modern UI component library with rich interface components and design systems to help build beautiful user interfaces quickly",
         },
         {
-          title: "Technical Consulting",
-          description: "Professional AI technical consulting services to help enterprises develop digital transformation strategies and technology roadmaps",
+          title: "AI Assistant",
+          description: "Intelligent dialogue system based on large language models, supporting multi-turn conversations, knowledge Q&A and task execution",
         },
         {
-          title: "System Integration",
-          description: "Professional system integration services ensuring seamless integration and stable operation of AI technology with existing enterprise systems",
+          title: "Data Analytics Platform",
+          description: "Visual data analysis tool supporting real-time data processing, chart generation and intelligent insight analysis",
         },
       ],
     },
@@ -281,7 +284,9 @@ const icons = {
   brain: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"></path><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path></svg>`,
   database: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>`,
   users: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`,
-  cpu: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>`
+  cpu: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>`,
+  monitor: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>`,
+  chart: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>`
 };
 
 // 获取当前翻译
@@ -298,6 +303,9 @@ function toggleLanguage() {
 // 更新内容
 function updateContent() {
   const t = getTranslation();
+  
+  // 更新页面标题
+  document.title = t.title;
   
   // 更新导航
   document.querySelector('[data-nav="home"]').textContent = t.nav.home;
@@ -366,20 +374,145 @@ function updateContent() {
 // 更新开源项目
 function updateProjects() {
   const t = getTranslation();
-  const projectsGrid = document.querySelector('.projects-grid');
+  const carouselTrack = document.querySelector('.carousel-track');
+  const carouselDots = document.querySelector('.carousel-dots');
   
-  projectsGrid.innerHTML = openSourceProjects.map(project => `
-    <div class="project-card" style="--gradient: ${project.gradient}">
-      <div class="project-header">
-        <div class="project-icon" style="background: ${project.gradient}">
-          ${getProjectIcon(project.language)}
+  if (!carouselTrack || !carouselDots) return;
+  
+  // 生成项目卡片 - 新的三容器布局
+  const currentIndex = 0;
+  const totalProjects = openSourceProjects.length;
+  
+  function generateProjectsLayout(startIndex) {
+    const mainProject = openSourceProjects[startIndex % totalProjects];
+    const leftProject = openSourceProjects[(startIndex - 1 + totalProjects) % totalProjects];
+    const rightProject = openSourceProjects[(startIndex + 1) % totalProjects];
+    
+    return `
+      <div class="projects-layout">
+        <div class="side-project left-project">
+          <div class="project-card small" style="--gradient: ${leftProject.gradient}">
+            <div class="project-header">
+              <div class="project-icon" style="background: ${leftProject.gradient}">
+                ${getProjectIcon(leftProject.language)}
+              </div>
+              <h3 class="project-title">${leftProject.name}</h3>
+            </div>
+            <p class="project-description">${leftProject.description[currentLanguage]}</p>
+            <span class="project-language">${leftProject.language}</span>
+          </div>
         </div>
-        <h3 class="project-title">${project.name}</h3>
+        
+        <div class="main-project">
+          <div class="project-card large" style="--gradient: ${mainProject.gradient}">
+            <div class="project-header">
+              <div class="project-icon" style="background: ${mainProject.gradient}">
+                ${getProjectIcon(mainProject.language)}
+              </div>
+              <h3 class="project-title">${mainProject.name}</h3>
+            </div>
+            <p class="project-description">${mainProject.description[currentLanguage]}</p>
+            <span class="project-language">${mainProject.language}</span>
+          </div>
+        </div>
+        
+        <div class="side-project right-project">
+          <div class="project-card small" style="--gradient: ${rightProject.gradient}">
+            <div class="project-header">
+              <div class="project-icon" style="background: ${rightProject.gradient}">
+                ${getProjectIcon(rightProject.language)}
+              </div>
+              <h3 class="project-title">${rightProject.name}</h3>
+            </div>
+            <p class="project-description">${rightProject.description[currentLanguage]}</p>
+            <span class="project-language">${rightProject.language}</span>
+          </div>
+        </div>
       </div>
-      <p class="project-description">${project.description[currentLanguage]}</p>
-      <span class="project-language">${project.language}</span>
-    </div>
-  `).join('');
+    `;
+  }
+  
+  carouselTrack.innerHTML = generateProjectsLayout(currentIndex);
+  
+  // 生成分页点（每个项目一个点）
+  carouselDots.innerHTML = openSourceProjects.map((_, index) => 
+    `<button class="carousel-dot ${index === 0 ? 'active' : ''}" data-slide="${index}"></button>`
+  ).join('');
+  
+  // 初始化轮播
+  initCarousel(generateProjectsLayout);
+}
+
+// 初始化轮播功能
+function initCarousel(generateLayoutFn) {
+  const track = document.querySelector('.carousel-track');
+  const nextBtn = document.querySelector('.carousel-next');
+  const prevBtn = document.querySelector('.carousel-prev');
+  const dots = document.querySelectorAll('.carousel-dot');
+  
+  if (!track) return;
+  
+  let currentIndex = 0;
+  const totalProjects = openSourceProjects.length;
+  
+  // 更新轮播内容
+  function updateCarousel() {
+    track.innerHTML = generateLayoutFn(currentIndex);
+    
+    // 更新分页点
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+  }
+  
+  // 下一个项目
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalProjects;
+    updateCarousel();
+  }
+  
+  // 上一个项目
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalProjects) % totalProjects;
+    updateCarousel();
+  }
+  
+  // 跳转到指定项目
+  function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+  
+  // 绑定事件
+  nextBtn?.addEventListener('click', nextSlide);
+  prevBtn?.addEventListener('click', prevSlide);
+  
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => goToSlide(index));
+  });
+  
+  // 自动播放
+  let autoplayInterval = setInterval(nextSlide, 5000);
+  
+  // 鼠标悬停时暂停自动播放
+  const carousel = document.querySelector('.projects-carousel');
+  carousel?.addEventListener('mouseenter', () => {
+    clearInterval(autoplayInterval);
+  });
+  
+  carousel?.addEventListener('mouseleave', () => {
+    autoplayInterval = setInterval(nextSlide, 5000);
+  });
+  
+  // 响应式处理
+  function handleResize() {
+    updateCarousel();
+  }
+  
+  window.addEventListener('resize', handleResize);
+  
+  // 初始化位置
+  updateCarousel();
 }
 
 // 获取项目图标
@@ -706,16 +839,36 @@ function initializePage() {
           <h2>${t.features.title}</h2>
           <p class="subtitle">${t.features.subtitle}</p>
         </div>
-        <div class="features-grid">
-          ${t.features.items.map((feature, index) => `
-            <div class="feature-card">
-              <div class="feature-icon">
-                ${[icons.zap, icons.shield, icons.code][index]}
-              </div>
-              <h3>${feature.title}</h3>
-              <p>${feature.description}</p>
+        <div class="features-container">
+          <!-- 左侧主要产品卡片 -->
+          <div class="main-feature-card">
+            <div class="main-feature-icon">${icons.brain}</div>
+            <h3>${t.features.main.title}</h3>
+            <p class="main-feature-description">${t.features.main.description}</p>
+            <div class="main-feature-highlights">
+              ${t.features.main.highlights.map(highlight => `
+                <div class="highlight-item">
+                  <span class="highlight-icon">${icons.check}</span>
+                  <h4>${highlight.title}</h4>
+                </div>
+              `).join('')}
             </div>
-          `).join('')}
+            <button class="main-feature-btn">
+              ${t.features.main.btn}
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+          
+          <!-- 右侧小卡片 -->
+          <div class="features-sidebar">
+            ${t.features.sidebar.map((item, index) => `
+              <div class="product-list-item">
+                <div class="product-list-icon">${[icons.database, icons.zap, icons.chart][index]}</div>
+                <h4>${item.title}</h4>
+                <p>${item.description}</p>
+              </div>
+            `).join('')}
+          </div>
         </div>
       </section>
       
@@ -747,8 +900,25 @@ function initializePage() {
       <section class="projects" id="projects">
         <h2>${t.hero.demo}</h2>
         <p class="subtitle">展示我们的开源贡献和技术实力</p>
-        <div class="projects-grid">
-          <!-- 项目将通过 JavaScript 动态生成 -->
+        <div class="projects-carousel">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <!-- 项目将通过 JavaScript 动态生成 -->
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn carousel-prev" aria-label="Previous">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15,18 9,12 15,6"></polyline>
+              </svg>
+            </button>
+            <div class="carousel-dots"></div>
+            <button class="carousel-btn carousel-next" aria-label="Next">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6"></polyline>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
       
