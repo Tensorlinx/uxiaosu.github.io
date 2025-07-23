@@ -90,6 +90,11 @@ html {
   50% { transform: translateY(-20px); }
 }
 
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
@@ -434,7 +439,7 @@ main {
   color: #374151;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
   margin-bottom: 2rem;
-  animation: slideInLeft 1s ease 0.2s both;
+  animation: slideInLeft 1s ease 0.2s both, floatUpDown 3s ease-in-out infinite 1.2s;
 }
 
 .hero h1 {
