@@ -72,6 +72,40 @@ const translations = {
       support: "技术支持",
       cta: "立即咨询",
     },
+    community: {
+      title: "官方生态社区",
+      subtitle: "加入我们的技术社区，与全球开发者共同成长",
+      items: [
+        {
+          name: "TensorLinx开发者社区",
+          description: "专业的AI开发者交流平台，分享最新技术动态",
+          members: "10,000+",
+          type: "开发者社区",
+          gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        },
+        {
+          name: "AI技术论坛",
+          description: "深度技术讨论，前沿算法分享，专家在线答疑",
+          members: "25,000+",
+          type: "技术论坛",
+          gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+        },
+        {
+          name: "开源项目协作",
+          description: "参与开源项目开发，贡献代码，共建AI生态",
+          members: "5,000+",
+          type: "开源协作",
+          gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+        },
+        {
+          name: "企业技术支持",
+          description: "为企业用户提供专业技术支持和解决方案咨询",
+          members: "500+",
+          type: "企业服务",
+          gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+        }
+      ]
+    },
     footer: {
         description: "TensorLinx - 专业的人工智能技术服务商，为企业数字化转型提供强有力的技术支撑。",
         support: "支持",
@@ -84,21 +118,6 @@ const translations = {
         title: "感谢以下合作伙伴的支持",
         items: [
           {
-            name: "Vercel",
-            logo: "/images/logos/vercel-logo.svg",
-            url: "https://vercel.com",
-          },
-          {
-            name: "PyTorch基金会",
-            logo: "/images/logos/pytorch-logo.svg",
-            url: "https://pytorch.org",
-          },
-          {
-            name: "Rust基金会",
-            logo: "/images/logos/rust-logo.svg",
-            url: "https://foundation.rust-lang.org",
-          },
-          {
             name: "GitHub开源社区",
             logo: "/images/logos/github-logo.svg",
             url: "https://github.com",
@@ -107,6 +126,11 @@ const translations = {
             name: "哔哩哔哩创作者社区",
             logo: "/images/logos/bilibili-logo.svg",
             url: "https://www.bilibili.com",
+          },
+          {
+            name: "NAVF新世家",
+            logo: "/images/logos/navf-logo.svg",
+            url: "#",
           },
         ],
       },
@@ -179,6 +203,40 @@ const translations = {
       support: "Technical Support",
       cta: "Contact Now",
     },
+    community: {
+      title: "Official Ecosystem Community",
+      subtitle: "Join our tech community and grow together with global developers",
+      items: [
+        {
+          name: "TensorLinx Developer Community",
+          description: "Professional AI developer communication platform sharing latest tech trends",
+          members: "10,000+",
+          type: "Developer Community",
+          gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        },
+        {
+          name: "AI Technology Forum",
+          description: "In-depth technical discussions, cutting-edge algorithm sharing, expert Q&A",
+          members: "25,000+",
+          type: "Tech Forum",
+          gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+        },
+        {
+          name: "Open Source Collaboration",
+          description: "Participate in open source development, contribute code, build AI ecosystem",
+          members: "5,000+",
+          type: "Open Source",
+          gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+        },
+        {
+          name: "Enterprise Tech Support",
+          description: "Professional technical support and solution consulting for enterprise users",
+          members: "500+",
+          type: "Enterprise Service",
+          gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+        }
+      ]
+    },
     footer: {
         description: "TensorLinx - Professional artificial intelligence technology service provider, providing strong technical support for enterprise digital transformation.",
         support: "Support",
@@ -191,21 +249,6 @@ const translations = {
         title: "Thanks to our partners for their support",
         items: [
           {
-            name: "Vercel",
-            logo: "/images/logos/vercel-logo.svg",
-            url: "https://vercel.com",
-          },
-          {
-            name: "PyTorch Foundation",
-            logo: "/images/logos/pytorch-logo.svg",
-            url: "https://pytorch.org",
-          },
-          {
-            name: "Rust Foundation",
-            logo: "/images/logos/rust-logo.svg",
-            url: "https://foundation.rust-lang.org",
-          },
-          {
             name: "GitHub Open Source Community",
             logo: "/images/logos/github-logo.svg",
             url: "https://github.com",
@@ -214,6 +257,11 @@ const translations = {
             name: "Bilibili Creator Community",
             logo: "/images/logos/bilibili-logo.svg",
             url: "https://www.bilibili.com",
+          },
+          {
+            name: "NAVF New World",
+            logo: "/images/logos/navf-logo.svg",
+            url: "#",
           },
         ],
       },
@@ -363,6 +411,9 @@ function updateContent() {
   // 更新开源项目
   updateProjects();
   
+  // 更新生态社区
+  updateCommunity();
+  
   // 更新联系我们
   document.querySelector('.contact h2').textContent = t.contact.title;
   document.querySelector('.contact .subtitle').textContent = t.contact.subtitle;
@@ -480,6 +531,45 @@ function updateProjects() {
   initCarousel(generateProjectsLayout);
 }
 
+// 更新生态社区
+function updateCommunity() {
+  const t = getTranslation();
+  const communityLayout = document.querySelector('.community-layout');
+  
+  if (!communityLayout) return;
+  
+  // 更新标题和副标题
+  const communityTitle = document.querySelector('.community-section h3');
+  const communitySubtitle = document.querySelector('.community-section .subtitle');
+  if (communityTitle) communityTitle.textContent = t.community.title;
+  if (communitySubtitle) communitySubtitle.textContent = t.community.subtitle;
+  
+  // 生成社区矩阵布局
+  function generateCommunityMatrix() {
+    const items = t.community.items;
+    
+    return items.map(item => `
+      <div class="community-card" style="--gradient: ${item.gradient}">
+        <div class="community-header">
+          <div class="community-icon" style="background: ${item.gradient}">
+            ${icons.users}
+          </div>
+          <h4 class="community-title">${item.name}</h4>
+        </div>
+        <p class="community-description">${item.description}</p>
+        <div class="community-stats">
+          <span class="community-members">${item.members} ${currentLanguage === 'zh' ? '成员' : 'Members'}</span>
+          <span class="community-type">${item.type}</span>
+        </div>
+        <button class="community-join-btn">${currentLanguage === 'zh' ? '加入社区' : 'Join Community'}</button>
+      </div>
+    `).join('');
+  }
+  
+  communityLayout.innerHTML = generateCommunityMatrix();
+}
+
+// 初始化社区轮播功能
 
 
 // 初始化轮播功能
@@ -870,6 +960,48 @@ function initializePage() {
       </section>
       
 
+      <!-- 开源项目部分 -->
+      <section class="projects" id="projects">
+        <div class="projects-header">
+          <button class="carousel-btn carousel-prev" aria-label="Previous">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15,18 9,12 15,6"></polyline>
+            </svg>
+          </button>
+          <div class="projects-title-section">
+            <h2>${t.hero.demo}</h2>
+            <p class="subtitle">展示我们的开源贡献和技术实力</p>
+          </div>
+          <button class="carousel-btn carousel-next" aria-label="Next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"></polyline>
+            </svg>
+          </button>
+          <div class="mobile-carousel-controls">
+            <button class="carousel-btn carousel-prev mobile-btn" aria-label="Previous">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15,18 9,12 15,6"></polyline>
+              </svg>
+            </button>
+            <button class="carousel-btn carousel-next mobile-btn" aria-label="Next">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="projects-carousel">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <!-- 项目将通过 JavaScript 动态生成 -->
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+      </section>
+      
       <!-- 关于我们部分 -->
       <section class="about" id="about">
         <div class="about-grid">
@@ -892,34 +1024,18 @@ function initializePage() {
             </div>
           </div>
         </div>
-      </section>
-      
-      <!-- 开源项目部分 -->
-      <section class="projects" id="projects">
-        <h2>${t.hero.demo}</h2>
-        <p class="subtitle">展示我们的开源贡献和技术实力</p>
-        <div class="projects-carousel">
-          <div class="carousel-container">
-            <div class="carousel-track">
-              <!-- 项目将通过 JavaScript 动态生成 -->
-            </div>
-          </div>
-          <div class="carousel-controls">
-            <button class="carousel-btn carousel-prev" aria-label="Previous">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="15,18 9,12 15,6"></polyline>
-              </svg>
-            </button>
-            <div class="carousel-dots"></div>
-            <button class="carousel-btn carousel-next" aria-label="Next">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9,18 15,12 9,6"></polyline>
-              </svg>
-            </button>
+        
+        <!-- 生态社区部分 -->
+        <div class="community-section">
+          <h3>${t.community.title}</h3>
+          <p class="subtitle">${t.community.subtitle}</p>
+          <div class="community-layout">
+            <!-- 社区项目将通过 JavaScript 动态生成 -->
           </div>
         </div>
       </section>
       
+
       <!-- 联系我们部分 -->
       <section class="contact" id="contact">
         <h2>${t.contact.title}</h2>
@@ -989,8 +1105,9 @@ function initializePage() {
     </footer>
   `;
   
-  // 初始化项目和页脚
+  // 初始化项目、社区和页脚
   updateProjects();
+  updateCommunity();
   updateFooter();
 }
 

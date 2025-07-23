@@ -416,7 +416,7 @@ main {
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 1400px;
   z-index: 10;
   position: relative;
   animation: fadeInUp 1s ease;
@@ -466,7 +466,7 @@ main {
   font-size: 1.25rem;
   color: #6b7280;
   margin-bottom: 3rem;
-  max-width: 600px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   animation: fadeInUp 1s ease 0.8s both;
@@ -683,32 +683,51 @@ main {
 
 /* 开源项目部分 */
 .projects {
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
+}
+
+.projects-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.projects-title-section {
+  flex: 1;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.mobile-carousel-controls {
+  display: none;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .projects h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: #1f2937;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .projects .subtitle {
   font-size: 1.25rem;
   color: #6b7280;
-  margin-bottom: 3rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
 }
 
 .projects-carousel {
   width: 100%;
   max-width: 1400px;
-  margin: 3rem auto 0;
+  margin: 1.5rem auto 0;
   padding: 0 2rem;
 }
 
@@ -726,7 +745,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  min-height: 400px;
+  min-height: 320px;
   padding: 0 1rem;
 }
 
@@ -762,6 +781,26 @@ main {
 }
 
 @media (max-width: 768px) {
+  .projects-header {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .projects-title-section {
+    order: 1;
+    margin-bottom: 0;
+  }
+  
+  .projects-header > .carousel-btn {
+    display: none;
+  }
+  
+  .mobile-carousel-controls {
+    display: flex;
+    order: 2;
+  }
+  
   .projects-layout {
     flex-direction: column;
     gap: 1.5rem;
@@ -984,6 +1023,167 @@ main {
   font-weight: 500;
 }
 
+/* 生态社区部分（整合到关于我们） */
+.community-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.community-section h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.community-section .subtitle {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.community-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 平板设备2列显示 */
+@media (max-width: 1024px) {
+  .community-layout {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+}
+
+.community-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(25px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.5s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  opacity: 1;
+  transform: none;
+}
+
+.community-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient);
+  opacity: 0.1;
+  border-radius: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.community-card:hover::before {
+  opacity: 0.2;
+}
+
+.community-card:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.community-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.community-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.community-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: left;
+  margin: 0;
+}
+
+.community-description {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.community-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.community-members {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 0.875rem;
+}
+
+.community-type {
+  background: rgba(31, 41, 55, 0.1);
+  color: #374151;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.community-join-btn {
+  width: 100%;
+  background: var(--gradient);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.community-join-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+
 /* 联系我们部分 */
 .contact {
   padding: 3rem 2rem;
@@ -1003,7 +1203,7 @@ main {
   font-size: 1.25rem;
   color: #6b7280;
   margin-bottom: 2rem;
-  max-width: 500px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1309,6 +1509,28 @@ footer {
       height: 40px;
     }
     
+  /* 生态社区移动端优化 */
+  .community-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+  
+  .community-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .community-layout {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem 0;
+    max-width: 100%;
+  }
+  
+  .community-card {
+    padding: 1.5rem;
+  }
+  
+
 
   
   .footer-main {
@@ -1337,6 +1559,11 @@ footer {
   
   .logo img {
     height: 1.5rem;
+  }
+  
+  /* 生态社区超小屏幕单列显示 */
+  .community-layout {
+    grid-template-columns: 1fr;
   }
   
   .hero {
