@@ -10,8 +10,8 @@ const translations = {
     title: "TensorLinx - 领先的AI通用应用技术企业",
     nav: {
       home: "首页",
-      features: "服务",
       about: "关于我们",
+      products: "产品",
       contact: "联系我们",
     },
     hero: {
@@ -25,24 +25,37 @@ const translations = {
       },
       demo: "开源项目展示",
     },
-    features: {
-      title: "我们的产品",
-      subtitle: "为您的业务提供强大的AI技术支持",
-      main: {
-        title: "TensorFlow 全栈版",
-        description: "TensorFlow 全栈版是一个完整的AI开发平台，提供从数据处理到模型部署的全流程支持。",
-        highlights: [
-          { title: "支持多种框架", description: "兼容TensorFlow, PyTorch等多种主流框架" },
-          { title: "企业级安全", description: "内置数据加密和访问控制" },
-          { title: "云端部署", description: "一键部署到云平台" }
-        ],
-        btn: "立即体验"
-      },
-      sidebar: [
-        { title: "TensorFlow 企业版", description: "企业级AI解决方案，支持大规模部署" },
-        { title: "PyTorch 加速器", description: "优化模型训练速度，提升效率" },
-        { title: "AI模型市场", description: "预训练模型一站式平台" }
-      ],
+
+    products: {
+      title: "最新产品展示",
+      subtitle: "探索我们的创新产品解决方案",
+      moreText: "更多产品",
+      items: [
+        {
+          title: "TensorFlow 企业版",
+          description: "企业级AI开发平台，提供完整的机器学习解决方案",
+          features: ["多框架支持", "企业级安全", "云端部署"],
+          gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        },
+        {
+          title: "AI智能助手",
+          description: "基于大语言模型的智能对话系统，支持多轮对话和任务执行",
+          features: ["自然语言处理", "多轮对话", "任务自动化"],
+          gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+        },
+        {
+          title: "数据分析平台",
+          description: "可视化数据分析工具，支持实时数据处理和智能洞察",
+          features: ["实时处理", "可视化图表", "智能分析"],
+          gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+        },
+        {
+          title: "边缘计算引擎",
+          description: "超低延迟的边缘AI推理引擎，专为物联网设备优化",
+          features: ["超低延迟", "边缘部署", "物联网优化"],
+          gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+        }
+      ]
     },
     about: {
       title: "关于TensorLinx",
@@ -60,18 +73,13 @@ const translations = {
       cta: "立即咨询",
     },
     footer: {
-      description: "TensorLinx - 专业的人工智能技术服务商，为企业数字化转型提供强有力的技术支撑。",
-      product: "服务",
-      support: "支持",
+        description: "TensorLinx - 专业的人工智能技术服务商，为企业数字化转型提供强有力的技术支撑。",
+        support: "支持",
       acknowledgments: "鸣谢支持",
       links: {
-        kernel: "解决方案",
-        docs: "技术白皮书",
-        api: "服务介绍",
-        community: "客户案例",
-        help: "帮助中心",
-        tutorials: "技术博客",
-      },
+          community: "客户案例",
+          help: "帮助中心",
+        },
       partners: {
         title: "感谢以下合作伙伴的支持",
         items: [
@@ -109,8 +117,8 @@ const translations = {
     title: "TensorLinx - Leading AI General Application Technology Company",
     nav: {
       home: "Home",
-      features: "Services",
       about: "About Us",
+      products: "Products",
       contact: "Contact",
     },
     hero: {
@@ -124,23 +132,37 @@ const translations = {
       },
       demo: "Open Source Projects",
     },
-    features: {
-      title: "Product Showcase",
-      subtitle: "Explore our innovative products that provide powerful technical support for your business",
+
+    products: {
+      title: "Latest Product Showcase",
+      subtitle: "Explore our innovative product solutions",
+      moreText: "More Products",
       items: [
         {
-          title: "BoxUI Framework",
-          description: "Modern UI component library with rich interface components and design systems to help build beautiful user interfaces quickly",
+          title: "TensorFlow Enterprise",
+          description: "Enterprise-grade AI development platform with complete machine learning solutions",
+          features: ["Multi-framework Support", "Enterprise Security", "Cloud Deployment"],
+          gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
         },
         {
           title: "AI Assistant",
-          description: "Intelligent dialogue system based on large language models, supporting multi-turn conversations, knowledge Q&A and task execution",
+          description: "Intelligent dialogue system based on large language models with multi-turn conversations",
+          features: ["Natural Language Processing", "Multi-turn Dialogue", "Task Automation"],
+          gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
         },
         {
           title: "Data Analytics Platform",
-          description: "Visual data analysis tool supporting real-time data processing, chart generation and intelligent insight analysis",
+          description: "Visual data analysis tool supporting real-time processing and intelligent insights",
+          features: ["Real-time Processing", "Visual Charts", "Smart Analytics"],
+          gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
         },
-      ],
+        {
+          title: "Edge Computing Engine",
+          description: "Ultra-low latency edge AI inference engine optimized for IoT devices",
+          features: ["Ultra-low Latency", "Edge Deployment", "IoT Optimized"],
+          gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+        }
+      ]
     },
     about: {
       title: "About TensorLinx",
@@ -158,18 +180,13 @@ const translations = {
       cta: "Contact Now",
     },
     footer: {
-      description: "TensorLinx - Professional artificial intelligence technology service provider, providing strong technical support for enterprise digital transformation.",
-      product: "Services",
-      support: "Support",
+        description: "TensorLinx - Professional artificial intelligence technology service provider, providing strong technical support for enterprise digital transformation.",
+        support: "Support",
       acknowledgments: "Acknowledgments",
       links: {
-        kernel: "Solutions",
-        docs: "Technical Whitepaper",
-        api: "Service Introduction",
-        community: "Case Studies",
-        help: "Help Center",
-        tutorials: "Tech Blog",
-      },
+          community: "Case Studies",
+          help: "Help Center",
+        },
       partners: {
         title: "Thanks to our partners for their support",
         items: [
@@ -309,7 +326,6 @@ function updateContent() {
   
   // 更新导航
   document.querySelector('[data-nav="home"]').textContent = t.nav.home;
-  document.querySelector('[data-nav="features"]').textContent = t.nav.features;
   document.querySelector('[data-nav="about"]').textContent = t.nav.about;
   document.querySelector('[data-nav="contact"]').textContent = t.nav.contact;
 
@@ -331,17 +347,8 @@ function updateContent() {
   `;
 
   
-  // 更新核心优势
-  document.querySelector('.features h2').textContent = t.features.title;
-  document.querySelector('.features .subtitle').textContent = t.features.subtitle;
+
   
-  const featureCards = document.querySelectorAll('.feature-card');
-  featureCards.forEach((card, index) => {
-    if (t.features.items[index]) {
-      card.querySelector('h3').textContent = t.features.items[index].title;
-      card.querySelector('p').textContent = t.features.items[index].description;
-    }
-  });
   
   // 更新关于我们
   document.querySelector('.about h2').textContent = t.about.title;
@@ -369,6 +376,8 @@ function updateContent() {
   
   // 更新页脚
   updateFooter();
+  
+
 }
 
 // 更新开源项目
@@ -385,21 +394,36 @@ function updateProjects() {
   
   function generateProjectsLayout(startIndex) {
     const mainProject = openSourceProjects[startIndex % totalProjects];
-    const leftProject = openSourceProjects[(startIndex - 1 + totalProjects) % totalProjects];
-    const rightProject = openSourceProjects[(startIndex + 1) % totalProjects];
+    const leftProject1 = openSourceProjects[(startIndex - 2 + totalProjects) % totalProjects];
+    const leftProject2 = openSourceProjects[(startIndex - 1 + totalProjects) % totalProjects];
+    const rightProject1 = openSourceProjects[(startIndex + 1) % totalProjects];
+    const rightProject2 = openSourceProjects[(startIndex + 2) % totalProjects];
     
     return `
       <div class="projects-layout">
-        <div class="side-project left-project">
-          <div class="project-card small" style="--gradient: ${leftProject.gradient}">
+        <div class="side-project far-left-project">
+          <div class="project-card extra-small" style="--gradient: ${leftProject1.gradient}">
             <div class="project-header">
-              <div class="project-icon" style="background: ${leftProject.gradient}">
-                ${getProjectIcon(leftProject.language)}
+              <div class="project-icon" style="background: ${leftProject1.gradient}">
+                ${getProjectIcon(leftProject1.language)}
               </div>
-              <h3 class="project-title">${leftProject.name}</h3>
+              <h3 class="project-title">${leftProject1.name}</h3>
             </div>
-            <p class="project-description">${leftProject.description[currentLanguage]}</p>
-            <span class="project-language">${leftProject.language}</span>
+            <p class="project-description">${leftProject1.description[currentLanguage]}</p>
+            <span class="project-language">${leftProject1.language}</span>
+          </div>
+        </div>
+        
+        <div class="side-project left-project">
+          <div class="project-card small" style="--gradient: ${leftProject2.gradient}">
+            <div class="project-header">
+              <div class="project-icon" style="background: ${leftProject2.gradient}">
+                ${getProjectIcon(leftProject2.language)}
+              </div>
+              <h3 class="project-title">${leftProject2.name}</h3>
+            </div>
+            <p class="project-description">${leftProject2.description[currentLanguage]}</p>
+            <span class="project-language">${leftProject2.language}</span>
           </div>
         </div>
         
@@ -417,15 +441,28 @@ function updateProjects() {
         </div>
         
         <div class="side-project right-project">
-          <div class="project-card small" style="--gradient: ${rightProject.gradient}">
+          <div class="project-card small" style="--gradient: ${rightProject1.gradient}">
             <div class="project-header">
-              <div class="project-icon" style="background: ${rightProject.gradient}">
-                ${getProjectIcon(rightProject.language)}
+              <div class="project-icon" style="background: ${rightProject1.gradient}">
+                ${getProjectIcon(rightProject1.language)}
               </div>
-              <h3 class="project-title">${rightProject.name}</h3>
+              <h3 class="project-title">${rightProject1.name}</h3>
             </div>
-            <p class="project-description">${rightProject.description[currentLanguage]}</p>
-            <span class="project-language">${rightProject.language}</span>
+            <p class="project-description">${rightProject1.description[currentLanguage]}</p>
+            <span class="project-language">${rightProject1.language}</span>
+          </div>
+        </div>
+        
+        <div class="side-project far-right-project">
+          <div class="project-card extra-small" style="--gradient: ${rightProject2.gradient}">
+            <div class="project-header">
+              <div class="project-icon" style="background: ${rightProject2.gradient}">
+                ${getProjectIcon(rightProject2.language)}
+              </div>
+              <h3 class="project-title">${rightProject2.name}</h3>
+            </div>
+            <p class="project-description">${rightProject2.description[currentLanguage]}</p>
+            <span class="project-language">${rightProject2.language}</span>
           </div>
         </div>
       </div>
@@ -442,6 +479,8 @@ function updateProjects() {
   // 初始化轮播
   initCarousel(generateProjectsLayout);
 }
+
+
 
 // 初始化轮播功能
 function initCarousel(generateLayoutFn) {
@@ -551,11 +590,10 @@ function updateFooter() {
   document.querySelector('.footer-description').textContent = t.footer.description;
   
   // 更新页脚链接
-  document.querySelector('[data-footer="product"]').textContent = t.footer.product;
   document.querySelector('[data-footer="support"]').textContent = t.footer.support;
   
   const footerLinks = document.querySelectorAll('.footer-links a');
-  const linkKeys = ['kernel', 'docs', 'api', 'community', 'help', 'tutorials'];
+  const linkKeys = ['community', 'help'];
   footerLinks.forEach((link, index) => {
     if (linkKeys[index] && t.footer.links[linkKeys[index]]) {
       link.textContent = t.footer.links[linkKeys[index]];
@@ -787,10 +825,9 @@ function initializePage() {
         
         <ul class="nav-links">
           <li><a href="#home" data-nav="home">${t.nav.home}</a></li>
-          <li><a href="#features" data-nav="features">${t.nav.features}</a></li>
           <li><a href="#about" data-nav="about">${t.nav.about}</a></li>
+          <li><a href="products-split.html">${t.nav.products}</a></li>
           <li><a href="#contact" data-nav="contact">${t.nav.contact}</a></li>
-
         </ul>
         
         <div style="display: flex; align-items: center; gap: 1rem;">
@@ -808,10 +845,9 @@ function initializePage() {
       <div class="mobile-menu" id="mobileMenu">
         <ul class="nav-links">
           <li><a href="#home" data-nav="home" onclick="closeMobileMenu()">${t.nav.home}</a></li>
-          <li><a href="#features" data-nav="features" onclick="closeMobileMenu()">${t.nav.features}</a></li>
           <li><a href="#about" data-nav="about" onclick="closeMobileMenu()">${t.nav.about}</a></li>
+          <li><a href="products-split.html" onclick="closeMobileMenu()">${t.nav.products}</a></li>
           <li><a href="#contact" data-nav="contact" onclick="closeMobileMenu()">${t.nav.contact}</a></li>
-
         </ul>
       </div>
     </header>
@@ -825,7 +861,7 @@ function initializePage() {
           <h1>${t.hero.title} <span class="highlight">${t.hero.highlight}</span> ${t.hero.subtitle}</h1>
           <p>${t.hero.description}</p>
           <div class="hero-buttons">
-            <a href="#features" class="btn btn-primary" data-cta="primary">
+            <a href="#about" class="btn btn-primary" data-cta="primary">
               ${t.hero.cta.primary} ${icons.arrowRight}
             </a>
 
@@ -833,45 +869,7 @@ function initializePage() {
         </div>
       </section>
       
-      <!-- 核心优势部分 -->
-      <section class="features" id="features">
-        <div class="features-header">
-          <h2>${t.features.title}</h2>
-          <p class="subtitle">${t.features.subtitle}</p>
-        </div>
-        <div class="features-container">
-          <!-- 左侧主要产品卡片 -->
-          <div class="main-feature-card">
-            <div class="main-feature-icon">${icons.brain}</div>
-            <h3>${t.features.main.title}</h3>
-            <p class="main-feature-description">${t.features.main.description}</p>
-            <div class="main-feature-highlights">
-              ${t.features.main.highlights.map(highlight => `
-                <div class="highlight-item">
-                  <span class="highlight-icon">${icons.check}</span>
-                  <h4>${highlight.title}</h4>
-                </div>
-              `).join('')}
-            </div>
-            <button class="main-feature-btn">
-              ${t.features.main.btn}
-              <span class="btn-arrow">→</span>
-            </button>
-          </div>
-          
-          <!-- 右侧小卡片 -->
-          <div class="features-sidebar">
-            ${t.features.sidebar.map((item, index) => `
-              <div class="product-list-item">
-                <div class="product-list-icon">${[icons.database, icons.zap, icons.chart][index]}</div>
-                <h4>${item.title}</h4>
-                <p>${item.description}</p>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      </section>
-      
+
       <!-- 关于我们部分 -->
       <section class="about" id="about">
         <div class="about-grid">
@@ -973,23 +971,15 @@ function initializePage() {
             <p class="footer-description">${t.footer.description}</p>
           </div>
           
-          <div class="footer-section">
-            <h3 data-footer="product">${t.footer.product}</h3>
-            <ul class="footer-links">
-              <li><a href="#">${t.footer.links.kernel}</a></li>
-              <li><a href="#">${t.footer.links.docs}</a></li>
-              <li><a href="#">${t.footer.links.api}</a></li>
-            </ul>
-          </div>
+
           
           <div class="footer-section">
-            <h3 data-footer="support">${t.footer.support}</h3>
-            <ul class="footer-links">
-              <li><a href="#">${t.footer.links.community}</a></li>
-              <li><a href="#">${t.footer.links.help}</a></li>
-              <li><a href="#">${t.footer.links.tutorials}</a></li>
-            </ul>
-          </div>
+             <h3 data-footer="support">${t.footer.support}</h3>
+             <ul class="footer-links">
+               <li><a href="#">${t.footer.links.community}</a></li>
+               <li><a href="#">${t.footer.links.help}</a></li>
+             </ul>
+           </div>
         </div>
         
         <div class="footer-bottom">
