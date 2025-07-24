@@ -12,6 +12,7 @@ const translations = {
       home: "首页",
       about: "关于我们",
       products: "产品",
+      jobs: "岗位招聘",
       contact: "联系我们",
     },
     hero: {
@@ -111,7 +112,6 @@ const translations = {
         support: "支持",
       acknowledgments: "鸣谢支持",
       links: {
-          community: "客户案例",
           help: "帮助中心",
         },
       partners: {
@@ -143,6 +143,7 @@ const translations = {
       home: "Home",
       about: "About Us",
       products: "Products",
+      jobs: "Careers",
       contact: "Contact",
     },
     hero: {
@@ -242,7 +243,6 @@ const translations = {
         support: "Support",
       acknowledgments: "Acknowledgments",
       links: {
-          community: "Case Studies",
           help: "Help Center",
         },
       partners: {
@@ -375,6 +375,7 @@ function updateContent() {
   // 更新导航
   document.querySelector('[data-nav="home"]').textContent = t.nav.home;
   document.querySelector('[data-nav="about"]').textContent = t.nav.about;
+document.querySelector('[data-nav="jobs"]').textContent = t.nav.jobs;
   document.querySelector('[data-nav="contact"]').textContent = t.nav.contact;
 
   
@@ -977,6 +978,7 @@ function initializePage() {
           <li><a href="#home" data-nav="home">${t.nav.home}</a></li>
           <li><a href="#about" data-nav="about">${t.nav.about}</a></li>
           <li><a href="products-split.html">${t.nav.products}</a></li>
+<li><a href="#jobs" data-nav="jobs">${t.nav.jobs}</a></li>
           <li><a href="#contact" data-nav="contact">${t.nav.contact}</a></li>
         </ul>
         
@@ -997,6 +999,7 @@ function initializePage() {
          <li><a href="#home" data-nav="home" onclick="closeMobileMenu()">${t.nav.home}</a></li>
          <li><a href="#about" data-nav="about" onclick="closeMobileMenu()">${t.nav.about}</a></li>
          <li><a href="products-split.html" onclick="closeMobileMenu()">${t.nav.products}</a></li>
+<li><a href="#jobs" data-nav="jobs" onclick="closeMobileMenu()">${t.nav.jobs}</a></li>
          <li><a href="#contact" data-nav="contact" onclick="closeMobileMenu()">${t.nav.contact}</a></li>
        </ul>
       </div>
@@ -1062,6 +1065,21 @@ function initializePage() {
         </div>
       </section>
       
+      <!-- 名人名言部分 -->
+      <section class="quote-section">
+        <div class="quote-container">
+          <div class="quote-avatar">
+            <img src="https://youke1.picui.cn/s1/2025/07/23/6880dff2d4686.jpg" alt="名人头像" class="avatar-image">
+          </div>
+          <div class="quote-content">
+            <blockquote class="quote-text">
+              人工智能将是人类历史上最重要的技术革命，它将改变我们工作、生活和思考的方式。
+            </blockquote>
+            <cite class="quote-author">— 李开复，创新工场创始人</cite>
+          </div>
+        </div>
+      </section>
+      
       <!-- 关于我们部分 -->
       <section class="about" id="about">
         <div class="about-grid">
@@ -1069,9 +1087,7 @@ function initializePage() {
             <h2>${t.about.title}</h2>
             <p>${t.about.description1}</p>
             <p>${t.about.description2}</p>
-            <a href="#" class="btn btn-primary" data-about-cta>
-              ${t.about.cta} ${icons.arrowRight}
-            </a>
+
           </div>
           <div class="about-image">
             <div class="about-image-content">
@@ -1117,11 +1133,7 @@ function initializePage() {
             </div>
           </div>
           
-          <div style="margin-top: 2rem;">
-            <button class="btn btn-primary" data-contact-cta>
-              ${t.contact.cta}
-            </button>
-          </div>
+
         </div>
       </section>
     </main>
@@ -1145,6 +1157,28 @@ function initializePage() {
               <span style="display: none; font-size: 1.5rem; font-weight: 800;">TensorLinx</span>
             </div>
             <p class="footer-description">${t.footer.description}</p>
+            <div class="social-links">
+            <a href="#" class="social-link" aria-label="GitHub">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Discord">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0190 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9460 2.4189-2.1568 2.4189Z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="X (Twitter)">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="哔哩哔哩">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .356-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.789 1.894v7.52c.02.764.283 1.395.789 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.789-1.893v-7.52c-.02-.765-.283-1.396-.789-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373z"/>
+              </svg>
+            </a>
+          </div>
           </div>
           
 
@@ -1152,7 +1186,6 @@ function initializePage() {
           <div class="footer-section">
              <h3 data-footer="support">${t.footer.support}</h3>
              <ul class="footer-links">
-               <li><a href="#">${t.footer.links.community}</a></li>
                <li><a href="#">${t.footer.links.help}</a></li>
              </ul>
            </div>
@@ -1169,6 +1202,23 @@ function initializePage() {
   updateProjects();
   updateCommunity();
   updateFooter();
+}
+
+function updateFooter() {
+  const t = translations[currentLanguage];
+  const partnersGrid = document.querySelector('.partners-grid');
+  if (partnersGrid) {
+    partnersGrid.innerHTML = t.footer.partners.items.map(item => `
+      <a href="${item.url}" class="partner-card" target="_blank" rel="noopener noreferrer">
+        <div class="partner-logo">
+          <img src="${item.logo}" alt="${item.name}">
+        </div>
+        <p class="partner-name">${item.name}</p>
+      </a>
+    `).join('');
+  }
+
+
 }
 
 // 移动端菜单控制
