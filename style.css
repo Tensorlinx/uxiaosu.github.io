@@ -539,7 +539,7 @@ main {
 .hero p {
   font-size: 1.25rem;
   color: #6b7280;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -1031,9 +1031,9 @@ main {
 }
 
 .carousel-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fbbf24;
+  background: rgba(31, 41, 55, 0.1);
+  border: 1px solid rgba(31, 41, 55, 0.2);
+  color: #1f2937;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
@@ -1046,7 +1046,7 @@ main {
 }
 
 .carousel-btn:hover {
-  background: rgba(251, 191, 36, 0.2);
+  background: rgba(31, 41, 55, 0.2);
   transform: scale(1.1);
 }
 
@@ -1066,12 +1066,12 @@ main {
 }
 
 .carousel-dot.active {
-  background: #fbbf24;
+  background: #1f2937;
   transform: scale(1.2);
 }
 
 .carousel-dot:hover {
-  background: rgba(251, 191, 36, 0.7);
+  background: rgba(31, 41, 55, 0.7);
 }
 
 .project-card {

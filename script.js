@@ -978,7 +978,7 @@ function initializePage() {
           <li><a href="#home" data-nav="home">${t.nav.home}</a></li>
           <li><a href="#about" data-nav="about">${t.nav.about}</a></li>
           <li><a href="products-split.html">${t.nav.products}</a></li>
-<li><a href="#jobs" data-nav="jobs">${t.nav.jobs}</a></li>
+<li><a href="NAVFIO.html" data-nav="jobs">${t.nav.jobs}</a></li>
           <li><a href="#contact" data-nav="contact">${t.nav.contact}</a></li>
         </ul>
         
@@ -999,7 +999,7 @@ function initializePage() {
          <li><a href="#home" data-nav="home" onclick="closeMobileMenu()">${t.nav.home}</a></li>
          <li><a href="#about" data-nav="about" onclick="closeMobileMenu()">${t.nav.about}</a></li>
          <li><a href="products-split.html" onclick="closeMobileMenu()">${t.nav.products}</a></li>
-<li><a href="#jobs" data-nav="jobs" onclick="closeMobileMenu()">${t.nav.jobs}</a></li>
+<li><a href="NAVFIO.html" data-nav="jobs" onclick="closeMobileMenu()">${t.nav.jobs}</a></li>
          <li><a href="#contact" data-nav="contact" onclick="closeMobileMenu()">${t.nav.contact}</a></li>
        </ul>
       </div>
