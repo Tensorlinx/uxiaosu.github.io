@@ -1,4 +1,4 @@
-// 导航栏滚动效果
+// Navbar scroll effect
 window.addEventListener('scroll', function() {
     const nav = document.querySelector('nav');
     if (window.scrollY > 50) {
@@ -8,25 +8,25 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// 移动端菜单功能
+// Mobile menu functionality
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
 const mobileMenuClose = document.querySelector('.mobile-menu-close');
 const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
 
-// 打开移动端菜单
+// Open mobile menu
 mobileMenuToggle.addEventListener('click', function() {
     mobileMenu.classList.add('active');
     document.body.style.overflow = 'hidden';
 });
 
-// 关闭移动端菜单
+// Close mobile menu
 mobileMenuClose.addEventListener('click', function() {
     mobileMenu.classList.remove('active');
     document.body.style.overflow = 'auto';
 });
 
-// 点击链接时关闭移动端菜单
+// Close mobile menu when clicking on links
 mobileMenuLinks.forEach(link => {
     link.addEventListener('click', function() {
         mobileMenu.classList.remove('active');
@@ -34,7 +34,7 @@ mobileMenuLinks.forEach(link => {
     });
 });
 
-// 点击外部区域关闭移动端菜单
+// Close mobile menu when clicking outside
 mobileMenu.addEventListener('click', function(e) {
     if (e.target === mobileMenu) {
         mobileMenu.classList.remove('active');
