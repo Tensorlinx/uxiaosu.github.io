@@ -4,93 +4,93 @@ let isMenuOpen = false;
 let scrollY = 0;
 let mousePosition = { x: 0, y: 0 };
 
-// 安全保护机制
-function createSecurityOverlay() {
-  // 创建或重新创建遮盖层
-  let overlay = document.getElementById('disable-overlay');
-  if (!overlay) {
-    overlay = document.createElement('div');
-    overlay.id = 'disable-overlay';
-    overlay.style.cssText = `
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      background: rgba(0, 0, 0, 0.1) !important;
-      z-index: 9999 !important;
-      cursor: not-allowed !important;
-      pointer-events: all !important;
-    `;
-    document.body.appendChild(overlay);
-  }
-  
-  // 创建或重新创建公告栏
-  let banner = document.getElementById('announcement-banner');
-  if (!banner) {
-    banner = document.createElement('div');
-    banner.id = 'announcement-banner';
-    banner.innerHTML = `
-      <div class="announcement-content">
-        <h3>网站公告</h3>
-        <p>网站正在公安备案中，暂不支持点击访问，详细请联系官方邮箱ym9981@qq.com</p>
-      </div>
-    `;
-    document.body.appendChild(banner);
-  }
-}
+// 安全保护机制 - 已完全禁用
+// function createSecurityOverlay() {
+//   // 创建或重新创建遮盖层
+//   let overlay = document.getElementById('disable-overlay');
+//   if (!overlay) {
+//     overlay = document.createElement('div');
+//     overlay.id = 'disable-overlay';
+//     overlay.style.cssText = `
+//       position: fixed !important;
+//       top: 0 !important;
+//       left: 0 !important;
+//       width: 100% !important;
+//       height: 100% !important;
+//       background: rgba(0, 0, 0, 0.1) !important;
+//       z-index: 9999 !important;
+//       cursor: not-allowed !important;
+//       pointer-events: all !important;
+//     `;
+//     document.body.appendChild(overlay);
+//   }
+//   
+//   // 创建或重新创建公告栏 - 已隐藏
+//   // let banner = document.getElementById('announcement-banner');
+//   // if (!banner) {
+//   //   banner = document.createElement('div');
+//   //   banner.id = 'announcement-banner';
+//   //   banner.innerHTML = `
+//   //     <div class="announcement-content">
+//   //       <h3>网站公告</h3>
+//   //       <p>网站正在公安备案中，暂不支持点击访问，详细请联系官方邮箱ym9981@qq.com</p>
+//   //     </div>
+//   //   `;
+//   //   document.body.appendChild(banner);
+//   // }
+// }
 
-// 监控DOM变化
-function initSecurityMonitor() {
-  // 初始创建
-  createSecurityOverlay();
-  
-  // 监控DOM变化
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'childList') {
-        mutation.removedNodes.forEach(function(node) {
-          if (node.id === 'disable-overlay' || node.id === 'announcement-banner') {
-            setTimeout(createSecurityOverlay, 10);
-          }
-        });
-      }
-    });
-  });
-  
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
-  
-  // 定期检查
-  setInterval(createSecurityOverlay, 1000);
-  
-  // 禁用右键菜单
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    return false;
-  });
-  
-  // 禁用开发者工具快捷键
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'F12' || 
-        (e.ctrlKey && e.shiftKey && e.key === 'I') ||
-        (e.ctrlKey && e.shiftKey && e.key === 'C') ||
-        (e.ctrlKey && e.shiftKey && e.key === 'J') ||
-        (e.ctrlKey && e.key === 'U')) {
-      e.preventDefault();
-      return false;
-    }
-  });
-}
+// 监控DOM变化 - 已完全禁用
+// function initSecurityMonitor() {
+//   // 初始创建
+//   createSecurityOverlay();
+//   
+//   // 监控DOM变化
+//   const observer = new MutationObserver(function(mutations) {
+//     mutations.forEach(function(mutation) {
+//       if (mutation.type === 'childList') {
+//         mutation.removedNodes.forEach(function(node) {
+//           if (node.id === 'disable-overlay') {
+//             setTimeout(createSecurityOverlay, 10);
+//           }
+//         });
+//       }
+//     });
+//   });
+//   
+//   observer.observe(document.body, {
+//     childList: true,
+//     subtree: true
+//   });
+//   
+//   // 定期检查
+//   setInterval(createSecurityOverlay, 1000);
+//   
+//   // 禁用右键菜单
+//   document.addEventListener('contextmenu', function(e) {
+//     e.preventDefault();
+//     return false;
+//   });
+//   
+//   // 禁用开发者工具快捷键
+//   document.addEventListener('keydown', function(e) {
+//     if (e.key === 'F12' || 
+//         (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+//         (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+//         (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+//         (e.ctrlKey && e.key === 'U')) {
+//       e.preventDefault();
+//       return false;
+//     }
+//   });
+// }
 
-// 页面加载完成后初始化安全监控
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initSecurityMonitor);
-} else {
-  initSecurityMonitor();
-}
+// 页面加载完成后初始化安全监控 - 已禁用
+// if (document.readyState === 'loading') {
+//   document.addEventListener('DOMContentLoaded', initSecurityMonitor);
+// } else {
+//   initSecurityMonitor();
+// }
 
 // 翻译数据
 const translations = {
@@ -1280,7 +1280,7 @@ function initializePage() {
         </div>
         
         <div class="footer-bottom">
-          <p>${t.footer.copyright}</p>
+          <p>${t.footer.copyright} | 沪ICP备2025137506号-1</p>
         </div>
       </div>
     </footer>
