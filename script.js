@@ -217,7 +217,7 @@ const translations = {
           },
           {
             name: "NAVF新世家",
-            logo: "/images/logos/navf-logo.svg",
+            logo: "NAVF",
             url: "#",
           },
         ],
@@ -1161,9 +1161,9 @@ function initializePage() {
           </div>
           <div class="quote-content">
             <blockquote class="quote-text">
-              人工智能将是人类历史上最重要的技术革命，它将改变我们工作、生活和思考的方式。
+             我们会陪伴并托举每个人、每个家庭、每个公司的梦想
             </blockquote>
-            <cite class="quote-author">— 李开复，创新工场创始人</cite>
+            <cite class="quote-author">— 吴翔，灵兮矩阵创始人</cite>
           </div>
         </div>
       </section>
