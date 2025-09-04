@@ -96,13 +96,32 @@ let mousePosition = { x: 0, y: 0 };
 const translations = {
   zh: {
     title: "TensorLinx - 领先的AI通用应用技术企业",
+    announcement: "近期有不法分子以我司招聘名义收取应聘者试题费用，我司面试题目不会对外公开，请应聘者悉知",
     nav: {
       home: "首页",
       about: "关于我们",
       products: "产品",
       jobs: "岗位招聘",
-      contact: "联系我们",
+      community: "生态社区",
+
     },
+    heroSlides: [
+      {
+        title: "构建智能未来的TensorLinx科技公司",
+        description: "TensorLinx致力于为全球企业提供前沿的人工智能解决方案，通过创新技术推动行业数字化转型",
+        cta: "了解更多"
+      },
+      {
+        title: "BoxUI测试版v.1.0正式发布",
+        description: "全新的UI组件库，专为开发者打造，现已开源发布",
+        cta: "立即体验"
+      },
+      {
+        title: "人工智能创新解决方案",
+        description: "从机器学习到深度学习，为企业提供全方位的AI技术支持",
+        cta: "查看方案"
+      }
+    ],
     hero: {
       badge: "🏢BoxUI测试版v.1.0正式发布在GitHub",
       title: "构建智能未来的",
@@ -113,6 +132,11 @@ const translations = {
         primary: "了解更多",
       },
       demo: "开源项目展示",
+    },
+    showcase: {
+      title: "创新科技",
+      description: "我们专注于人工智能技术的研发与应用，为企业提供智能化解决方案，助力数字化转型。",
+      cta: "探索更多"
     },
 
     products: {
@@ -153,14 +177,7 @@ const translations = {
       cta: "了解企业文化",
       imageAlt: "企业团队",
     },
-    contact: {
-      title: "与我们合作",
-      subtitle: "欢迎与TensorLinx建立合作关系，共同探索AI技术的无限可能",
-      email: "商务合作",
-      phone: "客服热线",
-      support: "技术支持",
-      cta: "立即咨询",
-    },
+
     community: {
       title: "官方生态社区",
       subtitle: "加入我们的技术社区，与全球开发者共同成长",
@@ -198,42 +215,79 @@ const translations = {
     footer: {
         description: "TensorLinx - 专业的人工智能技术服务商，为企业数字化转型提供强有力的技术支撑。",
         support: "支持",
-      acknowledgments: "鸣谢支持",
-      links: {
-          help: "帮助中心",
+        acknowledgments: "鸣谢支持",
+        productServices: "产品服务",
+        products: {
+          utopia: "乌托邦AI内核",
+          boxide: "BoxIDE",
+          aiSolution: "AI解决方案",
+          techSupport: "技术支持"
         },
-      partners: {
-        title: "感谢以下合作伙伴的支持",
-        items: [
-          {
-            name: "GitHub开源社区",
-            logo: "/images/logos/github-logo.svg",
-            url: "https://github.com",
-          },
-          {
-            name: "哔哩哔哩创作者社区",
-            logo: "/images/logos/bilibili-logo.svg",
-            url: "https://www.bilibili.com",
-          },
-          {
-            name: "NAVF新世家",
-            logo: "NAVF",
-            url: "#",
-          },
-        ],
+        quickLinks: "快速链接",
+        links: {
+          productSeries: "产品系列",
+          news: "新闻动态",
+          jobs: "岗位招聘",
+          contact: "联系我们",
+          help: "帮助中心"
+        },
+  
+        contact: {
+          email: "邮箱: contact@tensorlinx.com",
+          phone: "电话: +86 400-123-4567",
+          address: "地址: 北京市海淀区中关村科技园"
+        },
+        partners: {
+          title: "感谢以下合作伙伴的支持",
+          items: [
+            {
+              name: "GitHub开源社区",
+              logo: "/images/logos/github-logo.svg",
+              url: "https://github.com",
+            },
+            {
+              name: "哔哩哔哩创作者社区",
+              logo: "/images/logos/bilibili-logo.svg",
+              url: "https://www.bilibili.com",
+            },
+            {
+              name: "NAVF新世家",
+              logo: "NAVF",
+              url: "#",
+            },
+          ],
+        },
+        copyright: "© 2024 TensorLinx科技有限公司. 保留所有权利。",
       },
-      copyright: "© 2024 TensorLinx科技有限公司. 保留所有权利。",
-    },
   },
   en: {
     title: "TensorLinx - Leading AI General Application Technology Company",
+    announcement: "Recently, fraudsters have been collecting test fees from applicants under the guise of our company's recruitment. Our interview questions are not disclosed to the public. Please be aware.",
     nav: {
       home: "Home",
       about: "About Us",
       products: "Products",
       jobs: "Careers",
-      contact: "Contact",
+      community: "Community",
+
     },
+    heroSlides: [
+      {
+        title: "Building the Intelligent Future with TensorLinx Technology",
+        description: "TensorLinx is committed to providing cutting-edge artificial intelligence solutions for global enterprises, driving industry digital transformation through innovative technology",
+        cta: "Learn More"
+      },
+      {
+        title: "BoxUI Beta v.1.0 Official Release",
+        description: "Brand new UI component library, designed for developers, now open source",
+        cta: "Try Now"
+      },
+      {
+        title: "AI Innovation Solutions",
+        description: "From machine learning to deep learning, providing comprehensive AI technical support for enterprises",
+        cta: "View Solutions"
+      }
+    ],
     hero: {
       badge: "🏢BoxUI Beta v.1.0 Released on GitHub",
       title: "Building the Intelligent Future with",
@@ -244,6 +298,11 @@ const translations = {
         primary: "Learn More",
       },
       demo: "Open Source Projects",
+    },
+    showcase: {
+      title: "Innovative Technology",
+      description: "We focus on the research and application of artificial intelligence technology, providing intelligent solutions for enterprises and helping digital transformation.",
+      cta: "Explore More"
     },
 
     products: {
@@ -284,14 +343,7 @@ const translations = {
       cta: "Corporate Culture",
       imageAlt: "Corporate Team",
     },
-    contact: {
-      title: "Partner with Us",
-      subtitle: "Welcome to establish partnerships with TensorLinx and explore the infinite possibilities of AI technology together",
-      email: "Business Partnership",
-      phone: "Customer Service",
-      support: "Technical Support",
-      cta: "Contact Now",
-    },
+
     community: {
       title: "Official Ecosystem Community",
       subtitle: "Join our tech community and grow together with global developers",
@@ -328,6 +380,20 @@ const translations = {
     },
     footer: {
         description: "TensorLinx - Professional artificial intelligence technology service provider, providing strong technical support for enterprise digital transformation.",
+        productServices: "Product Services",
+        products: {
+          utopia: "Utopia AI Core",
+          boxide: "BoxIDE",
+          solutions: "AI Solutions",
+          support: "Technical Support"
+        },
+        quickLinks: "Quick Links",
+        contactInfo: "Contact Information",
+        contact: {
+          email: "Email: contact@tensorlinx.com",
+          phone: "Phone: +86 400-123-4567",
+          address: "Address: Zhongguancun Science Park, Haidian District, Beijing"
+        },
         support: "Support",
       acknowledgments: "Acknowledgments",
       links: {
@@ -461,63 +527,146 @@ function updateContent() {
   document.title = t.title;
   
   // 更新导航
-  document.querySelector('[data-nav="home"]').textContent = t.nav.home;
-  document.querySelector('[data-nav="about"]').textContent = t.nav.about;
-document.querySelector('[data-nav="jobs"]').textContent = t.nav.jobs;
-  document.querySelector('[data-nav="contact"]').textContent = t.nav.contact;
+  const navHome = document.querySelector('[data-nav="home"]');
+  const navAbout = document.querySelector('[data-nav="about"]');
+  const navJobs = document.querySelector('[data-nav="jobs"]');
+  const navCommunity = document.querySelector('[data-nav="community"]');
+  const navContact = document.querySelector('[data-nav="contact"]');
+  
+  if (navHome) navHome.textContent = t.nav.home;
+  if (navAbout) navAbout.textContent = t.nav.about;
+  if (navJobs) navJobs.textContent = t.nav.jobs;
+  if (navCommunity) navCommunity.textContent = t.nav.community;
+  if (navContact) navContact.textContent = t.nav.contact;
 
   
   // 更新语言切换按钮
-  document.querySelector('.language-toggle').innerHTML = `
-    ${icons.globe}
-    ${currentLanguage === 'zh' ? 'EN' : '中文'}
-  `;
+  const langToggle = document.querySelector('.language-toggle');
+  if (langToggle) {
+    langToggle.innerHTML = `
+      ${icons.globe}
+      ${currentLanguage === 'zh' ? 'EN' : '中文'}
+    `;
+  }
   
-  // 更新Hero部分
-  document.querySelector('.hero-badge').textContent = t.hero.badge;
-  document.querySelector('.hero h1').innerHTML = `
-    ${t.hero.title} <span class="highlight">${t.hero.highlight}</span> ${t.hero.subtitle}
-  `;
-  document.querySelector('.hero p').textContent = t.hero.description;
-  document.querySelector('[data-cta="primary"]').innerHTML = `
-    ${t.hero.cta.primary} ${icons.arrowRight}
-  `;
-
+  // 更新Hero轮播内容
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  if (heroSlides && heroSlides.length > 0) {
+    t.heroSlides.forEach((slide, index) => {
+      if (heroSlides[index]) {
+        const titleEl = heroSlides[index].querySelector('h1');
+        const descEl = heroSlides[index].querySelector('p');
+        const btnEl = heroSlides[index].querySelector('.btn');
+        
+        if (titleEl) titleEl.textContent = slide.title;
+        if (descEl) descEl.textContent = slide.description;
+        if (btnEl) btnEl.textContent = slide.cta;
+      }
+    });
+  }
   
-
+  // 更新产品卡片区域
+  const sectionTitle = document.querySelector('.section-title h2');
+  if (sectionTitle) sectionTitle.textContent = t.products.title;
   
+  const productCards = document.querySelectorAll('.cards .card');
+  if (productCards && productCards.length > 0) {
+    t.products.items.forEach((product, index) => {
+      if (productCards[index]) {
+        const titleEl = productCards[index].querySelector('h3');
+        const descEl = productCards[index].querySelector('p');
+        const linkEl = productCards[index].querySelector('a');
+        
+        if (titleEl) titleEl.textContent = product.name;
+        if (descEl) descEl.textContent = product.description;
+        if (linkEl) linkEl.textContent = product.cta;
+      }
+    });
+  }
+  
+  // 更新生态社区
+  const communityTitle = document.querySelector('.community-section h3');
+  const communitySubtitle = document.querySelector('.community-section .subtitle');
+  if (communityTitle) communityTitle.textContent = t.community.title;
+  if (communitySubtitle) communitySubtitle.textContent = t.community.subtitle;
+  
+  const communityCards = document.querySelectorAll('.community-layout .community-card');
+  if (communityCards && communityCards.length > 0) {
+    t.community.items.forEach((item, index) => {
+      if (communityCards[index]) {
+        const titleEl = communityCards[index].querySelector('.community-title');
+        const descEl = communityCards[index].querySelector('.community-description');
+        const membersEl = communityCards[index].querySelector('.community-members');
+        const typeEl = communityCards[index].querySelector('.community-type');
+        const btnEl = communityCards[index].querySelector('.community-join-btn');
+        
+        if (titleEl) titleEl.textContent = item.name;
+        if (descEl) descEl.textContent = item.description;
+        if (membersEl) membersEl.textContent = `${item.members} ${currentLanguage === 'zh' ? '成员' : 'Members'}`;
+        if (typeEl) typeEl.textContent = item.type;
+        if (btnEl) btnEl.textContent = currentLanguage === 'zh' ? '加入社区' : 'Join Community';
+      }
+    });
+  }
+  
+  // 更新特色展示区域
+  const showcaseTitle = document.querySelector('.showcase-content h3');
+  const showcaseDesc = document.querySelector('.showcase-content p');
+  const showcaseBtn = document.querySelector('.showcase-content .btn');
+  if (showcaseTitle) showcaseTitle.textContent = t.showcase.title;
+  if (showcaseDesc) showcaseDesc.textContent = t.showcase.description;
+  if (showcaseBtn) showcaseBtn.textContent = t.showcase.cta;
   
   // 更新关于我们
-  document.querySelector('.about h2').textContent = t.about.title;
+  const aboutTitle = document.querySelector('.about h2');
+  if (aboutTitle) aboutTitle.textContent = t.about.title;
+  
   const aboutPs = document.querySelectorAll('.about-content p');
-  aboutPs[0].textContent = t.about.description1;
-  aboutPs[1].textContent = t.about.description2;
-  document.querySelector('[data-about-cta]').innerHTML = `
-    ${t.about.cta} ${icons.arrowRight}
-  `;
-  document.querySelector('.about-image p').textContent = t.about.imageAlt;
+  if (aboutPs && aboutPs.length >= 2) {
+    if (aboutPs[0]) aboutPs[0].textContent = t.about.description1;
+    if (aboutPs[1]) aboutPs[1].textContent = t.about.description2;
+  }
+  
+  const aboutCta = document.querySelector('[data-about-cta]');
+  if (aboutCta) aboutCta.innerHTML = `${t.about.cta} ${icons.arrowRight}`;
+  
+  const aboutImageAlt = document.querySelector('.about-image p');
+  if (aboutImageAlt) aboutImageAlt.textContent = t.about.imageAlt;
   
   // 更新开源项目
   updateProjects();
   
-  // 更新生态社区
-  updateCommunity();
+
   
-  // 更新联系我们
-  document.querySelector('.contact h2').textContent = t.contact.title;
-  document.querySelector('.contact .subtitle').textContent = t.contact.subtitle;
-  
-  const contactItems = document.querySelectorAll('.contact-item');
-  contactItems[0].querySelector('h3').textContent = t.contact.email;
-  contactItems[1].querySelector('h3').textContent = t.contact.phone;
-  contactItems[2].querySelector('h3').textContent = t.contact.support;
-  
-  document.querySelector('[data-contact-cta]').textContent = t.contact.cta;
-  
+  // 更新公告横幅
+  const announcementText = document.querySelector('.announcement-text');
+  if (announcementText) {
+    announcementText.textContent = t.announcement;
+  }
+
   // 更新页脚
   updateFooter();
   
-
+  // 更新所有带data-translate属性的元素
+  const translateElements = document.querySelectorAll('[data-translate]');
+  translateElements.forEach(element => {
+    const key = element.getAttribute('data-translate');
+    const keys = key.split('.');
+    let value = t;
+    
+    for (const k of keys) {
+      if (value && typeof value === 'object' && value[k] !== undefined) {
+        value = value[k];
+      } else {
+        value = null;
+        break;
+      }
+    }
+    
+    if (value !== null) {
+      element.textContent = value;
+    }
+  });
 }
 
 // 更新开源项目
@@ -785,239 +934,20 @@ function updateFooter() {
 
 // 创建背景装饰
 function createBackgroundDecorations() {
+  // 背景装饰 - 已移除所有浮动动画
   const decorations = document.createElement('div');
   decorations.className = 'background-decorations';
-  
-  // 主要流动装饰
-  const flow1 = document.createElement('div');
-  flow1.className = 'liquid-flow-1';
-  flow1.style.cssText = `
-    position: absolute;
-    width: 24rem;
-    height: 24rem;
-    background: linear-gradient(135deg, rgba(31, 41, 55, 0.3), rgba(0, 0, 0, 0.3));
-    border-radius: 50%;
-    filter: blur(3rem);
-    top: -10rem;
-    right: -10rem;
-  `;
-  
-  const flow2 = document.createElement('div');
-  flow2.className = 'liquid-flow-2';
-  flow2.style.cssText = `
-    position: absolute;
-    width: 20rem;
-    height: 20rem;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.25), rgba(55, 65, 81, 0.25));
-    border-radius: 50%;
-    filter: blur(3rem);
-    bottom: -10rem;
-    left: -10rem;
-    animation-delay: 1s;
-  `;
-  
-  const flow3 = document.createElement('div');
-  flow3.className = 'liquid-flow-3';
-  flow3.style.cssText = `
-    position: absolute;
-    width: 18rem;
-    height: 18rem;
-    background: linear-gradient(135deg, rgba(107, 114, 128, 0.2), rgba(31, 41, 55, 0.2));
-    border-radius: 50%;
-    filter: blur(3rem);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  `;
-  
-  // 额外的流动元素
-  const extraFlows = [
-    { size: '16rem', pos: 'top: 25%; left: 25%;', anim: 'liquidFlow1', delay: '0s' },
-    { size: '12rem', pos: 'top: 75%; right: 25%;', anim: 'liquidFlow2', delay: '2s' },
-    { size: '14rem', pos: 'top: 50%; left: 33%;', anim: 'liquidFlow3', delay: '1s' },
-    { size: '10rem', pos: 'top: 10%; right: 33%;', anim: 'liquidFlow2', delay: '3s' },
-    { size: '13rem', pos: 'bottom: 20%; left: 50%;', anim: 'liquidFlow1', delay: '1.5s' },
-    { size: '9rem', pos: 'top: 66%; right: 10%;', anim: 'liquidFlow3', delay: '2.5s' },
-    { size: '22rem', pos: 'top: 15%; right: 15%;', anim: 'liquidFlow4', delay: '0.5s' },
-    { size: '18rem', pos: 'bottom: 30%; left: 20%;', anim: 'liquidFlow5', delay: '1.8s' },
-    { size: '15rem', pos: 'top: 80%; left: 60%;', anim: 'liquidFlow4', delay: '3.2s' },
-    { size: '11rem', pos: 'top: 40%; right: 40%;', anim: 'liquidFlow5', delay: '2.7s' },
-    { size: '19rem', pos: 'bottom: 10%; right: 30%;', anim: 'liquidFlow4', delay: '4s' },
-    { size: '8rem', pos: 'top: 5%; left: 70%;', anim: 'liquidFlow5', delay: '1.2s' }
-  ];
-  
-  extraFlows.forEach((flow, index) => {
-    const element = document.createElement('div');
-    element.className = `liquid-flow-${flow.anim.slice(-1)}`;
-    const colorVariants = [
-      ['107, 114, 128', '31, 41, 55'],
-      ['55, 65, 81', '0, 0, 0'],
-      ['75, 85, 99', '17, 24, 39'],
-      ['156, 163, 175', '55, 65, 81']
-    ];
-    const colorSet = colorVariants[index % 4];
-    element.style.cssText = `
-      position: absolute;
-      width: ${flow.size};
-      height: ${flow.size};
-      background: linear-gradient(135deg, rgba(${colorSet[0]}, ${0.12 + index * 0.015}), rgba(${colorSet[1]}, ${0.15 + index * 0.015}));
-      border-radius: 50%;
-      filter: blur(${1.5 + (index % 3) * 0.5}rem);
-      ${flow.pos}
-      animation-delay: ${flow.delay};
-      animation-duration: ${18 + index * 1.5}s;
-    `;
-    decorations.appendChild(element);
-  });
-  
-  // 波浪效果
-  const waveContainer = document.createElement('div');
-  waveContainer.style.cssText = `
-    position: absolute;
-    inset: 0;
-    opacity: 0.3;
+  decorations.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
+    z-index: -1;
   `;
-  
-  const waves = [
-    { gradient: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent)', skew: '-12deg', delay: '0s', duration: '15s' },
-    { gradient: 'linear-gradient(270deg, transparent, rgba(255, 255, 255, 0.03), transparent)', skew: '12deg', delay: '2s', duration: '15s' },
-    { gradient: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent)', skew: '-6deg', delay: '4s', duration: '18s' }
-  ];
-  
-  waves.forEach(wave => {
-    const waveElement = document.createElement('div');
-    waveElement.className = 'wave-animation';
-    waveElement.style.cssText = `
-      position: absolute;
-      inset: 0;
-      background: ${wave.gradient};
-      transform: skewY(${wave.skew});
-      animation-delay: ${wave.delay};
-      animation-duration: ${wave.duration};
-    `;
-    waveContainer.appendChild(waveElement);
-  });
-  
-  // 涟漪效果
-  const rippleContainer = document.createElement('div');
-  rippleContainer.style.cssText = `
-    position: absolute;
-    inset: 0;
-    opacity: 0.2;
-    pointer-events: none;
-  `;
-  
-  const ripples = [
-    { size: '8rem', pos: 'top: 25%; left: 25%;', delay: '0s' },
-    { size: '6rem', pos: 'top: 66%; right: 33%;', delay: '3s' },
-    { size: '7rem', pos: 'bottom: 25%; left: 50%;', delay: '6s' },
-    { size: '5rem', pos: 'top: 50%; right: 25%;', delay: '9s' }
-  ];
-  
-  ripples.forEach(ripple => {
-    const rippleElement = document.createElement('div');
-    rippleElement.className = 'ripple-animation';
-    rippleElement.style.cssText = `
-      position: absolute;
-      width: ${ripple.size};
-      height: ${ripple.size};
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 50%;
-      ${ripple.pos}
-      animation-delay: ${ripple.delay};
-    `;
-    rippleContainer.appendChild(rippleElement);
-  });
-  
-  // 流动路径
-  const pathContainer = document.createElement('div');
-  pathContainer.style.cssText = `
-    position: absolute;
-    inset: 0;
-    opacity: 0.25;
-    pointer-events: none;
-  `;
-  
-  const paths = [
-    { width: '0.5rem', height: '24rem', pos: 'top: 10%; left: 20%;', anim: 'liquidFlow1' },
-    { width: '0.25rem', height: '20rem', pos: 'top: 30%; right: 25%;', anim: 'liquidFlow2' },
-    { width: '0.75rem', height: '16rem', pos: 'bottom: 20%; left: 60%;', anim: 'liquidFlow3' }
-  ];
-  
-  paths.forEach(path => {
-    const pathElement = document.createElement('div');
-    pathElement.className = 'flow-path-animation';
-    pathElement.style.cssText = `
-      position: absolute;
-      width: ${path.width};
-      height: ${path.height};
-      background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), transparent);
-      border-radius: 9999px;
-      ${path.pos}
-    `;
-    pathContainer.appendChild(pathElement);
-  });
-  
-  // 浮动粒子
-  const particles = document.createElement('div');
-  particles.className = 'floating-particles';
-  particles.style.cssText = `
-    position: absolute;
-    inset: 0;
-    opacity: 0.4;
-    pointer-events: none;
-  `;
-  
-  for (let i = 0; i < 15; i++) {
-    const particle = document.createElement('div');
-    particle.className = `liquid-flow-${(i % 5) + 1}`;
-    const size = 0.3 + Math.random() * 0.4;
-    particle.style.cssText = `
-      position: absolute;
-      width: ${size}rem;
-      height: ${size}rem;
-      background: rgba(255, 255, 255, ${0.15 + Math.random() * 0.1});
-      border-radius: 50%;
-      filter: blur(${0.5 + Math.random() * 1}px);
-      top: ${Math.random() * 100}%;
-      left: ${Math.random() * 100}%;
-      animation-delay: ${i * 1.5}s;
-      animation-duration: ${16 + i * 1.2}s;
-    `;
-    particles.appendChild(particle);
-  }
-  
-  // 螺旋流动元素
-  const spiralElements = [
-    { size: '6rem', pos: 'top: 20%; left: 80%;', delay: '0s' },
-    { size: '8rem', pos: 'bottom: 40%; left: 15%;', delay: '2s' },
-    { size: '5rem', pos: 'top: 70%; right: 20%;', delay: '4s' },
-    { size: '7rem', pos: 'top: 45%; left: 45%;', delay: '1s' }
-  ];
-  
-  spiralElements.forEach((spiral, index) => {
-    const element = document.createElement('div');
-    element.className = 'spiral-flow';
-    element.style.cssText = `
-      position: absolute;
-      width: ${spiral.size};
-      height: ${spiral.size};
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 50%;
-      ${spiral.pos}
-      animation-delay: ${spiral.delay};
-    `;
-    decorations.appendChild(element);
-  });
-  
-  // 变形液态元素
-  const morphingBlobs = [
-    { size: '12rem', pos: 'top: 35%; left: 10%;', delay: '0s' },
-    { size: '16rem', pos: 'bottom: 25%; right: 15%;', delay: '3s' },
-    { size: '10rem', pos: 'top: 60%; left: 75%;', delay: '6s' }
-  ];
+  return decorations;
+}
   
   morphingBlobs.forEach((blob, index) => {
     const element = document.createElement('div');
@@ -1051,8 +981,7 @@ function initializePage() {
   const t = getTranslation();
   
   root.innerHTML = `
-    <!-- 背景装饰 -->
-    ${createBackgroundDecorations().outerHTML}
+    <!-- 背景装饰 - 已移除 -->
     
     <!-- 导航栏 -->
     <header>
@@ -1066,7 +995,8 @@ function initializePage() {
           <li><a href="#home" data-nav="home">${t.nav.home}</a></li>
           <li><a href="#about" data-nav="about">${t.nav.about}</a></li>
           <li><a href="products-split.html">${t.nav.products}</a></li>
-<li><a href="NAVFIO.html" data-nav="jobs">${t.nav.jobs}</a></li>
+          <li><a href="NAVFIO.html" data-nav="jobs">${t.nav.jobs}</a></li>
+          <li><a href="#community" data-nav="community">${t.nav.community}</a></li>
           <li><a href="#contact" data-nav="contact">${t.nav.contact}</a></li>
         </ul>
         
@@ -1087,7 +1017,8 @@ function initializePage() {
          <li><a href="#home" data-nav="home" onclick="closeMobileMenu()">${t.nav.home}</a></li>
          <li><a href="#about" data-nav="about" onclick="closeMobileMenu()">${t.nav.about}</a></li>
          <li><a href="products-split.html" onclick="closeMobileMenu()">${t.nav.products}</a></li>
-<li><a href="NAVFIO.html" data-nav="jobs" onclick="closeMobileMenu()">${t.nav.jobs}</a></li>
+         <li><a href="NAVFIO.html" data-nav="jobs" onclick="closeMobileMenu()">${t.nav.jobs}</a></li>
+         <li><a href="#community" data-nav="community" onclick="closeMobileMenu()">${t.nav.community}</a></li>
          <li><a href="#contact" data-nav="contact" onclick="closeMobileMenu()">${t.nav.contact}</a></li>
        </ul>
       </div>
@@ -1345,20 +1276,10 @@ function handleScroll() {
   }
 }
 
-// 鼠标移动事件处理
+// 鼠标移动事件处理 - 已移除背景装饰相关代码
 function handleMouseMove(e) {
   mousePosition = { x: e.clientX, y: e.clientY };
-  
-  // 更新背景装饰位置
-  const decorations = document.querySelectorAll('.background-decorations > div');
-  decorations.forEach((decoration, index) => {
-    if (index < 3) { // 只更新前三个流动装饰
-      const factor = (index + 1) * 0.01;
-      const x = mousePosition.x * factor;
-      const y = mousePosition.y * factor;
-      decoration.style.transform += ` translate(${x}px, ${y}px)`;
-    }
-  });
+  // 背景装饰动画已移除
 }
 
 // 平滑滚动
