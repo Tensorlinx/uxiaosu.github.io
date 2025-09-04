@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>访问限制 - TensorLinx</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #333;
+        }
+
+        .mobile-block-container {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 400px;
+            margin: 20px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-block-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .mobile-block-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .mobile-block-message {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .mobile-block-device {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .desktop-hint {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .mobile-block-container {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-block-container">
+        <div class="mobile-block-icon">📱</div>
+        <h1 class="mobile-block-title">移动设备访问限制</h1>
+        <p class="mobile-block-message">
+            抱歉，本网站暂不支持移动设备访问。请使用电脑或平板设备访问以获得最佳体验。
+        </p>
+        <div class="mobile-block-device">
+            <strong>推荐设备：</strong><br>
+            台式电脑 / 笔记本电脑 / 平板电脑
+        </div>
+        <p class="desktop-hint">
+            如果您正在使用桌面设备但仍看到此页面，请尝试刷新或调整浏览器窗口大小。
+        </p>
+    </div>
+
+    <script>
+        // 检测是否为移动设备
+        function isMobileDevice() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const mobileKeywords = [
+                'android', 'iphone', 'ipad', 'ipod', 'windows phone', 
+                'blackberry', 'webos', 'mobile', 'phone'
+            ];
+            
+            const screenWidth = window.innerWidth || document.documentElement.clientWidth;
+            const screenHeight = window.innerHeight || document.documentElement.clientHeight;
+            
+            // 检测用户代理
+            const isMobileUA = mobileKeywords.some(keyword => userAgent.includes(keyword));
+            
+            // 检测屏幕尺寸
+            const isSmallScreen = screenWidth <= 768 || screenHeight <= 600;
+            
+            return isMobileUA || isSmallScreen;
+        }
+
+        // 重定向到阻止页面
+        if (isMobileDevice()) {
+            // 已经在阻止页面，不需要操作
+        } else {
+            // 不是移动设备，重定向到主页面
+            window.location.href = 'index.html';
+        }
+
+        // 监听窗口大小变化
+        window.addEventListener('resize', function() {
+            if (!isMobileDevice()) {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>

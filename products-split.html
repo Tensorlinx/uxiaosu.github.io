@@ -49,7 +49,45 @@
     </div>
 </div>
 
-<script src="products-split.js"></script>
+<!-- 移动设备检测 -->
+  <script>
+    // 检测是否为移动设备
+    function isMobileDevice() {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const mobileKeywords = [
+        'android', 'iphone', 'ipad', 'ipod', 'windows phone', 
+        'blackberry', 'webos', 'mobile', 'phone'
+      ];
+      
+      const screenWidth = window.innerWidth || document.documentElement.clientWidth;
+      const screenHeight = window.innerHeight || document.documentElement.clientHeight;
+      
+      // 检测用户代理
+      const isMobileUA = mobileKeywords.some(keyword => userAgent.includes(keyword));
+      
+      // 检测屏幕尺寸
+      const isSmallScreen = screenWidth <= 768 || screenHeight <= 600;
+      
+      return isMobileUA || isSmallScreen;
+    }
 
+    // 如果是移动设备，重定向到阻止页面
+    if (isMobileDevice()) {
+      window.location.href = 'mobile-block.html';
+    }
+
+    // 监听窗口大小变化
+    window.addEventListener('resize', function() {
+      if (isMobileDevice()) {
+        window.location.href = 'mobile-block.html';
+      }
+    });
+  </script>
+  
+  <!-- 自定义脚本 -->
+  <script src="products-split.js"></script>
+  
+  <!-- 维护公告遮罩层 -->
+  <script src="maintenance-overlay.js"></script>
 </body>
 </html>
