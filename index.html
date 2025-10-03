@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>Tensorlinx - 产品系列、新闻动态、岗位招聘</title>
+  <title>Tensorlinx-上海灵兮矩阵</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- 国内字体资源 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,19 +10,101 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- 自定义样式 -->
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* 维护公告遮盖层 */
+    .maintenance-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: all;
+      user-select: none;
+    }
+
+    .maintenance-notice {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 40px 60px;
+      text-align: center;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      color: white;
+      max-width: 500px;
+    }
+
+    .maintenance-notice h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .maintenance-notice p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .maintenance-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* 防止页面交互 */
+    body.maintenance-mode {
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    body.maintenance-mode * {
+      pointer-events: none;
+    }
+
+    body.maintenance-mode .maintenance-overlay {
+      pointer-events: all;
+    }
+  </style>
 </head>
 
-<body>
+<body class="maintenance-mode">
+  <!-- 维护公告遮盖层 -->
+  <div class="maintenance-overlay">
+    <div class="maintenance-notice">
+      <h2>官网正在维护中</h2>
+      <p>我们正在对网站进行升级维护，请稍后再访问</p>
+      <div class="maintenance-spinner"></div>
+    </div>
+  </div>
   <!-- 顶部导航 -->
   <header class="top-nav">
     <a class="logo" href="#">
         <img src="img/remove.photos-removed-background.png" alt="Logo" style="height: 40px; width: auto;">
       </a>
     <nav class="nav-links">
-       <a href="#" data-nav="home">首页</a>
-       <a href="#" data-nav="products">产品系列</a>
-       <a href="#" data-nav="about">新闻动态</a>
-       <a href="#" data-nav="jobs">岗位招聘</a>
+       <a href="index.html" data-nav="home" class="active">首页</a>
+       <a href="products.html" data-nav="products">产品系列</a>
+       <a href="news.html" data-nav="about">新闻动态</a>
+       <a href="NAVFIO.html" data-nav="jobs">岗位招聘</a>
+       <a href="about.html" data-nav="about-us">关于我们</a>
 
      </nav>
     <div class="right">
@@ -41,31 +123,39 @@
             <div class="mega-menu">
               <div class="menu-column">
                 <h3>🏠 首页</h3>
-                <a href="#">最新动态</a>
-                <a href="#">热门推荐</a>
-                <a href="#">特色服务</a>
+                <a href="index.html">最新动态</a>
+                <a href="index.html">热门推荐</a>
+                <a href="index.html">特色服务</a>
               </div>
               
               <div class="menu-column">
                 <h3>📱 产品系列</h3>
-                <a href="#">人工智能</a>
-                <a href="#">云计算</a>
-                <a href="#">大数据</a>
-                <a href="#">物联网</a>
+                <a href="products.html">人工智能</a>
+                <a href="products.html">云计算</a>
+                <a href="products.html">大数据</a>
+                <a href="products.html">物联网</a>
               </div>
               
               <div class="menu-column">
                 <h3>📊 新闻动态</h3>
-                <a href="#">技术白皮书</a>
-                <a href="#">行业分析</a>
-                <a href="#">市场趋势</a>
+                <a href="news.html">技术白皮书</a>
+                <a href="news.html">行业分析</a>
+                <a href="news.html">市场趋势</a>
               </div>
               
               <div class="menu-column">
                 <h3>💼 岗位招聘</h3>
-                <a href="#">技术岗位</a>
-                <a href="#">产品岗位</a>
-                <a href="#">管理岗位</a>
+                <a href="NAVFIO.html">技术岗位</a>
+                <a href="NAVFIO.html">产品岗位</a>
+                <a href="NAVFIO.html">管理岗位</a>
+              </div>
+              
+              <div class="menu-column">
+                <h3>🏢 关于我们</h3>
+                <a href="about.html">公司简介</a>
+                <a href="about.html">发展历程</a>
+                <a href="about.html">企业文化</a>
+                <a href="about.html">联系我们</a>
               </div>
               
               <div class="menu-column">
@@ -86,9 +176,9 @@
       <div class="hero-slides">
         <div class="hero-slide active">
           <div class="hero-text">
-            <h1>全新 Surface Pro</h1>
-            <p>超强性能、全天候电池续航、惊艳的触控屏体验。</p>
-            <button class="btn">立即购买</button>
+            <h1>我们正在建设一家去政治化、多元人种的全球性科技企业</h1>
+            <p>在遵循各国出口管制与国际合规框架的前提下，我们致力于让技术与产品惠及更多国家和地区 </p>
+            <button class="btn">查看政策</button>
           </div>
         </div>
         <div class="hero-slide">
@@ -117,16 +207,10 @@
   </section>
 
   <!-- 最新产品标题 -->
-
-
-  <!-- 公告横幅 -->
-  <div class="announcement-banner">
-    <div class="announcement-content">
-      <span class="announcement-icon">📢</span>
-      <span class="announcement-text">近期有不法分子以我司招聘名义收取应聘者试题费用，我司面试题目不会对外公开，请应聘者悉知</span>
-      <button class="announcement-close" onclick="this.parentElement.parentElement.style.display='none'">×</button>
-    </div>
-  </div>
+  <section class="section-title">
+    <h2>最新动态</h2>
+    <p>探索我们最新的产品和技术创新</p>
+  </section>
 
   <!-- 产品卡片 -->
   <section class="cards">
@@ -289,11 +373,10 @@
   <!-- 自定义脚本 -->
   <script src="js/main.js"></script>
   
-  <!-- 维护公告遮罩层 -->
-  <script src="maintenance-overlay.js"></script>
+
 
   <!-- 网站底部 -->
-  <footer class="site-footer">
+  <footer class="site-footer" id="about-us">
     <div class="footer-content">
       <div class="footer-section">
         <h3>关于我们</h3>
@@ -356,6 +439,11 @@
 
   <!-- 底部样式 -->
   <style>
+    .nav-links a.active {
+      color: #000000;
+      font-weight: 600;
+    }
+    
     .site-footer {
       background: #1a1a1a;
       color: #fff;

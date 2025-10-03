@@ -84,7 +84,7 @@ nav.scrolled {
 }
 
 .nav-links a:hover {
-    color: var(--accent);
+    color: #ffffff;
 }
 
 .cta-button {

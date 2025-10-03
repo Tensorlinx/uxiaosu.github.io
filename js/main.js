@@ -68,6 +68,18 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             console.log('导航到:', this.textContent);
+            
+            // 处理关于我们链接的平滑滚动
+            if (this.getAttribute('href') === '#about-us') {
+                e.preventDefault();
+                const aboutUsSection = document.getElementById('about-us');
+                if (aboutUsSection) {
+                    aboutUsSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
         });
     });
 

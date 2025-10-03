@@ -639,10 +639,7 @@ function updateContent() {
 
   
   // 更新公告横幅
-  const announcementText = document.querySelector('.announcement-text');
-  if (announcementText) {
-    announcementText.textContent = t.announcement;
-  }
+
 
   // 更新页脚
   updateFooter();

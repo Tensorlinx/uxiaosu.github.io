@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>产品系列 - Tensorlinx</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 国内字体资源 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- 自定义样式 -->
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* 维护公告遮盖层 */
+    .maintenance-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: all;
+      user-select: none;
+    }
+
+    .maintenance-notice {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 40px 60px;
+      text-align: center;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      color: white;
+      max-width: 500px;
+    }
+
+    .maintenance-notice h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .maintenance-notice p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .maintenance-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* 防止页面交互 */
+    body.maintenance-mode {
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    body.maintenance-mode * {
+      pointer-events: none;
+    }
+
+    body.maintenance-mode .maintenance-overlay {
+      pointer-events: all;
+    }
+  </style>
+</head>
+
+<body class="maintenance-mode">
+  <!-- 维护公告遮盖层 -->
+  <div class="maintenance-overlay">
+    <div class="maintenance-notice">
+      <h2>官网正在维护中</h2>
+      <p>我们正在对网站进行升级维护，请稍后再访问</p>
+      <div class="maintenance-spinner"></div>
+    </div>
+  </div>
+  <!-- 顶部导航 -->
+  <header class="top-nav">
+    <a class="logo" href="index.html">
+        <img src="img/remove.photos-removed-background.png" alt="Logo" style="height: 40px; width: auto;">
+      </a>
+    <nav class="nav-links">
+       <a href="index.html" data-nav="home">首页</a>
+       <a href="products.html" data-nav="products" class="active">产品系列</a>
+       <a href="news.html" data-nav="about">新闻动态</a>
+       <a href="NAVFIO.html" data-nav="jobs">岗位招聘</a>
+       <a href="about.html" data-nav="about-us">关于我们</a>
+     </nav>
+    <div class="right">
+        <div class="language-toggle">
+          <button class="lang-btn active" data-lang="zh" onclick="toggleLanguage()">中</button>
+          <button class="lang-btn" data-lang="en" onclick="toggleLanguage()">EN</button>
+        </div>
+        <a href="#" class="search-icon">
+          <svg viewBox="0 0 24 24" fill="#000000" width="30" height="30">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">所有Tensorlinx</a>
+          <div class="dropdown-menu">
+            <div class="mega-menu">
+              <div class="menu-column">
+                <h3>🏠 首页</h3>
+                <a href="index.html">最新动态</a>
+                <a href="index.html">热门推荐</a>
+                <a href="index.html">特色服务</a>
+              </div>
+              
+              <div class="menu-column">
+                <h3>📱 产品系列</h3>
+                <a href="products.html">人工智能</a>
+                <a href="products.html">云计算</a>
+                <a href="products.html">大数据</a>
+                <a href="products.html">物联网</a>
+              </div>
+              
+              <div class="menu-column">
+                <h3>📊 新闻动态</h3>
+                <a href="news.html">技术白皮书</a>
+                <a href="news.html">行业分析</a>
+                <a href="news.html">市场趋势</a>
+              </div>
+              
+              <div class="menu-column">
+                <h3>💼 岗位招聘</h3>
+                <a href="#">技术岗位</a>
+                <a href="#">产品岗位</a>
+                <a href="#">管理岗位</a>
+              </div>
+              
+              <div class="menu-column">
+                <h3>🏢 关于我们</h3>
+                <a href="about.html">公司简介</a>
+                <a href="about.html">发展历程</a>
+                <a href="about.html">企业文化</a>
+                <a href="about.html">联系我们</a>
+              </div>
+              
+              <div class="menu-column">
+                <h3>🛠️ 技术支持</h3>
+                <a href="#">在线文档</a>
+                <a href="#">视频教程</a>
+                <a href="#">技术论坛</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </header>
+
+  <!-- 产品系列页面内容 -->
+  <main class="products-main">
+    <section class="products-hero">
+      <div class="container">
+        <h1>产品系列</h1>
+        <p>探索我们全面的AI产品和解决方案，助力企业数字化转型</p>
+      </div>
+    </section>
+
+    <!-- 产品分类区域已删除 -->
+
+    <section class="featured-products">
+      <div class="container">
+        <div class="featured-grid">
+          <div class="featured-card">
+            <div class="product-image">
+              <img src="img/boxide.png" alt="BoxIDE">
+            </div>
+            <div class="product-info">
+              <h3>BoxIDE</h3>
+              <p>功能丰富的AI编程应用，专为中小企业和个人团队设计</p>
+              <button class="btn-secondary">立即体验</button>
+            </div>
+          </div>
+
+          <div class="featured-card">
+            <div class="product-image">
+              <img src="img/UTOPIA S.png" alt="乌托邦AI内核">
+            </div>
+            <div class="product-info">
+              <h3>乌托邦AI内核</h3>
+              <p>专为操作系统、机器人等工作设计的AI微内核</p>
+              <button class="btn-secondary">了解更多</button>
+            </div>
+          </div>
+
+          <div class="featured-card">
+            <div class="product-image">
+              <img src="img/remove.photos-removed-background.png" alt="智能云平台">
+            </div>
+            <div class="product-info">
+              <h3>智能云平台</h3>
+              <p>企业级云计算解决方案，提供高性能计算资源</p>
+              <button class="btn-secondary">立即体验</button>
+            </div>
+          </div>
+
+          <div class="featured-card">
+            <div class="product-image">
+              <img src="img/remove.photos-removed-background (2).png" alt="数据分析平台">
+            </div>
+            <div class="product-info">
+              <h3>数据分析平台</h3>
+              <p>智能化数据分析工具，助力企业数据驱动决策</p>
+              <button class="btn-secondary">了解更多</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 产品页面样式 -->
+  <style>
+    .products-main {
+      min-height: 80vh;
+      background: #f8f9fa;
+    }
+
+    .products-hero {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .products-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .products-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .products-grid {
+      padding: 80px 0;
+    }
+
+    /* 产品分类样式已删除 */
+    
+    .featured-products {
+      background: white;
+      padding: 1px 0;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 60px;
+    }
+
+    .featured-card {
+      background: #f8f9fa;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .featured-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-image {
+      height: 160px;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .product-info p {
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: #1a1a1a;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-secondary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
+      transition: left 0.5s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      color: #1a1a1a;
+    }
+
+    .btn-secondary:hover::before {
+      left: 100%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav-links a.active {
+      color: #000000;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .products-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>
