@@ -2,8 +2,10 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>产品系列 - Tensorlinx</title>
+  <title data-translate="title">产品文档 - Tensorlinx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 标签页 Logo -->
+  <link rel="icon" type="image/png" href="img/NAVFOS-removebg-preview.png" />
   <!-- 国内字体资源 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,161 +13,30 @@
   <!-- 自定义样式 -->
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* 维护公告遮盖层 */
-    .maintenance-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      pointer-events: all;
-      user-select: none;
-    }
-
-    .maintenance-notice {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 40px 60px;
-      text-align: center;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      color: white;
-      max-width: 500px;
-    }
-
-    .maintenance-notice h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .maintenance-notice p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      margin-bottom: 30px;
-    }
-
-    .maintenance-spinner {
-      width: 50px;
-      height: 50px;
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      border-top: 3px solid white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* 防止页面交互 */
-    body.maintenance-mode {
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    body.maintenance-mode * {
-      pointer-events: none;
-    }
-
-    body.maintenance-mode .maintenance-overlay {
-      pointer-events: all;
-    }
   </style>
 </head>
 
-<body class="maintenance-mode">
-  <!-- 维护公告遮盖层 -->
-  <div class="maintenance-overlay">
-    <div class="maintenance-notice">
-      <h2>官网正在维护中</h2>
-      <p>我们正在对网站进行升级维护，请稍后再访问</p>
-      <div class="maintenance-spinner"></div>
-    </div>
-  </div>
+<body>
   <!-- 顶部导航 -->
   <header class="top-nav">
     <a class="logo" href="index.html">
         <img src="img/remove.photos-removed-background.png" alt="Logo" style="height: 40px; width: auto;">
       </a>
+    <span class="nav-divider">|</span>
     <nav class="nav-links">
-       <a href="index.html" data-nav="home">首页</a>
-       <a href="products.html" data-nav="products" class="active">产品系列</a>
-       <a href="news.html" data-nav="about">新闻动态</a>
-       <a href="NAVFIO.html" data-nav="jobs">岗位招聘</a>
-       <a href="about.html" data-nav="about-us">关于我们</a>
+       <a href="index.html" data-nav="home" data-translate="nav.home">首页</a>
+       <a href="products.html" data-nav="products" class="active" data-translate="nav.products">产品文档</a>
+       <a href="news.html" data-nav="news" data-translate="nav.news">新闻动态</a>
+       <a href="NAVFIO.html" data-nav="jobs" data-translate="nav.jobs">岗位招聘</a>
+       <a href="about.html" data-nav="about-us" data-translate="nav.about">关于我们</a>
      </nav>
     <div class="right">
         <div class="language-toggle">
-          <button class="lang-btn active" data-lang="zh" onclick="toggleLanguage()">中</button>
-          <button class="lang-btn" data-lang="en" onclick="toggleLanguage()">EN</button>
+          <button class="lang-btn active" data-lang="zh">中</button>
+          <button class="lang-btn" data-lang="en">EN</button>
         </div>
-        <a href="#" class="search-icon">
-          <svg viewBox="0 0 24 24" fill="#000000" width="30" height="30">
-            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-          </svg>
-        </a>
-        <div class="dropdown">
-          <a href="#" class="dropdown-toggle">所有Tensorlinx</a>
-          <div class="dropdown-menu">
-            <div class="mega-menu">
-              <div class="menu-column">
-                <h3>🏠 首页</h3>
-                <a href="index.html">最新动态</a>
-                <a href="index.html">热门推荐</a>
-                <a href="index.html">特色服务</a>
-              </div>
-              
-              <div class="menu-column">
-                <h3>📱 产品系列</h3>
-                <a href="products.html">人工智能</a>
-                <a href="products.html">云计算</a>
-                <a href="products.html">大数据</a>
-                <a href="products.html">物联网</a>
-              </div>
-              
-              <div class="menu-column">
-                <h3>📊 新闻动态</h3>
-                <a href="news.html">技术白皮书</a>
-                <a href="news.html">行业分析</a>
-                <a href="news.html">市场趋势</a>
-              </div>
-              
-              <div class="menu-column">
-                <h3>💼 岗位招聘</h3>
-                <a href="#">技术岗位</a>
-                <a href="#">产品岗位</a>
-                <a href="#">管理岗位</a>
-              </div>
-              
-              <div class="menu-column">
-                <h3>🏢 关于我们</h3>
-                <a href="about.html">公司简介</a>
-                <a href="about.html">发展历程</a>
-                <a href="about.html">企业文化</a>
-                <a href="about.html">联系我们</a>
-              </div>
-              
-              <div class="menu-column">
-                <h3>🛠️ 技术支持</h3>
-                <a href="#">在线文档</a>
-                <a href="#">视频教程</a>
-                <a href="#">技术论坛</a>
-              </div>
-            </div>
-          </div>
-        </div>
+
+
       </div>
   </header>
 
@@ -173,59 +44,18 @@
   <main class="products-main">
     <section class="products-hero">
       <div class="container">
-        <h1>产品系列</h1>
-        <p>探索我们全面的AI产品和解决方案，助力企业数字化转型</p>
+        <h1 data-translate="hero.title">产品文档</h1>
+        <p data-translate="hero.subtitle">了解我们的产品技术规格、使用指南和开发文档</p>
       </div>
     </section>
 
     <!-- 产品分类区域已删除 -->
 
-    <section class="featured-products">
+    <section class="updating-section">
       <div class="container">
-        <div class="featured-grid">
-          <div class="featured-card">
-            <div class="product-image">
-              <img src="img/boxide.png" alt="BoxIDE">
-            </div>
-            <div class="product-info">
-              <h3>BoxIDE</h3>
-              <p>功能丰富的AI编程应用，专为中小企业和个人团队设计</p>
-              <button class="btn-secondary">立即体验</button>
-            </div>
-          </div>
-
-          <div class="featured-card">
-            <div class="product-image">
-              <img src="img/UTOPIA S.png" alt="乌托邦AI内核">
-            </div>
-            <div class="product-info">
-              <h3>乌托邦AI内核</h3>
-              <p>专为操作系统、机器人等工作设计的AI微内核</p>
-              <button class="btn-secondary">了解更多</button>
-            </div>
-          </div>
-
-          <div class="featured-card">
-            <div class="product-image">
-              <img src="img/remove.photos-removed-background.png" alt="智能云平台">
-            </div>
-            <div class="product-info">
-              <h3>智能云平台</h3>
-              <p>企业级云计算解决方案，提供高性能计算资源</p>
-              <button class="btn-secondary">立即体验</button>
-            </div>
-          </div>
-
-          <div class="featured-card">
-            <div class="product-image">
-              <img src="img/remove.photos-removed-background (2).png" alt="数据分析平台">
-            </div>
-            <div class="product-info">
-              <h3>数据分析平台</h3>
-              <p>智能化数据分析工具，助力企业数据驱动决策</p>
-              <button class="btn-secondary">了解更多</button>
-            </div>
-          </div>
+        <div class="updating-content">
+          <h2 data-translate="updating.title">正在更新中</h2>
+          <p data-translate="updating.description">产品文档正在全面升级，敬请期待...</p>
         </div>
       </div>
     </section>
@@ -239,7 +69,7 @@
     }
 
     .products-hero {
-      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      background: #000;
       color: white;
       padding: 100px 0;
       text-align: center;
@@ -262,58 +92,32 @@
       padding: 80px 0;
     }
 
-    /* 产品分类样式已删除 */
-    
-    .featured-products {
+    /* 正在更新中样式 */
+    .updating-section {
       background: white;
-      padding: 1px 0;
+      padding: 100px 0;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
     }
 
-    .featured-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 60px;
+    .updating-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    .featured-card {
-      background: #f8f9fa;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .featured-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .product-image {
-      height: 160px;
-      overflow: hidden;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .product-info {
-      padding: 20px;
-    }
-
-    .product-info h3 {
-      font-size: 1.3rem;
-      margin-bottom: 12px;
+    .updating-content h2 {
+      font-size: 2.5rem;
       color: #333;
+      margin-bottom: 20px;
+      font-weight: 600;
     }
 
-    .product-info p {
+    .updating-content p {
+      font-size: 1.2rem;
       color: #666;
-      margin-bottom: 20px;
-      line-height: 1.5;
-      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
     .btn-secondary {
@@ -380,10 +184,196 @@
         font-size: 2rem;
       }
       
-      .featured-grid {
-        grid-template-columns: 1fr;
+      .updating-content h2 {
+        font-size: 2rem;
+      }
+      
+      .updating-content p {
+        font-size: 1rem;
       }
     }
   </style>
+  
+  <!-- Cookie 政策弹窗 -->
+  <div id="cookie-consent" class="cookie-consent" style="display: none;">
+    <div class="cookie-consent-content">
+      <div class="cookie-consent-text">
+        <h4 data-translate="cookie.title">Cookie 政策</h4>
+        <p><span data-translate="cookie.description">我们使用必要的 Cookie 来确保网站正常运行。我们也使用分析 Cookie 来了解访客如何与网站互动，这有助于我们改进服务。您可以通过下面的选项来控制 Cookie 设置。</span><a href="cookie-policy.html" class="cookie-policy-link" data-translate="cookie.learnMore">了解更多</a></p>
+      </div>
+      <div class="cookie-consent-buttons">
+        <button id="accept-all-cookies" class="btn btn-primary" data-translate="cookie.acceptAll">接受全部</button>
+        <button id="reject-cookies" class="btn btn-secondary" data-translate="cookie.reject">拒绝</button>
+        <button id="customize-cookies" class="btn btn-outline" data-translate="cookie.customize">自定义</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 产品页面专用翻译脚本 -->
+  <script>
+    // 产品页面专用翻译功能
+    let productsTranslations = {};
+    let currentProductsLanguage = 'zh';
+    
+    // 加载产品页面翻译文件
+    async function loadProductsTranslations() {
+      try {
+        const response = await fetch('products-translations.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        productsTranslations = await response.json();
+        console.log('产品页面翻译文件加载成功');
+        updateProductsContent();
+        updateProductsLanguageButtons();
+        // 翻译文件加载完成后再应用保存的语言偏好
+        applySavedLanguagePreference();
+      } catch (error) {
+        console.error('加载产品页面翻译文件失败:', error);
+        productsTranslations = { zh: {}, en: {} };
+      }
+    }
+    
+    // 更新产品页面内容
+    function updateProductsContent() {
+      if (!productsTranslations || !productsTranslations[currentProductsLanguage]) {
+        return;
+      }
+      
+      const t = productsTranslations[currentProductsLanguage];
+      
+      // 更新页面标题
+      if (t.title) {
+        document.title = t.title;
+      }
+      
+      // 更新导航栏
+      const navHome = document.querySelector('a[data-nav="home"]');
+      const navProducts = document.querySelector('a[data-nav="products"]');
+      const navNews = document.querySelector('a[data-nav="news"]');
+      const navJobs = document.querySelector('a[data-nav="jobs"]');
+      const navAbout = document.querySelector('a[data-nav="about-us"]');
+      
+      if (navHome) navHome.textContent = t.nav?.home || '首页';
+      if (navProducts) navProducts.textContent = t.nav?.products || '产品文档';
+      if (navNews) navNews.textContent = t.nav?.news || '新闻动态';
+      if (navJobs) navJobs.textContent = t.nav?.jobs || '岗位招聘';
+      if (navAbout) navAbout.textContent = t.nav?.about || '关于我们';
+      
+      // 更新Hero区域
+      const heroTitle = document.querySelector('.products-hero h1');
+      const heroSubtitle = document.querySelector('.products-hero p');
+      
+      if (heroTitle) heroTitle.textContent = t.hero?.title || '产品文档';
+      if (heroSubtitle) heroSubtitle.textContent = t.hero?.subtitle || '了解我们的产品技术规格、使用指南和开发文档';
+      
+      // 更新"正在更新中"区域
+      const updatingTitle = document.querySelector('.updating-content h2');
+      const updatingDesc = document.querySelector('.updating-content p');
+      
+      console.log('更新updating区域:', t.updating);
+      console.log('updatingTitle元素:', updatingTitle);
+      console.log('updatingDesc元素:', updatingDesc);
+      
+      if (updatingTitle && t.updating?.title) {
+        updatingTitle.textContent = t.updating.title;
+        console.log('已更新标题为:', t.updating.title);
+      }
+      if (updatingDesc && t.updating?.description) {
+        updatingDesc.textContent = t.updating.description;
+        console.log('已更新描述为:', t.updating.description);
+      }
+      
+      // 更新Cookie弹窗
+      const cookieTitle = document.querySelector('.cookie-consent-text h4');
+      const cookieDesc = document.querySelector('.cookie-consent-text p span');
+      const cookieLearnMore = document.querySelector('.cookie-policy-link');
+      const cookieAccept = document.getElementById('accept-all-cookies');
+      const cookieReject = document.getElementById('reject-cookies');
+      const cookieCustomize = document.getElementById('customize-cookies');
+      
+      if (cookieTitle && t.cookie?.title) cookieTitle.textContent = t.cookie.title;
+      if (cookieDesc && t.cookie?.description) cookieDesc.textContent = t.cookie.description;
+      if (cookieLearnMore && t.cookie?.learnMore) cookieLearnMore.textContent = t.cookie.learnMore;
+      if (cookieAccept && t.cookie?.acceptAll) cookieAccept.textContent = t.cookie.acceptAll;
+      if (cookieReject && t.cookie?.reject) cookieReject.textContent = t.cookie.reject;
+      if (cookieCustomize && t.cookie?.customize) cookieCustomize.textContent = t.cookie.customize;
+    }
+    
+    // 更新语言按钮状态
+    function updateProductsLanguageButtons() {
+      const langBtns = document.querySelectorAll('.lang-btn');
+      langBtns.forEach(btn => {
+        if (btn.dataset.lang === currentProductsLanguage) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+    
+    // 切换语言
+    function toggleProductsLanguage() {
+      currentProductsLanguage = currentProductsLanguage === 'zh' ? 'en' : 'zh';
+      updateProductsContent();
+      updateProductsLanguageButtons();
+      
+      // 保存语言偏好到 localStorage 和 cookie
+      localStorage.setItem('preferredLanguage', currentProductsLanguage);
+      document.cookie = `preferredLanguage=${currentProductsLanguage};path=/`;
+    }
+    
+    // 设置语言切换按钮事件
+    function setupProductsLanguageButtons() {
+      const langBtns = document.querySelectorAll('.lang-btn');
+      
+      langBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.dataset.lang;
+          
+          // 如果点击的是当前语言，不做任何操作
+          if (lang === currentProductsLanguage) return;
+          
+          // 切换语言
+          toggleProductsLanguage();
+          
+          // 添加切换动画效果
+          this.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            this.style.transform = 'scale(1)';
+          }, 150);
+        });
+      });
+    }
+    
+    // 应用保存的语言偏好
+    function applySavedLanguagePreference() {
+      // 加载保存的语言偏好
+      const savedLang = localStorage.getItem('preferredLanguage') || 
+                       (navigator.language.startsWith('zh') ? 'zh' : 'en');
+      if (savedLang && savedLang !== currentProductsLanguage) {
+        currentProductsLanguage = savedLang;
+        updateProductsContent();
+        updateProductsLanguageButtons();
+      }
+    }
+    
+    // 初始化产品页面翻译
+    document.addEventListener('DOMContentLoaded', () => {
+      loadProductsTranslations();
+      setupProductsLanguageButtons();
+    });
+    
+    // 如果页面已加载，则直接初始化
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        loadProductsTranslations();
+        setupProductsLanguageButtons();
+      });
+    } else {
+      loadProductsTranslations();
+      setupProductsLanguageButtons();
+    }
+  </script>
 </body>
 </html>

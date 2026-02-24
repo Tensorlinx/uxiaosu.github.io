@@ -1,0 +1,64 @@
+{
+  "zh": {
+    "title": "产品文档 - Tensorlinx",
+    "nav": {
+      "home": "首页",
+      "products": "产品文档",
+      "news": "新闻动态",
+      "jobs": "岗位招聘",
+      "about": "关于我们"
+    },
+    "hero": {
+      "title": "产品文档",
+      "subtitle": "了解我们的产品技术规格、使用指南和开发文档"
+    },
+    "updating": {
+      "title": "正在更新中",
+      "description": "产品文档正在全面升级，敬请期待..."
+    },
+    "cookie": {
+      "title": "Cookie 政策",
+      "description": "我们使用必要的 Cookie 来确保网站正常运行。我们也使用分析 Cookie 来了解访客如何与网站互动，这有助于我们改进服务。您可以通过下面的选项来控制 Cookie 设置。",
+      "learnMore": "了解更多",
+      "acceptAll": "接受全部",
+      "reject": "拒绝",
+      "customize": "自定义"
+    },
+    "footer": {
+      "privacyPolicy": "隐私政策",
+      "cookiePolicy": "Cookie政策",
+      "manageCookies": "Cookie管理"
+    }
+  },
+  "en": {
+    "title": "Product Documentation - Tensorlinx",
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "news": "News",
+      "jobs": "Careers",
+      "about": "About Us"
+    },
+    "hero": {
+      "title": "Product Documentation",
+      "subtitle": "Learn about our product technical specifications, user guides, and development documentation"
+    },
+    "updating": {
+      "title": "Updating",
+      "description": "Product documentation is being fully upgraded, please stay tuned..."
+    },
+    "cookie": {
+      "title": "Cookie Policy",
+      "description": "We use necessary cookies to ensure the website functions properly. We also use analytics cookies to understand how visitors interact with the website, which helps us improve our services. You can control cookie settings through the options below.",
+      "learnMore": "Learn More",
+      "acceptAll": "Accept All",
+      "reject": "Reject",
+      "customize": "Customize"
+    },
+    "footer": {
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy",
+      "manageCookies": "Cookie Management"
+    }
+  }
+}

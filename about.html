@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <title>关于我们 - Tensorlinx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 标签页 Logo -->
+  <link rel="icon" type="image/png" href="img/NAVFOS-removebg-preview.png" />
   <!-- 国内字体资源 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,161 +13,30 @@
   <!-- 自定义样式 -->
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* 维护公告遮盖层 */
-    .maintenance-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      pointer-events: all;
-      user-select: none;
-    }
-
-    .maintenance-notice {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 40px 60px;
-      text-align: center;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      color: white;
-      max-width: 500px;
-    }
-
-    .maintenance-notice h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .maintenance-notice p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      margin-bottom: 30px;
-    }
-
-    .maintenance-spinner {
-      width: 50px;
-      height: 50px;
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      border-top: 3px solid white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* 防止页面交互 */
-    body.maintenance-mode {
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    body.maintenance-mode * {
-      pointer-events: none;
-    }
-
-    body.maintenance-mode .maintenance-overlay {
-      pointer-events: all;
-    }
   </style>
 </head>
 
-<body class="maintenance-mode">
-  <!-- 维护公告遮盖层 -->
-  <div class="maintenance-overlay">
-    <div class="maintenance-notice">
-      <h2>官网正在维护中</h2>
-      <p>我们正在对网站进行升级维护，请稍后再访问</p>
-      <div class="maintenance-spinner"></div>
-    </div>
-  </div>
+<body>
   <!-- 顶部导航 -->
   <header class="top-nav">
     <a class="logo" href="index.html">
         <img src="img/remove.photos-removed-background.png" alt="Logo" style="height: 40px; width: auto;">
       </a>
+    <span class="nav-divider">|</span>
     <nav class="nav-links">
-       <a href="index.html" data-nav="home">首页</a>
-       <a href="products.html" data-nav="products">产品系列</a>
-       <a href="news.html" data-nav="about">新闻动态</a>
-       <a href="NAVFIO.html" data-nav="jobs">岗位招聘</a>
-       <a href="about.html" data-nav="about-us" class="active">关于我们</a>
+       <a href="index.html" data-nav="home" data-translate="nav.home">首页</a>
+       <a href="products.html" data-nav="products" data-translate="nav.products">产品文档</a>
+       <a href="news.html" data-nav="news" data-translate="nav.news">新闻动态</a>
+       <a href="NAVFIO.html" data-nav="jobs" data-translate="nav.jobs">岗位招聘</a>
+       <a href="about.html" data-nav="about-us" class="active" data-translate="nav.about">关于我们</a>
      </nav>
     <div class="right">
         <div class="language-toggle">
-          <button class="lang-btn active" data-lang="zh" onclick="toggleLanguage()">中</button>
-          <button class="lang-btn" data-lang="en" onclick="toggleLanguage()">EN</button>
+          <button class="lang-btn active" data-lang="zh">中</button>
+          <button class="lang-btn" data-lang="en">EN</button>
         </div>
-        <a href="#" class="search-icon">
-          <svg viewBox="0 0 24 24" fill="#000000" width="30" height="30">
-            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-          </svg>
-        </a>
-        <div class="dropdown">
-          <a href="#" class="dropdown-toggle">所有Tensorlinx</a>
-          <div class="dropdown-menu">
-            <div class="mega-menu">
-              <div class="menu-column">
-                <h3>🏠 首页</h3>
-                <a href="index.html">最新动态</a>
-                <a href="index.html">热门推荐</a>
-                <a href="index.html">特色服务</a>
-              </div>
-              
-              <div class="menu-column">
-                <h3>📱 产品系列</h3>
-                <a href="products.html">人工智能</a>
-                <a href="products.html">云计算</a>
-                <a href="products.html">大数据</a>
-                <a href="products.html">物联网</a>
-              </div>
-              
-              <div class="menu-column">
-                <h3>📊 新闻动态</h3>
-                <a href="news.html">技术白皮书</a>
-                <a href="news.html">行业分析</a>
-                <a href="news.html">市场趋势</a>
-              </div>
-              
-              <div class="menu-column">
-                <h3>💼 岗位招聘</h3>
-                <a href="#">技术岗位</a>
-                <a href="#">产品岗位</a>
-                <a href="#">管理岗位</a>
-              </div>
-              
-              <div class="menu-column">
-                <h3>🏢 关于我们</h3>
-                <a href="about.html">公司简介</a>
-                <a href="about.html">发展历程</a>
-                <a href="about.html">企业文化</a>
-                <a href="about.html">联系我们</a>
-              </div>
-              
-              <div class="menu-column">
-                <h3>🛠️ 技术支持</h3>
-                <a href="#">在线文档</a>
-                <a href="#">视频教程</a>
-                <a href="#">技术论坛</a>
-              </div>
-            </div>
-          </div>
-        </div>
+
+
       </div>
   </header>
 
@@ -173,8 +44,8 @@
   <main class="about-main">
     <section class="about-hero">
       <div class="container">
-        <h1>关于我们</h1>
-        <p>了解Tensorlinx的使命、愿景和价值观</p>
+        <h1 data-translate="hero.title">关于我们</h1>
+        <p data-translate="hero.subtitle">了解Tensorlinx的使命、愿景和价值观</p>
       </div>
     </section>
 
@@ -182,63 +53,12 @@
       <div class="container">
         <div class="intro-content">
           <div class="intro-text">
-            <h2>我们是谁</h2>
-            <p>Tensorlinx（灵兮矩阵）是一家专注于人工智能技术研发和应用的高科技企业。我们致力于推动AI技术的民主化，让每个人都能享受到人工智能带来的便利。</p>
-            <p>我们正在建设一家去政治化、多元人种的全球性科技企业。在遵循各国出口管制与国际合规框架的前提下，我们致力于让技术与产品惠及更多国家和地区。</p>
+            <h2 data-translate="intro.title">我们是谁</h2>
+            <p data-translate="intro.content.0">Tensorlinx是一家专注于计算机基础设施建设的科技企业。我们致力于推动计算机科学技术到全球边缘地带，我们受新世家DAO资助成立。</p>
+            <p data-translate="intro.content.1">我们正在建设一家去政治化、多元人种的全球性科技企业。在遵循各国出口管制与国际合规框架的前提下，我们致力于让技术与产品惠及更多国家和地区。</p>
           </div>
           <div class="intro-image">
-            <img src="https://picsum.photos/600/400?random=1" alt="Tensorlinx团队">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mission-vision">
-      <div class="container">
-        <div class="mission-vision-grid">
-          <div class="mission-card">
-            <div class="card-icon">🎯</div>
-            <h3>我们的使命</h3>
-            <p>通过创新的AI技术，为全球用户提供智能化解决方案，推动社会进步和人类发展。</p>
-          </div>
-          <div class="vision-card">
-            <div class="card-icon">🌟</div>
-            <h3>我们的愿景</h3>
-            <p>成为全球领先的AI技术公司，构建一个更加智能、高效、包容的数字世界。</p>
-          </div>
-          <div class="values-card">
-            <div class="card-icon">💎</div>
-            <h3>我们的价值观</h3>
-            <p>创新、开放、包容、责任。我们相信技术的力量，更相信人性的光辉。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="history-timeline">
-      <div class="container">
-        <h2 class="section-title">发展历程</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-date">2024</div>
-            <div class="timeline-content">
-              <h3>BoxIDE内测版发布</h3>
-              <p>推出专为中小企业和个人团队设计的AI编程应用BoxIDE，开启AI编程新时代。</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2023</div>
-            <div class="timeline-content">
-              <h3>乌托邦AI内核升级</h3>
-              <p>乌托邦AI内核支持更多操作系统和机器人平台，为开发者提供更强大的AI开发环境。</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2022</div>
-            <div class="timeline-content">
-              <h3>公司成立</h3>
-              <p>Tensorlinx在上海正式成立，致力于AI技术研发和应用推广。</p>
-            </div>
+            <img src="img/28af8049-d742-48cf-8432-ec0ede31d601.png" alt="Tensorlinx团队">
           </div>
         </div>
       </div>
@@ -246,84 +66,138 @@
 
     <section class="team-section">
       <div class="container">
-        <h2 class="section-title">核心团队</h2>
+        <h2 class="section-title" data-translate="team.title">公司治理层</h2>
         <div class="team-grid">
           <div class="team-member">
             <div class="member-avatar">
-              <img src="https://picsum.photos/200/200?random=10" alt="CEO">
+              <img src="img/wx.png" alt="CEO">
             </div>
-            <h3>张明</h3>
-            <p class="member-title">首席执行官</p>
-            <p class="member-bio">拥有15年AI行业经验，曾在多家知名科技公司担任高管职位。</p>
+            <h3 data-translate="team.members.0.name">吴翔</h3>
+            <p class="member-title" data-translate="team.members.0.title">执行董事兼CEO</p>
+            <p class="member-bio" data-translate="team.members.0.bio">2024/5/31创立tensorlinx并成为创始人<br>2026/2/25担任新世家DAO联席主席<br>负责tensorlinx公司行政事务与技术研发</p>
           </div>
           <div class="team-member">
             <div class="member-avatar">
-              <img src="https://picsum.photos/200/200?random=11" alt="CTO">
+              <img src="img/ycx.png" alt="CTO">
             </div>
-            <h3>李华</h3>
-            <p class="member-title">首席技术官</p>
-            <p class="member-bio">AI领域资深专家，在自然语言处理和机器学习方面有深入研究。</p>
+            <h3 data-translate="team.members.1.name">颜才祥</h3>
+            <p class="member-title" data-translate="team.members.1.title">监事（已离职）</p>
+            <p class="member-bio" data-translate="team.members.1.bio">2024/5/31加入tensorlinx公司后担任监事及审计工作<br>2024/10/21正式退出公司治理层</p>
           </div>
           <div class="team-member">
             <div class="member-avatar">
-              <img src="https://picsum.photos/200/200?random=12" alt="CPO">
+              <img src="img/jiekemi.png" alt="CPO">
             </div>
-            <h3>王芳</h3>
-            <p class="member-title">首席产品官</p>
-            <p class="member-bio">产品设计专家，致力于将复杂的AI技术转化为用户友好的产品。</p>
+            <h3 data-translate="team.members.2.name">阿米特·帕特尔</h3>
+            <p class="member-title" data-translate="team.members.2.title">非执行董事</p>
+            <p class="member-bio" data-translate="team.members.2.bio">2024/5/31加入tensorlinx公司并担任非执行董事<br>由新世家DAO联席指派监管公司的协议人员</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="contact-section">
+    <section class="company-addresses">
       <div class="container">
-        <h2 class="section-title">联系我们</h2>
-        <div class="contact-grid">
-          <div class="contact-info">
-            <div class="contact-item">
-              <div class="contact-icon">📧</div>
-              <div class="contact-details">
-                <h3>邮箱</h3>
-                <p>contact@tensorlinx.com</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">📞</div>
-              <div class="contact-details">
-                <h3>电话</h3>
-                <p>+86 400-123-4567</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">📍</div>
-              <div class="contact-details">
-                <h3>地址</h3>
-                <p>上海市浦东新区张江高科技园区</p>
-              </div>
-            </div>
+        <h2 class="section-title" data-translate="addresses.title">公司地址</h2>
+        <div class="addresses-list">
+          <div class="address-item">
+            <h3 data-translate="addresses.songjiang.title">松江研发中心</h3>
+            <p data-translate="addresses.songjiang.address">上海市松江区佘山镇陶干路74号<br>中国 201602</p>
+            <p data-translate="addresses.songjiang.email">邮箱：shanghai@tensorlinx.freeqiye.com</p>
           </div>
-          <div class="contact-form">
-            <form id="contactForm">
-              <div class="form-group">
-                <input type="text" id="name" name="name" placeholder="您的姓名" required>
-              </div>
-              <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="您的邮箱" required>
-              </div>
-              <div class="form-group">
-                <input type="text" id="subject" name="subject" placeholder="主题" required>
-              </div>
-              <div class="form-group">
-                <textarea id="message" name="message" placeholder="您的消息" rows="5" required></textarea>
-              </div>
-              <button type="submit" class="submit-btn">发送消息</button>
-            </form>
+          <div class="address-item">
+            <h3 data-translate="addresses.changning.title">长宁商务中心</h3>
+            <p data-translate="addresses.changning.address">上海市长宁区平武路168号玉嘉大厦12B<br>中国 200052</p>
+            <p data-translate="addresses.changning.email">邮箱：tensorlinx@tensorlinx.cn</p>
           </div>
         </div>
       </div>
     </section>
+
   </main>
+
+  <!-- Cookie 政策弹窗 -->
+  <div id="cookie-consent" class="cookie-consent" style="display: none;">
+    <div class="cookie-consent-content">
+      <div class="cookie-consent-text">
+        <h4 data-translate="cookie.title">Cookie 政策</h4>
+        <p><span data-translate="cookie.description">我们使用必要的 Cookie 来确保网站正常运行。我们也使用分析 Cookie 来了解访客如何与网站互动，这有助于我们改进服务。您可以通过下面的选项来控制 Cookie 设置。</span><a href="cookie-policy.html" class="cookie-policy-link" data-translate="cookie.learnMore">了解更多</a></p>
+      </div>
+      <div class="cookie-consent-buttons">
+        <button id="accept-all-cookies" class="btn btn-primary" data-translate="cookie.acceptAll">接受全部</button>
+        <button id="reject-cookies" class="btn btn-secondary" data-translate="cookie.reject">拒绝</button>
+        <button id="customize-cookies" class="btn btn-outline" data-translate="cookie.customize">自定义</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 网站底部 -->
+  <footer class="site-footer" id="about-us">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 data-translate="footer.about">关于我们</h3>
+        <p data-translate="footer.aboutDesc">Tensorlinx 致力于提供领先的AI解决方案，赋能企业和开发者构建智能化的未来。</p>
+        <div class="social-links">
+          <a href="https://github.com/orgs/Tensorlinx/repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="X">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.931zm-1.613 19.544h2.039L6.486 2.24H4.298z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Bilibili">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L11.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.765.28 1.396.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.497.769-1.128.786-1.893v-7.52c-.017-.765-.28-1.397-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373z"/>
+            </svg>
+          </a>
+          <a href="https://discord.gg/WpG2ZgUc" target="_blank" rel="noopener noreferrer" aria-label="NAVFOS" class="navfos-link">
+            <img src="img/NAVFOS__1_-removebg-preview.png" alt="NAVFOS" width="20" height="20">
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3 data-translate="footer.productServices">产品服务</h3>
+        <ul>
+          <li><a href="#" data-translate="footer.products.utopia">乌托邦AI内核</a></li>
+          <li><a href="#" data-translate="footer.products.boxide">BoxIDE</a></li>
+          <li><a href="#" data-translate="footer.products.solutions">AI解决方案</a></li>
+          <li><a href="#" data-translate="footer.products.support">技术支持</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 data-translate="footer.quickLinks">快速链接</h3>
+        <ul>
+          <li><a href="#" data-translate="footer.quickLinksList.docs">产品文档</a></li>
+          <li><a href="#" data-translate="footer.quickLinksList.news">新闻动态</a></li>
+          <li><a href="#" data-translate="footer.quickLinksList.jobs">岗位招聘</a></li>
+          <li><a href="#" data-translate="footer.quickLinksList.contact">联系我们</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 data-translate="footer.contactInfo">联系方式</h3>
+        <ul>
+            <li><span data-translate="footer.emailLabel">邮箱</span>: <span data-translate="footer.email">tensorlinx@tensorlinx.cn</span></li>
+          </ul>
+      </div>
+
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="copyright-cn" data-translate="copyright">&copy; 2024 灵兮矩阵（上海）计算机系统有限公司. 保留所有权利 | 沪ICP备2025137506号-1 <a href="#" style="color: #0066cc !important;" onclick="alert('我们已经将该网站服务器迁至美国，根据中国法律规定，我们已经不再适合ICP备案'); return false;">(已废弃)</a></p>
+      <p class="copyright-en" style="display: none;" data-translate="copyright">&copy; 2024 TensorLinx. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="cookie-policy.html" data-translate="footer.cookiePolicy">Cookie政策</a>
+        <a href="#" onclick="showCustomizeCookiePanel(); return false;" id="manage-cookies-link" data-translate="footer.manageCookies">Cookie管理</a>
+        <a href="privacy-policy.html" data-translate="footer.privacyPolicy">隐私政策</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- 关于我们页面样式 -->
   <style>
@@ -333,7 +207,7 @@
     }
 
     .about-hero {
-      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      background: #000;
       color: white;
       padding: 100px 0;
       text-align: center;
@@ -381,6 +255,7 @@
       width: 100%;
       height: 400px;
       object-fit: cover;
+      object-position: top left;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
@@ -506,7 +381,7 @@
     }
 
     .team-section {
-      padding: 80px 0;
+      padding: 40px 0;
       background: #f8f9fa;
     }
 
@@ -517,23 +392,14 @@
     }
 
     .team-member {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .team-member:hover {
-      transform: translateY(-5px);
+      text-align: left;
+      padding: 20px;
     }
 
     .member-avatar {
-      width: 120px;
-      height: 120px;
+      width: 200px;
+      height: 280px;
       margin: 0 auto 20px;
-      border-radius: 50%;
       overflow: hidden;
     }
 
@@ -558,53 +424,6 @@
     .member-bio {
       color: #666;
       line-height: 1.6;
-    }
-
-    .contact-section {
-      padding: 80px 0;
-      background: white;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .contact-icon {
-      font-size: 2rem;
-      width: 60px;
-      height: 60px;
-      background: #4facfe;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .contact-details h3 {
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-      color: #333;
-    }
-
-    .contact-details p {
-      color: #666;
-      font-size: 1.1rem;
     }
 
     .contact-form {
@@ -660,6 +479,104 @@
       font-weight: 600;
     }
 
+    /* 底部样式 */
+    .site-footer {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 60px 40px 20px;
+      margin-top: 80px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 60px;
+    }
+
+    .footer-section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .footer-section p {
+      color: #aaa;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: #fff;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      color: #aaa;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+    }
+    
+    .social-links .navfos-link img {
+      filter: grayscale(100%) brightness(0.7);
+      transition: filter 0.3s ease;
+    }
+    
+    .social-links .navfos-link:hover img {
+      filter: grayscale(0%) brightness(1);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      margin-top: 15px;
+    }
+
+    .footer-links a {
+      color: #666;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
     @media (max-width: 768px) {
       .about-hero h1 {
         font-size: 2rem;
@@ -699,12 +616,374 @@
       .team-grid {
         grid-template-columns: 1fr;
       }
-      
-      .contact-grid {
-        grid-template-columns: 1fr;
+
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
         gap: 40px;
       }
     }
+
+    @media (max-width: 480px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    /* 公司地址部分样式 */
+    .company-addresses {
+      padding: 80px 0;
+      background: #f8f9fa;
+    }
+
+    .company-addresses .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 60px;
+      color: #333;
+    }
+
+    .addresses-list {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .address-item {
+      flex: 1;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .address-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .address-item p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .address-item p:last-child {
+      margin-bottom: 0;
+      color: #333;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .company-addresses {
+        padding: 60px 0;
+      }
+
+      .company-addresses .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
+
+      .addresses-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 0 20px;
+      }
+
+      .address-item {
+        max-width: 100%;
+      }
+    }
   </style>
+  <!-- 关于我们页面专用翻译脚本 -->
+  <script>
+    // 关于我们页面专用翻译功能
+    let aboutTranslations = {};
+    let currentAboutLanguage = 'zh';
+    
+    // 加载关于我们页面翻译文件
+    async function loadAboutTranslations() {
+      try {
+        const response = await fetch('about-translations.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        aboutTranslations = await response.json();
+        console.log('关于我们页面翻译文件加载成功');
+        updateAboutContent();
+        updateAboutLanguageButtons();
+      } catch (error) {
+        console.error('加载关于我们页面翻译文件失败:', error);
+        aboutTranslations = { zh: {}, en: {} };
+      }
+    }
+    
+    // 更新关于我们页面内容
+    function updateAboutContent() {
+      if (!aboutTranslations || !aboutTranslations[currentAboutLanguage]) {
+        return;
+      }
+      
+      const t = aboutTranslations[currentAboutLanguage];
+      
+      // 更新页面标题
+      if (t.title) {
+        document.title = t.title;
+      }
+      
+      // 更新导航栏
+      const navHome = document.querySelector('a[data-nav="home"]');
+      const navProducts = document.querySelector('a[data-nav="products"]');
+      const navNews = document.querySelector('a[data-nav="news"]');
+      const navJobs = document.querySelector('a[data-nav="jobs"]');
+      const navAbout = document.querySelector('a[data-nav="about-us"]');
+      
+      if (navHome) navHome.textContent = t.nav?.home || '首页';
+      if (navProducts) navProducts.textContent = t.nav?.products || '产品文档';
+      if (navNews) navNews.textContent = t.nav?.news || '新闻动态';
+      if (navJobs) navJobs.textContent = t.nav?.jobs || '岗位招聘';
+      if (navAbout) navAbout.textContent = t.nav?.about || '关于我们';
+      
+      // 更新Hero区域
+      const heroTitle = document.querySelector('.about-hero h1');
+      const heroSubtitle = document.querySelector('.about-hero p');
+      
+      if (heroTitle) heroTitle.textContent = t.hero?.title || '关于我们';
+      if (heroSubtitle) heroSubtitle.textContent = t.hero?.subtitle || '了解Tensorlinx的使命、愿景和价值观';
+      
+      // 更新Intro区域
+      const introTitle = document.querySelector('.intro-text h2');
+      const introParagraphs = document.querySelectorAll('.intro-text p[data-translate^="intro.content"]');
+      
+      if (introTitle && t.intro?.title) introTitle.textContent = t.intro.title;
+      introParagraphs.forEach((p, index) => {
+        if (t.intro?.content && t.intro.content[index]) {
+          p.textContent = t.intro.content[index];
+        }
+      });
+      
+      // 更新团队区域
+      const teamTitle = document.querySelector('.team-section .section-title');
+      if (teamTitle && t.team?.title) teamTitle.textContent = t.team.title;
+      
+      const teamMembers = document.querySelectorAll('.team-member');
+      teamMembers.forEach((member, index) => {
+        if (t.team?.members && t.team.members[index]) {
+          const nameEl = member.querySelector('h3');
+          const titleEl = member.querySelector('.member-title');
+          const bioEl = member.querySelector('.member-bio');
+          
+          if (nameEl) nameEl.textContent = t.team.members[index].name;
+          if (titleEl) titleEl.textContent = t.team.members[index].title;
+          if (bioEl) {
+            // 处理bio中的换行符
+            bioEl.innerHTML = t.team.members[index].bio.replace(/\n/g, '<br>');
+          }
+        }
+      });
+      
+      // 更新Cookie弹窗
+      const cookieTitle = document.querySelector('.cookie-consent-text h4');
+      const cookieDesc = document.querySelector('.cookie-consent-text p span');
+      const cookieLearnMore = document.querySelector('.cookie-policy-link');
+      const cookieAccept = document.getElementById('accept-all-cookies');
+      const cookieReject = document.getElementById('reject-cookies');
+      const cookieCustomize = document.getElementById('customize-cookies');
+      
+      if (cookieTitle && t.cookie?.title) cookieTitle.textContent = t.cookie.title;
+      if (cookieDesc && t.cookie?.description) cookieDesc.textContent = t.cookie.description;
+      if (cookieLearnMore && t.cookie?.learnMore) cookieLearnMore.textContent = t.cookie.learnMore;
+      if (cookieAccept && t.cookie?.acceptAll) cookieAccept.textContent = t.cookie.acceptAll;
+      if (cookieReject && t.cookie?.reject) cookieReject.textContent = t.cookie.reject;
+      if (cookieCustomize && t.cookie?.customize) cookieCustomize.textContent = t.cookie.customize;
+      
+      // 更新公司地址
+      const addressesTitle = document.querySelector('.company-addresses .section-title');
+      const songjiangTitle = document.querySelector('.address-item h3[data-translate="addresses.songjiang.title"]');
+      const songjiangAddress = document.querySelector('.address-item p[data-translate="addresses.songjiang.address"]');
+      const songjiangEmail = document.querySelector('.address-item p[data-translate="addresses.songjiang.email"]');
+      const changningTitle = document.querySelector('.address-item h3[data-translate="addresses.changning.title"]');
+      const changningAddress = document.querySelector('.address-item p[data-translate="addresses.changning.address"]');
+      const changningEmail = document.querySelector('.address-item p[data-translate="addresses.changning.email"]');
+
+      if (addressesTitle && t.addresses?.title) addressesTitle.textContent = t.addresses.title;
+      if (songjiangTitle && t.addresses?.songjiang?.title) songjiangTitle.textContent = t.addresses.songjiang.title;
+      if (songjiangAddress && t.addresses?.songjiang?.address) {
+        songjiangAddress.innerHTML = t.addresses.songjiang.address.replace(/\n/g, '<br>');
+      }
+      if (songjiangEmail && t.addresses?.songjiang?.email) songjiangEmail.textContent = t.addresses.songjiang.email;
+      if (changningTitle && t.addresses?.changning?.title) changningTitle.textContent = t.addresses.changning.title;
+      if (changningAddress && t.addresses?.changning?.address) {
+        changningAddress.innerHTML = t.addresses.changning.address.replace(/\n/g, '<br>');
+      }
+      if (changningEmail && t.addresses?.changning?.email) changningEmail.textContent = t.addresses.changning.email;
+      
+      // 更新页脚
+      const footerAboutTitle = document.querySelector('.footer-section h3[data-translate="footer.about"]');
+      const footerAboutDesc = document.querySelector('.footer-section p[data-translate="footer.aboutDesc"]');
+      
+      if (footerAboutTitle && t.footer?.about) footerAboutTitle.textContent = t.footer.about;
+      if (footerAboutDesc && t.footer?.aboutDesc) footerAboutDesc.textContent = t.footer.aboutDesc;
+      
+      // 更新产品服务
+      const productServicesTitle = document.querySelector('.footer-section h3[data-translate="footer.productServices"]');
+      if (productServicesTitle && t.footer?.productServices) productServicesTitle.textContent = t.footer.productServices;
+      
+      // 更新产品链接
+      const productLinks = document.querySelectorAll('.footer-section a[data-translate^="footer.products"]');
+      productLinks.forEach(link => {
+        const key = link.getAttribute('data-translate').replace('footer.products.', '');
+        if (t.footer?.products && t.footer.products[key]) {
+          link.textContent = t.footer.products[key];
+        }
+      });
+      
+      // 更新快速链接标题
+      const quickLinksTitle = document.querySelector('.footer-section h3[data-translate="footer.quickLinks"]');
+      if (quickLinksTitle && t.footer?.quickLinks) quickLinksTitle.textContent = t.footer.quickLinks;
+      
+      // 更新快速链接
+      const quickLinks = document.querySelectorAll('.footer-section a[data-translate^="footer.quickLinksList"]');
+      quickLinks.forEach(link => {
+        const key = link.getAttribute('data-translate').replace('footer.quickLinksList.', '');
+        if (t.footer?.quickLinksList && t.footer.quickLinksList[key]) {
+          link.textContent = t.footer.quickLinksList[key];
+        }
+      });
+      
+      // 更新联系方式
+      const contactInfoTitle = document.querySelector('.footer-section h3[data-translate="footer.contactInfo"]');
+      if (contactInfoTitle && t.footer?.contactInfo) contactInfoTitle.textContent = t.footer.contactInfo;
+      
+      // 更新邮箱和地址标签
+      const emailLabel = document.querySelector('span[data-translate="footer.emailLabel"]');
+      const addressLabel = document.querySelector('span[data-translate="footer.addressLabel"]');
+      const email = document.querySelector('span[data-translate="footer.email"]');
+      const address = document.querySelector('span[data-translate="footer.address"]');
+      
+      if (emailLabel && t.footer?.emailLabel) emailLabel.textContent = t.footer.emailLabel;
+      if (addressLabel && t.footer?.addressLabel) addressLabel.textContent = t.footer.addressLabel;
+      if (email && t.footer?.email) email.textContent = t.footer.email;
+      if (address && t.footer?.address) address.textContent = t.footer.address;
+      
+      // 更新footer-bottom链接
+      const cookiePolicyLink = document.querySelector('.footer-links a[data-translate="footer.cookiePolicy"]');
+      const manageCookiesLink = document.querySelector('.footer-links a[data-translate="footer.manageCookies"]');
+      const privacyPolicyLink = document.querySelector('.footer-links a[data-translate="footer.privacyPolicy"]');
+      const copyrightCn = document.querySelector('.copyright-cn');
+      const copyrightEn = document.querySelector('.copyright-en');
+      
+      if (cookiePolicyLink && t.footer?.cookiePolicy) cookiePolicyLink.textContent = t.footer.cookiePolicy;
+      if (manageCookiesLink && t.footer?.manageCookies) manageCookiesLink.textContent = t.footer.manageCookies;
+      if (privacyPolicyLink && t.footer?.privacyPolicy) privacyPolicyLink.textContent = t.footer.privacyPolicy;
+      
+      // 更新版权信息 - 根据语言切换显示
+      if (currentAboutLanguage === 'zh') {
+        if (copyrightCn) {
+          copyrightCn.style.display = 'block';
+          // 保留原有的HTML结构（包括链接）
+          copyrightCn.innerHTML = `&copy; 2024 灵兮矩阵（上海）计算机系统有限公司. 保留所有权利 | 沪ICP备2025137506号-1 <a href="#" style="color: #0066cc !important;" onclick="alert('我们已经将该网站服务器迁至美国，根据中国法律规定，我们已经不再适合ICP备案'); return false;">(已废弃)</a>`;
+        }
+        if (copyrightEn) copyrightEn.style.display = 'none';
+      } else {
+        if (copyrightCn) copyrightCn.style.display = 'none';
+        if (copyrightEn) {
+          copyrightEn.style.display = 'block';
+          if (t.copyright) copyrightEn.textContent = t.copyright;
+        }
+      }
+    }
+    
+    // 更新语言按钮状态
+    function updateAboutLanguageButtons() {
+      const langBtns = document.querySelectorAll('.lang-btn');
+      langBtns.forEach(btn => {
+        if (btn.dataset.lang === currentAboutLanguage) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+    
+    // 切换语言
+    function toggleAboutLanguage() {
+      currentAboutLanguage = currentAboutLanguage === 'zh' ? 'en' : 'zh';
+      updateAboutContent();
+      updateAboutLanguageButtons();
+      
+      // 保存语言偏好到 localStorage 和 cookie
+      localStorage.setItem('preferredLanguage', currentAboutLanguage);
+      document.cookie = `preferredLanguage=${currentAboutLanguage};path=/`;
+    }
+    
+    // 设置语言切换按钮事件
+    function setupAboutLanguageButtons() {
+      const langBtns = document.querySelectorAll('.lang-btn');
+      
+      langBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.dataset.lang;
+          
+          // 如果点击的是当前语言，不做任何操作
+          if (lang === currentAboutLanguage) return;
+          
+          // 切换语言
+          toggleAboutLanguage();
+          
+          // 添加切换动画效果
+          this.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            this.style.transform = 'scale(1)';
+          }, 150);
+        });
+      });
+      
+      // 加载保存的语言偏好
+      const savedLang = localStorage.getItem('preferredLanguage') || 
+                       (navigator.language.startsWith('zh') ? 'zh' : 'en');
+      if (savedLang && savedLang !== currentAboutLanguage) {
+        currentAboutLanguage = savedLang;
+        updateAboutContent();
+        updateAboutLanguageButtons();
+      }
+      
+
+    }
+    
+    // 初始化关于我们页面翻译
+    document.addEventListener('DOMContentLoaded', () => {
+      // 检查是否需要应用保存的语言偏好
+      const savedLang = localStorage.getItem('preferredLanguage');
+      if (savedLang && savedLang !== 'zh') {
+        currentAboutLanguage = savedLang;
+      }
+      loadAboutTranslations();
+      setupAboutLanguageButtons();
+    });
+    
+    // 如果页面已加载，则直接初始化
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang && savedLang !== 'zh') {
+          currentAboutLanguage = savedLang;
+        }
+        loadAboutTranslations();
+        setupAboutLanguageButtons();
+      });
+    } else {
+      const savedLang = localStorage.getItem('preferredLanguage');
+      if (savedLang && savedLang !== 'zh') {
+        currentAboutLanguage = savedLang;
+      }
+      loadAboutTranslations();
+      setupAboutLanguageButtons();
+    }
+  </script>
 </body>
 </html>

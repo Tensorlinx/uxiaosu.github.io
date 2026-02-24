@@ -1,0 +1,54 @@
+{
+  "zh": {
+    "title": "Tensorlinx正在向redox开发小组进行资助 - Tensorlinx",
+    "nav": {
+      "home": "首页",
+      "products": "产品文档",
+      "news": "新闻动态",
+      "jobs": "岗位招聘",
+      "about": "关于我们"
+    },
+    "pageTitle": "新闻动态",
+    "pageSubtitle": "了解Tensorlinx最新动态、技术突破和行业洞察",
+    "article": {
+      "title": "Tensorlinx正在向redox开发小组进行资助",
+      "meta": "发布时间：2025年3月10日 | 作者：Tensorlinx团队 | 分类：企业公告",
+      "content": [
+        "Tensorlinx正在使用NAVF流动储备向redox开发小组进行资助，包括参与维护。这一行为不代表政治目的，是我们社会使命的一部分。",
+        "Redox是一个用Rust语言编写的通用操作系统，旨在提供安全、可靠、高性能的计算环境。作为开源社区的重要成员，Redox项目致力于构建一个现代化的操作系统内核，采用微内核架构设计，从根本上提升系统的安全性和稳定性。",
+        "Tensorlinx此次资助将主要用于支持Redox项目的核心开发工作，包括系统内核优化、驱动程序开发、以及用户空间工具的完善。我们相信，通过支持这样的开源项目，能够推动整个计算机基础设施领域的技术进步。",
+        "作为一家专注于计算机基础设施建设的企业，Tensorlinx始终将技术创新和社会责任视为企业发展的核心驱动力。我们坚信，开源软件是现代技术生态的基石，支持开源项目的发展就是投资于整个行业的未来。",
+        "此次资助是Tensorlinx长期开源战略的一部分。未来，我们将继续寻找并支持更多具有创新潜力的开源项目，为构建更加开放、安全、高效的数字世界贡献力量。"
+      ],
+      "shareTitle": "分享这篇新闻",
+      "shareButton": "分享",
+      "copySuccess": "链接已复制到剪贴板！"
+    }
+  },
+  "en": {
+    "title": "Tensorlinx is Providing Funding to the Redox Development Team - Tensorlinx",
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "news": "News",
+      "jobs": "Careers",
+      "about": "About Us"
+    },
+    "pageTitle": "News & Updates",
+    "pageSubtitle": "Stay informed about Tensorlinx's latest developments, technical breakthroughs, and industry insights",
+    "article": {
+      "title": "Tensorlinx is Providing Funding to the Redox Development Team",
+      "meta": "Published: February 20, 2026 | Author: Tensorlinx Team | Category: Company Announcement",
+      "content": [
+        "Tensorlinx is using NAVF liquid reserves to fund the Redox development team, including participation in maintenance. This action does not represent political purposes and is part of our social mission.",
+        "Redox is a general-purpose operating system written in Rust, designed to provide a secure, reliable, and high-performance computing environment. As an important member of the open-source community, the Redox project is committed to building a modern operating system kernel using a microkernel architecture, fundamentally improving system security and stability.",
+        "Tensorlinx's funding will primarily support the core development work of the Redox project, including system kernel optimization, driver development, and the improvement of user-space tools. We believe that by supporting such open-source projects, we can drive technological advancement across the entire computer infrastructure field.",
+        "As a company focused on computer infrastructure construction, Tensorlinx always regards technological innovation and social responsibility as the core drivers of enterprise development. We firmly believe that open-source software is the cornerstone of the modern technology ecosystem, and supporting the development of open-source projects is an investment in the future of the entire industry.",
+        "This funding is part of Tensorlinx's long-term open-source strategy. In the future, we will continue to seek out and support more open-source projects with innovative potential, contributing to the construction of a more open, secure, and efficient digital world."
+      ],
+      "shareTitle": "Share this News",
+      "shareButton": "Share",
+      "copySuccess": "Link copied to clipboard!"
+    }
+  }
+}

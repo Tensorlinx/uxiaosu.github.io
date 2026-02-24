@@ -1,30 +1,112 @@
 // ===== 页面加载完成后执行 =====
 document.addEventListener('DOMContentLoaded', function() {
     // Hero轮播功能
-    const slides = document.querySelectorAll('.hero-slide');
+    const slideImages = document.querySelectorAll('.hero-slide-image');
     const indicators = document.querySelectorAll('.indicator');
+    const heroText = document.getElementById('heroText');
+    
+    // 轮播内容数据 - 使用全局翻译对象
+    function getSlideContents() {
+        // 获取当前语言的翻译
+        const currentLang = window.currentLanguage || 'zh';
+        const translations = window.translations || {};
+        const langData = translations[currentLang] || translations['zh'];
+        
+        if (!langData || !langData.hero) {
+            // 默认内容（中文）
+            return [
+                {
+                    title: '"吴翔"于2月25日正式接任NAVF（香港）联席主席',
+                    desc: '17日联席举行投票，右派候选人"吴翔"获得BTC赞成票0.81枚，ETH赞成票0.3枚，获票数领先左派候选人。意味着右派长达3年的治理结束，NAVF将步入新的秩序治理中。',
+                    btn: '查看新闻',
+                    link: 'news-wuxiang.html'
+                },
+                {
+                    title: 'Tensorlinx正在向redox开发小组进行资助',
+                    desc: 'Tensorlinx正在使用NAVF流动储备向redox开发小组进行资助，包括参与维护。这一行为不代表政治目的，是我们社会使命的一部分。',
+                    btn: '查看详情',
+                    link: 'news-redox.html'
+                },
+                {
+                    title: '即将发布乌托邦3的x64平台操作系统',
+                    desc: '为AI全新定制的操作系统将改变您的生活，我们通过增加类WSL来兼容Linux的软件生态，将应用程序与内核施行更加安全的设计！',
+                    btn: '预约下载',
+                    link: 'https://github.com/Tensorlinx/utopia'
+                }
+            ];
+        }
+        
+        // 返回基于当前语言的翻译内容
+        return [
+            {
+                title: langData.hero.slideTitle || '"吴翔"于2月25日正式接任NAVF（香港）联席主席',
+                desc: langData.hero.slideDescription || '17日联席举行投票，右派候选人"吴翔"获得BTC赞成票0.81枚，ETH赞成票0.3枚，获票数领先左派候选人。意味着右派长达3年的治理结束，NAVF将步入新的秩序治理中。',
+                btn: langData.hero.cta.secondary || '查看新闻',
+                link: 'news-wuxiang.html'
+            },
+            {
+                title: langData.hero.slide2Title || 'Tensorlinx正在向redox开发小组进行资助',
+                desc: langData.hero.slide2Description || 'Tensorlinx正在使用NAVF流动储备向redox开发小组进行资助，包括参与维护。这一行为不代表政治目的，是我们社会使命的一部分。',
+                btn: langData.hero.cta.viewDetails || '查看详情',
+                link: 'news-redox.html'
+            },
+            {
+                title: langData.hero.slide3Title || '即将发布乌托邦3的x64平台操作系统',
+                desc: langData.hero.slide3Description || '为AI全新定制的操作系统将改变您的生活，我们通过增加类WSL来兼容Linux的软件生态，将应用程序与内核施行更加安全的设计！',
+                btn: langData.hero.cta.download || '预约下载',
+                link: 'https://github.com/Tensorlinx/utopia'
+            }
+        ];
+    }
+    
+    let slideContents = getSlideContents();
+    
+    // 添加语言切换监听，更新轮播内容
+    function updateSlideContentsOnLanguageChange() {
+        slideContents = getSlideContents();
+        // 如果当前是这个幻灯片，更新显示内容
+        if (heroText) {
+            heroText.innerHTML = `
+                <h1>${slideContents[currentSlide].title}</h1>
+                <p>${slideContents[currentSlide].desc}</p>
+                <a href="${slideContents[currentSlide].link}" class="btn">${slideContents[currentSlide].btn}</a>
+            `;
+        }
+    }
+    
+    // 监听语言变化事件
+    window.addEventListener('languageChanged', updateSlideContentsOnLanguageChange);
     
     let currentSlide = 0;
     let autoplayInterval;
     
     // 显示指定幻灯片
     function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
+        slideImages.forEach(img => img.classList.remove('active'));
         indicators.forEach(indicator => indicator.classList.remove('active'));
         
-        slides[index].classList.add('active');
+        slideImages[index].classList.add('active');
         indicators[index].classList.add('active');
+        
+        // 更新右侧内容框
+          if (heroText) {
+              heroText.innerHTML = `
+                  <h1>${slideContents[index].title}</h1>
+                  <p>${slideContents[index].desc}</p>
+                  <a href="${slideContents[index].link}" class="btn">${slideContents[index].btn}</a>
+              `;
+          }
     }
     
     // 下一张幻灯片
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
+        currentSlide = (currentSlide + 1) % slideImages.length;
         showSlide(currentSlide);
     }
     
     // 开始自动播放
     function startAutoplay() {
-        autoplayInterval = setInterval(nextSlide, 5000);
+        autoplayInterval = setInterval(nextSlide, 10000);
     }
     
     // 停止自动播放
@@ -43,8 +125,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // 鼠标悬停时暂停自动播放
     const heroCarousel = document.querySelector('.hero-carousel');
     if (heroCarousel) {
-        heroCarousel.addEventListener('mouseenter', stopAutoplay);
-        heroCarousel.addEventListener('mouseleave', startAutoplay);
+        heroCarousel.addEventListener('mouseenter', () => {
+            console.log('鼠标进入轮播，停止自动播放');
+            stopAutoplay();
+        });
+        heroCarousel.addEventListener('mouseleave', () => {
+            console.log('鼠标离开轮播，开始自动播放');
+            startAutoplay();
+        });
     }
     
     // Hero按钮点击事件
@@ -61,7 +149,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // 启动轮播
+    console.log('启动轮播自动播放');
     startAutoplay();
+    
+    // 确保页面加载后开始自动播放（延迟1秒确保DOM完全就绪）
+    setTimeout(() => {
+        console.log('延迟启动轮播');
+        startAutoplay();
+    }, 1000);
     
     // 导航链接点击事件
     const navLinks = document.querySelectorAll('.nav-links a, .card a');
@@ -128,104 +223,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 初始化
     setupResponsiveMenu();
-    
-    // ===== 语言切换功能 =====
-    setupLanguageToggle();
-});
-
-// ===== 语言切换功能 =====
-function setupLanguageToggle() {
-    const langBtns = document.querySelectorAll('.lang-btn');
-    
-    langBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const lang = this.dataset.lang;
-            
-            // 移除所有活跃状态
-            langBtns.forEach(b => b.classList.remove('active'));
-            
-            // 添加当前活跃状态
-            this.classList.add('active');
-            
-            // 切换语言
-            switchLanguage(lang);
-            
-            // 添加切换动画效果
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 150);
-        });
-    });
-}
-
-function switchLanguage(lang) {
-    // 使用script.js中的toggleLanguage函数
-    if (typeof toggleLanguage === 'function') {
-        // 设置script.js中的当前语言
-        if (typeof window.currentLanguage !== 'undefined') {
-            window.currentLanguage = lang;
-        }
-        // 调用script.js的更新函数
-        if (typeof updateContent === 'function') {
-            updateContent();
-        }
-        
-        // 同步main.js中的按钮状态
-        const langBtns = document.querySelectorAll('.lang-btn');
-        langBtns.forEach(btn => {
-            if (btn.dataset.lang === lang) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-        
-        // 保存用户偏好
-        localStorage.setItem('preferredLanguage', lang);
-        
-        console.log(`语言已切换为: ${lang === 'zh' ? '中文' : 'English'}`);
-    } else {
-        console.error('script.js翻译系统未加载');
-    }
-    
-    // 切换版权信息
-    const copyrightCn = document.querySelector('.copyright-cn');
-    const copyrightEn = document.querySelector('.copyright-en');
-    
-    if (lang === 'zh') {
-        if (copyrightCn) copyrightCn.style.display = 'block';
-        if (copyrightEn) copyrightEn.style.display = 'none';
-    } else {
-        if (copyrightCn) copyrightCn.style.display = 'none';
-        if (copyrightEn) copyrightEn.style.display = 'block';
-    }
-    
-    // 更新页面语言属性
-    document.documentElement.lang = lang;
-    
-    // 保存用户偏好
-    localStorage.setItem('preferredLanguage', lang);
-    
-    console.log(`语言已切换为: ${lang === 'zh' ? '中文' : 'English'}`);
-}
-
-// 加载保存的语言偏好
-document.addEventListener('DOMContentLoaded', function() {
-    const savedLang = localStorage.getItem('preferredLanguage') || 'zh';
-    const langBtns = document.querySelectorAll('.lang-btn');
-    
-    // 设置初始语言状态
-    langBtns.forEach(btn => {
-        if (btn.dataset.lang === savedLang) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-    
-    // 应用保存的语言
-    switchLanguage(savedLang);
 });
 
 // ===== 工具函数 =====

@@ -1,0 +1,126 @@
+{
+  "zh": {
+    "title": "新闻动态 - Tensorlinx",
+    "nav": {
+      "home": "首页",
+      "products": "产品文档",
+      "news": "新闻动态",
+      "jobs": "岗位招聘",
+      "about": "关于我们"
+    },
+    "pageTitle": "新闻动态",
+    "pageSubtitle": "了解Tensorlinx的最新动态、行业资讯和企业公告",
+    "newsCategories": {
+      "all": "全部",
+      "company": "企业公告",
+      "industry": "行业资讯",
+      "tech": "技术动态"
+    },
+    "featured": "精选新闻",
+    "latest": "最新新闻",
+    "newsList": [
+      {
+        "date": "2026年2月20日",
+        "author": "Tensorlinx新闻团队",
+        "category": "新闻动态",
+        "title": "吴翔于2月25日正式接任NAVF联席主席",
+        "excerpt": "左派由于顾虑26年港府加大人民币在港流通力度，认为非锚定美元与港币兑换汇率比例浮动增大，大部分左派决定倾向右派，通过合法手段维持储备池中的美元总价值，并同意加快稳定币支付手段。",
+        "readMore": "阅读全文 →"
+      },
+      {
+        "date": "2026年2月20日",
+        "author": "Tensorlinx团队",
+        "category": "新闻动态",
+        "title": "Tensorlinx正在向redox开发小组进行资助",
+        "excerpt": "Tensorlinx正在使用NAVF流动储备向redox开发小组进行资助，包括参与维护。这一行为不代表政治目的，是我们社会使命的一部分。",
+        "readMore": "阅读全文 →"
+      },
+      {
+        "date": "2026年1月11日",
+        "author": "Tensorlinx团队",
+        "category": "新闻动态",
+        "title": "Tensorlinx正在进行中国技术出口合规，以避免法律纠纷",
+        "excerpt": "Tensorlinx正在积极响应中国技术出口合规要求，确保我们的产品和服务符合相关法律法规，避免潜在的法律纠纷...",
+        "readMore": "阅读全文 →"
+      }
+
+    ],
+    "pagination": {
+      "prev": "上一页",
+      "next": "下一页"
+    },
+    "footer": {
+      "about": "关于我们",
+      "aboutDesc": "Tensorlinx是一家专注于计算机基础设施建设的科技企业",
+      "productServices": "产品服务",
+      "quickLinks": "快速链接",
+      "contactInfo": "联系方式",
+      "emailLabel": "邮箱",
+      "privacyPolicy": "隐私政策",
+      "cookiePolicy": "Cookie政策",
+      "manageCookies": "Cookie管理"
+    }
+  },
+  "en": {
+    "title": "News - Tensorlinx",
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "news": "News",
+      "jobs": "Careers",
+      "about": "About Us"
+    },
+    "pageTitle": "News & Updates",
+    "pageSubtitle": "Stay informed about Tensorlinx's latest developments, industry insights, and company announcements",
+    "newsCategories": {
+      "all": "All",
+      "company": "Company",
+      "industry": "Industry",
+      "tech": "Technology"
+    },
+    "featured": "Featured News",
+    "latest": "Latest News",
+    "newsList": [
+      {
+        "date": "February 20, 2026",
+        "author": "Tensorlinx News Team",
+        "category": "News",
+        "title": "Wu Xiang officially assumes the position of Co-Chairman of NAVF on February 25",
+        "excerpt": "The Left faction, concerned about the Hong Kong government's increased efforts to promote RMB circulation in 2026, believes that the exchange rate volatility between non-USD pegged currencies and HKD will increase. Most leftists have decided to lean towards the Right faction, using legal means to maintain the total USD value in the reserve pool, and agree to accelerate stablecoin payment methods.",
+        "readMore": "Read More →"
+      },
+      {
+        "date": "February 20, 2026",
+        "author": "Tensorlinx Team",
+        "category": "News",
+        "title": "Tensorlinx is providing funding to the Redox development team",
+        "excerpt": "Tensorlinx is using NAVF liquid reserves to fund the Redox development team, including participation in maintenance. This action does not represent political purposes and is part of our social mission.",
+        "readMore": "Read More →"
+      },
+      {
+        "date": "January 11, 2026",
+        "author": "Tensorlinx Team",
+        "category": "News",
+        "title": "Tensorlinx is conducting China technology export compliance to avoid legal disputes",
+        "excerpt": "Tensorlinx is actively responding to China's technology export compliance requirements to ensure our products and services comply with relevant laws and regulations, avoiding potential legal disputes...",
+        "readMore": "Read More →"
+      }
+
+    ],
+    "pagination": {
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "footer": {
+      "about": "About Us",
+      "aboutDesc": "Tensorlinx is a technology company focused on computer infrastructure construction",
+      "productServices": "Product Services",
+      "quickLinks": "Quick Links",
+      "contactInfo": "Contact Information",
+      "emailLabel": "Email",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy",
+      "manageCookies": "Cookie Management"
+    }
+  }
+}

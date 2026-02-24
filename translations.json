@@ -1,0 +1,425 @@
+{
+  "zh": {
+    "title": "TensorLinx - 领先的AI通用应用技术企业",
+    "nav": {
+      "home": "首页",
+      "products": "产品文档",
+      "news": "新闻动态",
+      "funding": "资助申请",
+      "jobs": "岗位招聘",
+      "about": "关于我们",
+      "community": "生态社区",
+      "contact": "联系我们",
+      "searchPlaceholder": "搜索..."
+    },
+    "footer": {
+        "emailLabel": "邮箱",
+        "privacyPolicy": "隐私政策",
+        "cookiePolicy": "Cookie政策",
+        "manageCookies": "Cookie管理",
+        "contact": {
+          "emailLabel": "邮箱",
+          "phoneLabel": "电话",
+          "email": "tensorlinx@tensorlinx.cn",
+          "phone": ""
+        }
+      },
+    "dropdown": {
+      "title": "所有Tensorlinx",
+      "home": "首页",
+      "open_source": "开源动态",
+      "community": "生态社区",
+      "featured_showcase": "特色展示",
+      "products": "产品文档",
+      "intro": "产品介绍",
+      "specs": "技术规格",
+      "guide": "使用指南",
+      "news": "新闻动态",
+      "company_news": "公司新闻",
+      "industry": "行业资讯",
+      "media": "媒体报道",
+      "jobs": "岗位招聘",
+      "tech": "技术岗位",
+      "product": "产品岗位",
+      "management": "管理岗位",
+      "about": "关于我们",
+      "company": "公司简介",
+      "history": "发展历程",
+      "team": "团队介绍",
+      "contact": "联系我们"
+    },
+    "heroSlides": [
+      {
+        "title": "我们正在建设一家去政治化、多元人种的全球性科技企业",
+        "description": "在遵循各国出口管制与国际合规框架的前提下，我们致力于让技术与产品惠及更多国家和地区",
+        "cta": "查看政策"
+      },
+      {
+        "title": "最新版乌托邦AI内核-机器人",
+        "description": "专为操作系统、机器人等工作设计的AI微内核",
+        "cta": "立即体验"
+      },
+      {
+        "title": "内测版BoxIDE发布",
+        "description": "功能更加丰富的AI编程应用，面向中小企业和个人团队",
+        "cta": "立即体验"
+      }
+    ],
+    "hero": {
+      "badge": "🏢BoxUI测试版v.1.0正式发布在GitHub",
+      "title": "构建智能未来的",
+      "highlight": "TensorLinx",
+      "subtitle": "科技公司",
+      "description": "Tensorlinx致力于为全球企业提供前沿的人工智能解决方案，通过创新技术推动行业数字化转型",
+      "slideTitle": "吴翔于2月25日正式接任NAVF（香港）联席主席",
+      "slideDescription": "17日联席举行投票，右派候选人吴翔获得BTC赞成票0.81枚，ETH赞成票0.3枚，获票数领先左派候选人。意味着右派长达3年的治理结束，NAVF将步入新的秩序治理中。",
+      "slide2Title": "Tensorlinx正在向redox开发小组进行资助",
+      "slide2Description": "Tensorlinx正在使用NAVF流动储备向redox开发小组进行资助，包括参与维护。这一行为不代表政治目的，是我们社会使命的一部分。",
+      "slide3Title": "即将发布乌托邦3的x64平台操作系统",
+      "slide3Description": "为AI全新定制的操作系统将改变您的生活，我们通过增加类WSL来兼容Linux的软件生态，将应用程序与内核施行更加安全的设计！",
+      "cta": {
+        "primary": "了解更多",
+        "secondary": "查看新闻",
+        "viewDetails": "查看详情",
+        "download": "预约下载"
+      },
+      "demo": "开源项目展示"
+    },
+    "sectionTitle": {
+      "latest": "开源动态",
+      "subtitle": "探索我们最新的开源项目和技术分享"
+    },
+    "showcase": {
+      "title": "Tensorlinx正在进行中国技术出口合规，以避免法律纠纷",
+      "subtitle": "Tensorlinx正在积极响应中国技术出口合规要求，确保我们的产品和服务符合相关法律法规，避免潜在的法律纠纷...",
+      "description": "我们致力于遵守国际贸易法规，确保所有技术出口活动符合国家相关政策，为全球客户提供安全可靠的服务。",
+      "cta": "查看详情"
+    },
+    "banner": {
+       "fundingText": "Tensorlinx正在资助学生、开发者、开源项目参与计算机基础设施建设，如符合条件→",
+       "fundingLink": "点击资助申请"
+     },
+     "cookie": {
+        "title": "Cookie 政策",
+        "description": "我们使用必要的 Cookie 来确保网站正常运行。我们也使用分析 Cookie 来了解访客如何与网站互动，这有助于我们改进服务。您可以通过下面的选项来控制 Cookie 设置。",
+        "learnMore": "了解更多",
+        "acceptAll": "接受全部",
+        "reject": "拒绝",
+        "customize": "自定义"
+      },
+
+    "products": {
+      "title": "最新产品展示",
+      "subtitle": "探索我们的创新产品解决方案",
+      "moreText": "更多产品",
+      "useNow": "立即使用",
+      "viewNow": "立即查看",
+      "items": [
+        {
+          "title": "simplePHP",
+          "description": "SimplePHP 是一个注重安全性和性能的轻量级 PHP 框架。它提供了简洁且强大的MVC架构，同时引入了缓存系统、前端资源优化和安全措施等现代化功能，使开发者能够快速构建高质量的网页应用。",
+          "date": "April 17, 2025",
+          "cta": "Use Now",
+          "url": "https://github.com/Tensorlinx/Simple-PHP"
+        },
+        {
+          "title": "ZenodoCPU推理通用数据库和推理脚本",
+          "description": "快速剖析大型语言模型的技术基础，使用UoomiNumPy，然后直接在CPU上运行，无需任何框架即可即时测试。",
+          "date": "May 08, 2025",
+          "cta": "立即查看",
+          "url": "https://zenodo.org/records/16723903"
+        },
+        {
+          "title": "uoomi-v1-1.7b",
+          "description": "uoomi-v1-1.7b 的Model Card 这是一个小型模型，拥有17.8亿个参数，源自Qwen大型模型。其参数大小较小，不适合回答复杂问题。uoomi-v1-1.7b 模型专为个人开发者设计，用于嵌入、优化或进一步微调。它允许用户创建自定义对话模板。",
+          "date": "February 03, 2025",
+          "cta": "立即使用",
+          "url": "https://huggingface.co/Uoomi-ai/uoomi-v1-1.78B"
+        },
+        {
+          "title": "乌托邦微内核v1.0版本",
+          "description": "乌托邦微内核1.0版本主要兼容于x64、x86,是一个用 Rust 编写的现代操作系统内核项目，支持 VGA 显示、串口通信和日志系统。",
+          "date": "July 20, 2025",
+          "cta": "立即使用",
+          "url": "https://github.com/Tensorlinx/utopia"
+        }
+      ]
+    },
+
+    "community": {
+      "title": "官方生态社区",
+      "subtitle": "加入我们的技术社区，与全球开发者共同成长",
+      "joinBtn": "加入社区",
+      "types": {
+        "openDatabase": "开放数据库",
+        "techForum": "技术论坛",
+        "openSource": "开源协作",
+        "daoCommunity": "DAO社区"
+      },
+      "items": [
+        {
+          "name": "zenodo数据库",
+          "description": "开放的科学数据存储库，支持研究数据的共享和发现",
+          "type": "开放数据库",
+          "gradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        },
+        {
+          "name": "AI技术论坛",
+          "description": "深度技术讨论，前沿算法分享，专家在线答疑",
+          "type": "技术论坛",
+          "gradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+        },
+        {
+          "name": "开源项目协作",
+          "description": "参与开源项目开发，贡献代码，共建AI生态",
+          "type": "开源协作",
+          "gradient": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+        },
+        {
+          "name": "NAVF新世家",
+          "description": "加入NAVF去中心化政治组织治理我们的国库和政策",
+          "type": "DAO社区",
+          "gradient": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+          "url": "https://discord.gg/WpG2ZgUc"
+        }
+      ]
+    },
+    "about": {
+      "title": "关于TensorLinx",
+      "description1": "TensorLinx成立于2020年，是一家专注于人工智能技术研发与应用的创新型科技企业。我们拥有一支由资深AI专家和工程师组成的专业团队，致力于为各行业客户提供领先的AI解决方案。",
+      "description2": "公司总部位于北京，在上海、深圳设有分支机构。我们已为超过200家企业提供AI技术服务，涵盖金融、制造、医疗、教育等多个行业领域。",
+      "cta": "了解企业文化",
+      "imageAlt": "企业团队"
+    },
+    "footer": {
+      "about": "关于我们",
+      "aboutDesc": "Tensorlinx是一家专注于计算机基础设施建设的科技企业",
+      "productServices": "产品服务",
+      "products": {
+        "simplePHP": "simplePHP",
+        "zenodo": "zenodo",
+        "utopia": "乌托邦内核",
+        "uoomiv1": "uoomiv1"
+      },
+      "quickLinks": "快速链接",
+      "links": {
+        "products": "产品文档",
+        "news": "新闻动态",
+        "jobs": "岗位招聘",
+        "about": "关于我们"
+      },
+      "contactInfo": "联系方式",
+      "contact": {
+        "emailLabel": "邮箱",
+        "phoneLabel": "电话",
+        "email": "tensorlinx@tensorlinx.cn",
+        "phone": ""
+      },
+      "copyright": "© 2024 TensorLinx科技有限公司. 保留所有权利。"
+    }
+  },
+  "en": {
+    "title": "TensorLinx - Leading AI General Application Technology Company",
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "news": "News",
+      "jobs": "Careers",
+      "about": "About Us",
+      "community": "Community",
+      "contact": "Contact",
+      "searchPlaceholder": "Search..."
+    },
+    "dropdown": {
+      "title": "All Tensorlinx",
+      "home": "Home",
+      "open_source": "Open Source Updates",
+      "community": "Community",
+      "featured_showcase": "Featured Showcase",
+      "products": "Products",
+      "intro": "Product Introduction",
+      "specs": "Technical Specifications",
+      "guide": "User Guide",
+      "news": "News",
+      "company_news": "Company News",
+      "industry": "Industry Updates",
+      "media": "Media Coverage",
+      "jobs": "Careers",
+      "tech": "Tech Positions",
+      "product": "Product Positions",
+      "management": "Management",
+      "about": "About Us",
+      "company": "Company Profile",
+      "history": "History",
+      "team": "Team Introduction",
+      "contact": "Contact Us"
+    },
+    "heroSlides": [
+      {
+        "title": "We are building a depoliticized, multicultural global technology enterprise",
+        "description": "While adhering to export controls and international compliance frameworks, we are committed to making technology and products accessible to more countries and regions",
+        "cta": "View Policy"
+      },
+      {
+        "title": "Latest Utopia AI Kernel - Robotics",
+        "description": "AI microkernel designed for operating systems, robotics, and more",
+        "cta": "Try Now"
+      },
+      {
+        "title": "Beta BoxIDE Released",
+        "description": "Feature-rich AI programming application for SMEs and individual teams",
+        "cta": "Try Now"
+      }
+    ],
+    "hero": {
+      "badge": "🏢BoxUI Beta v.1.0 Released on GitHub",
+      "title": "Building the Intelligent Future with",
+      "highlight": "TensorLinx",
+      "subtitle": "Technology",
+      "description": "TensorLinx is committed to providing cutting-edge artificial intelligence solutions for global enterprises, driving industry digital transformation through innovative technology",
+      "slideTitle": "Wu Xiang officially assumes the position of Co-Chairman of NAVF (Hong Kong) on February 25",
+      "slideDescription": "On the 17th, a joint vote was held, and right-wing candidate Wu Xiang received 0.81 BTC approval votes and 0.3 ETH approval votes, leading the left-wing candidate in votes received. This means the end of three years of right-wing governance, and NAVF will enter a new order of governance.",
+      "slide2Title": "Tensorlinx is funding the redox development team",
+      "slide2Description": "Tensorlinx is using NAVF liquid reserves to fund the redox development team, including participation in maintenance. This action does not represent political purposes, but is part of our social mission.",
+      "slide3Title": "Utopia 3 x64 platform operating system coming soon",
+      "slide3Description": "The AI-customized operating system will change your life. We have added WSL-like compatibility with the Linux software ecosystem, implementing a more secure design for applications and the kernel!",
+      "cta": {
+        "primary": "Learn More",
+        "secondary": "View News",
+        "viewDetails": "View Details",
+        "download": "Pre-order Download"
+      },
+      "demo": "Open Source Projects"
+    },
+    "sectionTitle": {
+      "latest": "Open Source Updates",
+      "subtitle": "Explore our latest open source projects and technical sharing"
+    },
+    "showcase": {
+      "title": "Tensorlinx is conducting China's technical export compliance to avoid legal disputes",
+      "subtitle": "Tensorlinx is actively responding to China's technical export compliance requirements, ensuring our products and services comply with relevant laws and regulations, avoiding potential legal disputes...",
+      "description": "We are committed to complying with international trade regulations, ensuring all technology export activities meet national policies, and providing safe and reliable services to global customers.",
+      "cta": "Learn More"
+    },
+    "banner": {
+        "fundingText": "Tensorlinx is funding students, developers, and open source projects to participate in computer infrastructure construction. If eligible →",
+        "fundingLink": "Click to Apply for Funding"
+      },
+      "cookie": {
+        "title": "Cookie Policy",
+        "description": "We use necessary cookies to ensure the website functions properly. We also use analytics cookies to understand how visitors interact with the website, which helps us improve our services. You can control cookie settings through the options below.",
+        "learnMore": "Learn More",
+        "acceptAll": "Accept All",
+        "reject": "Reject",
+        "customize": "Customize"
+      },
+    "products": {
+      "title": "Latest Products",
+      "subtitle": "Explore our innovative product solutions",
+      "moreText": "More Products",
+      "useNow": "Use Now",
+      "viewNow": "View Now",
+      "items": [
+        {
+          "title": "simplePHP",
+          "description": "SimplePHP is a lightweight PHP framework focused on security and performance. It provides a clean and powerful MVC architecture with modern features including caching systems, frontend asset optimization, and security measures, enabling developers to quickly build high-quality web applications.",
+          "cta": "Use Now"
+        },
+        {
+          "title": "ZenodoCPU Inference Database and Scripts",
+          "description": "Quickly analyze the technical foundation of large language models using UoomiNumPy, then run directly on CPU for instant testing without any framework.",
+          "cta": "View Now >"
+        },
+        {
+          "title": "uoomi-v1-1.7b",
+          "description": "uoomi-v1-1.7b Model Card - This is a small model with 1.78 billion parameters, derived from the Qwen large model. With a relatively small parameter size, it is not suitable for answering complex questions. The uoomi-v1-1.7b model is designed specifically for individual developers for embedding, optimization, or further fine-tuning. It allows users to create custom dialogue templates.",
+          "cta": "Try Now"
+        },
+        {
+          "title": "Utopia Microkernel v1.0",
+          "description": "Utopia Microkernel v1.0 is mainly compatible with x64 and x86 architectures. It is a modern operating system kernel project written in Rust, supporting VGA display, serial communication, and logging systems.",
+          "cta": "Try Now"
+        }
+      ]
+    },
+
+    "community": {
+      "title": "Official Ecosystem Community",
+      "subtitle": "Join our tech community and grow together with global developers",
+      "joinBtn": "Join Community",
+      "types": {
+        "openDatabase": "Open Database",
+        "techForum": "Tech Forum",
+        "openSource": "Open Source",
+        "daoCommunity": "DAO Community"
+      },
+      "items": [
+        {
+          "name": "Zenodo",
+          "description": "Open science data repository supporting research data sharing and discovery",
+          "members": "10,000+",
+          "type": "Developer Community",
+          "gradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        },
+        {
+          "name": "AI Technology Forum",
+          "description": "In-depth technical discussions, cutting-edge algorithm sharing, expert Q&A",
+          "members": "25,000+",
+          "type": "Tech Forum",
+          "gradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+        },
+        {
+          "name": "Open Source Collaboration",
+          "description": "Participate in open source development, contribute code, build AI ecosystem",
+          "members": "5,000+",
+          "type": "Open Source",
+          "gradient": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+        },
+        {
+          "name": "NAVF",
+          "description": "Join NAVF decentralized political organization to govern our treasury and policies",
+          "members": "500+",
+          "type": "DAO Community",
+          "gradient": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+        }
+      ]
+    },
+    "about": {
+      "title": "About TensorLinx",
+      "description1": "Founded in 2020, TensorLinx is an innovative technology company focused on artificial intelligence research and application. We have a professional team of senior AI experts and engineers, dedicated to providing leading AI solutions for customers across industries.",
+      "description2": "Headquartered in Beijing with branches in Shanghai and Shenzhen, we have provided AI technology services to over 200 enterprises across finance, manufacturing, healthcare, education and other industries.",
+      "cta": "Corporate Culture",
+      "imageAlt": "Corporate Team"
+    },
+    "footer": {
+      "about": "About Us",
+      "aboutDesc": "Tensorlinx is a technology company focused on computer infrastructure construction",
+      "productServices": "Product Services",
+      "products": {
+        "simplePHP": "simplePHP",
+        "zenodo": "zenodo",
+        "utopia": "Utopia Core",
+        "uoomiv1": "uoomiv1"
+      },
+      "quickLinks": "Quick Links",
+      "links": {
+        "products": "Products",
+        "news": "News",
+        "jobs": "Careers",
+        "about": "About Us"
+      },
+      "contactInfo": "Contact Information",
+      "emailLabel": "Email",
+      "contact": {
+        "emailLabel": "Email",
+        "phoneLabel": "Phone",
+        "email": "tensorlinx@tensorlinx.cn",
+        "phone": ""
+      },
+      "copyright": "© 2024 TensorLinx. All rights reserved.",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy",
+      "manageCookies": "Cookie Management"
+    }
+  }
+}

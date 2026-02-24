@@ -1,0 +1,30 @@
+{
+  "zh": {
+    "title": "Tensorlinx积极履行技术出口合规义务，确保业务可持续发展 - Tensorlinx",
+    "nav": {
+      "home": "首页",
+      "products": "产品文档",
+      "news": "新闻动态",
+      "jobs": "岗位招聘",
+      "about": "关于我们"
+    },
+    "news": {
+      "title": "新闻动态",
+      "subtitle": "了解Tensorlinx最新动态、技术突破和行业洞察"
+    }
+  },
+  "en": {
+    "title": "Tensorlinx Actively Complies with Technical Export Regulations to Ensure Sustainable Business Development - Tensorlinx",
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "news": "News",
+      "jobs": "Jobs",
+      "about": "About Us"
+    },
+    "news": {
+      "title": "News",
+      "subtitle": "Stay informed about Tensorlinx's latest developments, technological breakthroughs, and industry insights"
+    }
+  }
+}

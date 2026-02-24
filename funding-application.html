@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>资助申请 - Tensorlinx</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 标签页 Logo -->
+  <link rel="icon" type="image/png" href="img/NAVFOS-removebg-preview.png" />
+  <!-- 国内字体资源 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    .header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #666;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #000;
+    }
+
+
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 40px;
+    }
+
+    .funding-info {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .funding-info h2 {
+      font-size: 2rem;
+      color: #000;
+      margin-bottom: 20px;
+    }
+
+    .funding-info h3 {
+      font-size: 1.5rem;
+      color: #000;
+      margin: 30px 0 15px;
+    }
+
+    .funding-info p {
+      margin-bottom: 15px;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .eligibility-criteria {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .eligibility-criteria ul {
+      margin: 15px 0 15px 20px;
+      list-style-type: circle;
+    }
+
+    .eligibility-criteria li {
+      margin-bottom: 10px;
+    }
+
+    .application-form {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-top: 40px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #000;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background: #000;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #333;
+    }
+
+    .back-to-home {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #000;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .back-to-home:hover {
+      background: #333;
+    }
+
+    .contact-info {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-top: 40px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.8rem;
+      color: #000;
+      margin-bottom: 25px;
+    }
+
+    .contact-methods {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-item {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 8px;
+    }
+
+    .contact-item h4 {
+      font-size: 1.2rem;
+      color: #000;
+      margin: 0 0 15px 0;
+    }
+
+    .contact-item p {
+      margin: 10px 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .funding-hero {
+        padding: 60px 20px;
+      }
+
+      .funding-hero h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        margin: 20px auto;
+        padding: 0 20px;
+      }
+
+      .funding-info,
+      .application-form {
+        padding: 30px 20px;
+      }
+    }
+    
+    .new世家-member {
+      background: #f0f0f0;
+      padding: 25px;
+      border-radius: 8px;
+      margin: 25px 0;
+      border-left: 4px solid #000;
+    }
+    
+    .new世家-member h4 {
+      font-size: 1.3rem;
+      color: #000;
+      margin: 0 0 15px 0;
+    }
+    
+    .new世家-member p {
+      margin: 0 0 15px 0;
+      color: #333;
+    }
+    
+    .apply-button {
+      display: inline-block;
+      background: #000;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+    
+    .apply-button:hover {
+      background: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo">Tensorlinx</a>
+      <nav class="nav-links">
+        <a href="index.html" data-nav="home">首页</a>
+        <a href="products.html" data-nav="products">产品文档</a>
+        <a href="news.html" data-nav="news">新闻动态</a>
+        <a href="NAVFIO.html" data-nav="jobs">岗位招聘</a>
+        <a href="about.html" data-nav="about">关于我们</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="funding-info">
+      <h2>资助计划详情</h2>
+      <p>Tensorlinx致力于推动计算机基础设施建设的发展，我们特别设立了资助计划，以支持那些在技术领域有热情和潜力的学生、开发者和开源项目。</p>
+
+      <h3>资助范围</h3>
+      <p>我们的资助计划主要关注以下几个方面：</p>
+      <ul>
+        <li>开源软件项目开发与维护</li>
+        <li>计算机基础设施相关研究</li>
+        <li>教育领域的技术创新</li>
+        <li>边缘计算和分布式系统</li>
+        <li>AI模型优化与部署</li>
+      </ul>
+
+      <h3>资助金额</h3>
+      <p>根据项目规模和影响程度，资助金额从1千美元到10万美元不等。我们也会提供技术支持和资源对接服务。</p>
+
+      <h3>申请资格</h3>
+      <div class="eligibility-criteria">
+        <ul>
+          <li>学生：在校大学生、研究生，专业不限</li>
+          <li>开发者：独立开发者或小团队，有相关技术项目经验</li>
+          <li>开源项目：活跃的开源项目，有明确的发展规划</li>
+          <li>项目需与计算机基础设施建设相关</li>
+          <li>申请者需具备一定的技术能力</li>
+        </ul>
+      </div>
+      
+      <div class="new世家-member">
+        <h4>成为新世家成员</h4>
+        <p>作为新世家成员，您将获得更多的资源和支持，包括但不限于优先资助、技术指导和行业合作机会。</p>
+        <a href="#" class="apply-button">申请加入</a>
+      </div>
+    </div>
+
+    <div class="contact-info">
+      <h3>联系方式</h3>
+      <div class="contact-methods">
+        <div class="contact-item">
+          <h4>新世家成员申请地址</h4>
+          <p>shanghai@tensorlinx.freeqiye.com</p>
+          <p>申请格式：[新世家成员申请][姓名][项目简介]</p>
+        </div>
+        <div class="contact-item">
+          <h4>普通申请地址</h4>
+          <p>tensorlinx@tensorlinx.cn</p>
+          <p>申请格式：[资助申请][姓名][项目简介]</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-to-home">返回首页</a>
+  </div>
+
+  <!-- Cookie 政策弹窗 -->
+  <div id="cookie-consent" class="cookie-consent" style="display: none;">
+    <div class="cookie-consent-content">
+      <div class="cookie-consent-text">
+        <h4>Cookie 政策</h4>
+        <p>我们使用必要的 Cookie 来确保网站正常运行。我们也使用分析 Cookie 来了解访客如何与网站互动，这有助于我们改进服务。您可以通过下面的选项来控制 Cookie 设置。<a href="cookie-policy.html" class="cookie-policy-link">了解更多</a></p>
+      </div>
+      <div class="cookie-consent-buttons">
+        <button id="accept-all-cookies" class="btn btn-primary">接受全部</button>
+        <button id="reject-cookies" class="btn btn-secondary">拒绝</button>
+        <button id="customize-cookies" class="btn btn-outline">自定义</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cookie 操作函数
+    function setCookie(name, value, days = 30) {
+      const expires = new Date();
+      expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+      document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+    }
+
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+
+    // Cookie 政策相关函数
+    function showCookieConsent() {
+      // 检查用户是否已经同意过
+      const cookieConsent = getCookie('cookie_consent');
+      if (!cookieConsent) {
+        // 显示Cookie同意弹窗
+        const cookieConsentElement = document.getElementById('cookie-consent');
+        if (cookieConsentElement) {
+          cookieConsentElement.style.display = 'block';
+        }
+      }
+    }
+
+    function handleCookieConsent(consentType) {
+      // 设置Cookie同意状态
+      setCookie('cookie_consent', consentType, 365); // 保存一年
+      
+      // 隐藏Cookie同意弹窗
+      const cookieConsentElement = document.getElementById('cookie-consent');
+      if (cookieConsentElement) {
+        cookieConsentElement.style.display = 'none';
+      }
+      
+      // 根据用户选择执行相应操作
+      if (consentType === 'accept_all') {
+        // 用户接受所有Cookie
+        console.log('用户接受了所有Cookie');
+      } else if (consentType === 'reject') {
+        // 用户拒绝Cookie，可能需要清除某些Cookie
+        console.log('用户拒绝了Cookie');
+      } else if (consentType === 'customize') {
+        // 用户选择自定义，显示详细的Cookie设置面板
+        showCustomizeCookiePanel();
+      } else if (consentType === 'customize_saved') {
+        // 用户已保存自定义设置
+        console.log('用户已保存自定义Cookie设置');
+      }
+    }
+
+    // 显示自定义Cookie设置面板
+    function showCustomizeCookiePanel() {
+      // 创建自定义Cookie设置面板
+      const existingPanel = document.getElementById('cookie-customize-panel');
+      if (existingPanel) {
+        existingPanel.remove();
+      }
+      
+      const customizePanel = document.createElement('div');
+      customizePanel.id = 'cookie-customize-panel';
+      customizePanel.className = 'cookie-customize-panel';
+      customizePanel.innerHTML = `
+        <div class="cookie-customize-content">
+          <div class="cookie-customize-header">
+            <h4>自定义 Cookie 设置</h4>
+            <button id="close-cookie-panel" class="close-cookie-panel-btn">×</button>
+          </div>
+          <div class="cookie-options">
+            <div class="cookie-option">
+              <input type="checkbox" id="necessary-cookies" checked disabled>
+              <label for="necessary-cookies">必要 Cookie <small>(无法关闭)</small></label>
+            </div>
+            <div class="cookie-option">
+              <input type="checkbox" id="analytics-cookies" checked>
+              <label for="analytics-cookies">分析 Cookie</label>
+            </div>
+            <div class="cookie-option">
+              <input type="checkbox" id="marketing-cookies">
+              <label for="marketing-cookies">营销 Cookie</label>
+            </div>
+            <div class="cookie-option">
+              <input type="checkbox" id="language-preferences" checked>
+              <label for="language-preferences">语言偏好 Cookie</label>
+            </div>
+          </div>
+          <div class="cookie-customize-actions">
+            <button id="save-cookie-settings" class="btn btn-primary">保存设置</button>
+            <button id="accept-all-from-customize" class="btn btn-secondary">接受全部</button>
+          </div>
+        </div>
+      `;
+      
+      document.body.appendChild(customizePanel);
+      
+      // 添加事件监听器
+      document.getElementById('close-cookie-panel').addEventListener('click', function() {
+        document.getElementById('cookie-customize-panel').remove();
+      });
+      
+      document.getElementById('save-cookie-settings').addEventListener('click', function() {
+        saveCustomizedCookieSettings();
+      });
+      
+      document.getElementById('accept-all-from-customize').addEventListener('click', function() {
+        handleCookieConsent('accept_all');
+      });
+    }
+
+    // 保存自定义Cookie设置
+    function saveCustomizedCookieSettings() {
+      const analyticsChecked = document.getElementById('analytics-cookies').checked;
+      const marketingChecked = document.getElementById('marketing-cookies').checked;
+      const languageChecked = document.getElementById('language-preferences').checked;
+      
+      // 保存详细的Cookie偏好
+      const cookiePreferences = {
+        necessary: true, // 必要Cookie总是启用
+        analytics: analyticsChecked,
+        marketing: marketingChecked,
+        language: languageChecked
+      };
+      
+      setCookie('cookie_preferences', JSON.stringify(cookiePreferences), 365);
+      
+      // 隐藏自定义面板
+      const customizePanel = document.getElementById('cookie-customize-panel');
+      if (customizePanel) {
+        customizePanel.remove();
+      }
+      
+      // 记录用户选择
+      handleCookieConsent('customize_saved');
+    }
+
+    // 页面加载完成后显示Cookie政策
+    document.addEventListener('DOMContentLoaded', function() {
+      // 延迟显示Cookie同意弹窗，让用户先看到主要内容
+      setTimeout(showCookieConsent, 2000);
+    });
+
+    // 为Cookie同意按钮添加事件监听器
+    document.addEventListener('DOMContentLoaded', function() {
+      const acceptAllBtn = document.getElementById('accept-all-cookies');
+      const rejectBtn = document.getElementById('reject-cookies');
+      const customizeBtn = document.getElementById('customize-cookies');
+      
+      if (acceptAllBtn) {
+        acceptAllBtn.addEventListener('click', function() {
+          handleCookieConsent('accept_all');
+        });
+      }
+      
+      if (rejectBtn) {
+        rejectBtn.addEventListener('click', function() {
+          handleCookieConsent('reject');
+        });
+      }
+      
+      if (customizeBtn) {
+        customizeBtn.addEventListener('click', function() {
+          handleCookieConsent('customize');
+        });
+      }
+    });
+    
+    // 翻译功能
+    // 默认语言
+    let currentLang = localStorage.getItem('preferredLanguage') || 'zh'; // 使用与主页相同的键名
+    
+    // 翻译文本映射
+    const translations = {
+      zh: {
+        nav: {
+          home: "首页",
+          products: "产品文档",
+          news: "新闻动态",
+          jobs: "岗位招聘",
+          about: "关于我们",
+          funding: "资助申请",
+          community: "生态社区",
+          contact: "联系我们"
+        },
+        hero: {
+          title: "TensorLinx",
+          subtitle: "开源 · 创新 · 协作"
+        },
+        footer: {
+          quickLinks: "快速链接",
+          contactInfo: "联系方式",
+          rights: "保留所有权利"
+        }
+      },
+      en: {
+        nav: {
+          home: "Home",
+          products: "Products",
+          news: "News",
+          jobs: "Jobs",
+          about: "About",
+          funding: "Funding",
+          community: "Community",
+          contact: "Contact"
+        },
+        hero: {
+          title: "TensorLinx",
+          subtitle: "Open Source · Innovation · Collaboration"
+        },
+        footer: {
+          quickLinks: "Quick Links",
+          contactInfo: "Contact Info",
+          rights: "All Rights Reserved"
+        }
+      }
+    };
+    
+    // 获取当前语言的翻译
+    function getTranslation(key) {
+      const keys = key.split('.');
+      let value = translations[currentLang];
+      for (let k of keys) {
+        value = value[k] || {};
+      }
+      return typeof value === 'string' ? value : key;
+    }
+    
+    // 更新页面文本
+    function updatePageText() {
+      // 更新导航链接
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(link => {
+        const navKey = link.getAttribute('data-nav');
+        if (navKey) {
+          link.textContent = getTranslation(`nav.${navKey}`);
+        }
+      });
+      
+      // 更新其他可能的翻译元素
+      const elements = document.querySelectorAll('[data-translate]');
+      elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (key) {
+          element.textContent = getTranslation(key);
+        }
+      });
+    }
+    
+    // 监听localStorage变化，实现跨页面语言同步
+    window.addEventListener('storage', function(e) {
+      if (e.key === 'preferredLanguage' && e.newValue !== e.oldValue) { // 使用与主页相同的键名
+        currentLang = e.newValue || 'zh';
+        updatePageText();
+      }
+    });
+    
+    // 页面加载完成后初始化语言
+    document.addEventListener('DOMContentLoaded', function() {
+      updatePageText();
+    });
+
+    // 表单提交处理（如果页面中存在表单）
+    const formElement = document.getElementById('fundingForm');
+    if (formElement) {
+      formElement.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // 简单验证
+        const applicantName = document.getElementById('applicantName').value;
+        const email = document.getElementById('email').value;
+        const projectName = document.getElementById('projectName').value;
+        const projectDescription = document.getElementById('projectDescription').value;
+        
+        if (!applicantName || !email || !projectName || !projectDescription) {
+          alert('请填写所有必填项');
+          return;
+        }
+        
+        // 模拟提交
+        alert('感谢您的申请！我们会尽快审核并与您联系。');
+        
+        // 这里可以添加实际的表单提交逻辑
+        // 例如发送AJAX请求到服务器
+      });
+    }
+  </script>
+  <style>
+    /* Cookie 政策弹窗样式 */
+    .cookie-consent {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        left: auto;
+        max-width: 500px;
+        z-index: 10000;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        border: 1px solid #000;
+        overflow: hidden;
+    }
+
+    .cookie-consent-content {
+        padding: 24px;
+    }
+
+    .cookie-consent-text h4 {
+        margin: 0 0 12px 0;
+        font-size: 18px;
+        color: #000;
+    }
+
+    .cookie-consent-text p {
+        margin: 0 0 20px 0;
+        font-size: 14px;
+        color: #000;
+        line-height: 1.5;
+    }
+
+    .cookie-consent-buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .cookie-consent-buttons .btn {
+        flex: 1;
+        min-width: 100px;
+        padding: 10px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        border: 1px solid #000;
+        transition: all 0.3s ease;
+        background: white;
+        color: #000;
+    }
+
+    .btn.btn-primary {
+        background: #000;
+        color: white;
+    }
+
+    .btn.btn-secondary {
+        background: #fff;
+        color: #000;
+        border: 1px solid #000;
+    }
+
+    .btn.btn-outline {
+        background: #fff;
+        border: 1px solid #000;
+        color: #000;
+    }
+
+    .cookie-consent-buttons .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 600px) {
+        .cookie-consent {
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+        }
+        
+        .cookie-consent-buttons {
+            flex-direction: column;
+        }
+        
+        .cookie-consent-buttons .btn {
+            width: 100%;
+        }
+    }
+
+    /* Cookie 政策链接 */
+    .cookie-policy-link {
+        color: #000;
+        text-decoration: underline;
+        margin-left: 5px;
+        font-weight: 500;
+    }
+
+    .cookie-policy-link:hover {
+        color: #333;
+        text-decoration: none;
+    }
+
+    /* 自定义 Cookie 面板 */
+    .cookie-customize-panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 10001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+    }
+
+    .cookie-customize-content {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        width: 90%;
+        max-width: 500px;
+        max-height: 80vh;
+        overflow-y: auto;
+        border: 1px solid #000;
+    }
+
+    .cookie-customize-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .cookie-customize-header h4 {
+        margin: 0;
+        font-size: 18px;
+        color: #000;
+    }
+
+    .close-cookie-panel-btn {
+        background: none;
+        border: 1px solid #000;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        color: #000;
+        background: white;
+    }
+
+    .cookie-options {
+        padding: 20px 24px;
+    }
+
+    .cookie-option {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .cookie-option input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+        accent-color: #000;
+    }
+
+    .cookie-option label {
+        margin: 0;
+        color: #000;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .cookie-option label small {
+        margin-left: 6px;
+        color: #666;
+        font-size: 12px;
+    }
+
+    .cookie-customize-actions {
+        padding: 0 24px 24px;
+        display: flex;
+        gap: 12px;
+    }
+
+    .cookie-customize-actions .btn {
+        flex: 1;
+        padding: 12px;
+        text-align: center;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        border: 1px solid #000;
+        transition: all 0.3s ease;
+    }
+
+    .cookie-customize-actions .btn.btn-primary {
+        background: #000;
+        color: white;
+    }
+
+    .cookie-customize-actions .btn.btn-secondary {
+        background: #fff;
+        color: #000;
+    }
+
+    @media (max-width: 600px) {
+        .cookie-customize-content {
+            width: 95%;
+            margin: 20px;
+        }
+        
+        .cookie-customize-actions {
+            flex-direction: column;
+        }
+    }
+  </style>
+</body>
+</html>

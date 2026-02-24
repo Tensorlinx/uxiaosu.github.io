@@ -1,0 +1,180 @@
+{
+  "zh": {
+    "title": "关于我们 - Tensorlinx",
+    "nav": {
+      "home": "首页",
+      "products": "产品文档",
+      "news": "新闻动态",
+      "jobs": "岗位招聘",
+      "about": "关于我们"
+    },
+    "hero": {
+      "title": "关于我们",
+      "subtitle": "了解Tensorlinx的使命、愿景和价值观"
+    },
+    "intro": {
+      "title": "我们是谁",
+      "content": [
+        "Tensorlinx是一家专注于计算机基础设施建设的科技企业。我们致力于推动计算机科学技术到全球边缘地带，我们受新世家DAO资助成立。",
+        "我们正在建设一家去政治化、多元人种的全球性科技企业。在遵循各国出口管制与国际合规框架的前提下，我们致力于让技术与产品惠及更多国家和地区。"
+      ]
+    },
+    "team": {
+      "title": "公司治理层",
+      "members": [
+        {
+          "name": "吴翔",
+          "title": "执行董事兼CEO",
+          "bio": "2024/5/31创立tensorlinx并成为创始人\n2026/2/25担任新世家DAO联席主席\n负责tensorlinx公司行政事务与技术研发"
+        },
+        {
+          "name": "颜才祥",
+          "title": "监事（已离职）",
+          "bio": "2024/5/31加入tensorlinx公司后担任监事及审计工作\n2024/10/21正式退出公司治理层"
+        },
+        {
+          "name": "阿米特·帕特尔",
+          "title": "非执行董事",
+          "bio": "2024/5/31加入tensorlinx公司并担任非执行董事\n由新世家DAO联席指派监管公司的协议人员"
+        }
+      ]
+    },
+    "addresses": {
+      "title": "公司地址",
+      "songjiang": {
+        "title": "松江研发中心",
+        "address": "上海市松江区佘山镇陶干路74号\n中国 201602",
+        "email": "邮箱：shanghai@tensorlinx.freeqiye.com"
+      },
+      "changning": {
+        "title": "长宁商务中心",
+        "address": "上海市长宁区平武路168号玉嘉大厦12B\n中国 200052",
+        "email": "邮箱：tensorlinx@tensorlinx.cn"
+      }
+    },
+    "cookie": {
+      "title": "Cookie 政策",
+      "description": "我们使用必要的 Cookie 来确保网站正常运行。我们也使用分析 Cookie 来了解访客如何与网站互动，这有助于我们改进服务。您可以通过下面的选项来控制 Cookie 设置。",
+      "learnMore": "了解更多",
+      "acceptAll": "接受全部",
+      "reject": "拒绝",
+      "customize": "自定义"
+    },
+    "footer": {
+      "about": "关于我们",
+      "aboutDesc": "Tensorlinx 致力于提供领先的AI解决方案，赋能企业和开发者构建智能化的未来。",
+      "productServices": "产品服务",
+      "products": {
+        "utopia": "乌托邦AI内核",
+        "boxide": "BoxIDE",
+        "solutions": "AI解决方案",
+        "support": "技术支持"
+      },
+      "quickLinks": "快速链接",
+      "quickLinksList": {
+        "docs": "产品文档",
+        "news": "新闻动态",
+        "jobs": "岗位招聘",
+        "contact": "联系我们"
+      },
+      "contactInfo": "联系方式",
+      "emailLabel": "邮箱",
+      "addressLabel": "地址",
+      "email": "tensorlinx@tensorlinx.cn",
+      "address": "北京市海淀区中关村科技园",
+      "privacyPolicy": "隐私政策",
+      "cookiePolicy": "Cookie政策",
+      "manageCookies": "Cookie管理",
+      "copyright": "© 2024 灵兮矩阵（上海）计算机系统有限公司. 保留所有权利 | 沪ICP备2025137506号-1 (已废弃)"
+    }
+  },
+  "en": {
+    "title": "About Us - Tensorlinx",
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "news": "News",
+      "jobs": "Careers",
+      "about": "About Us"
+    },
+    "hero": {
+      "title": "About Us",
+      "subtitle": "Learn about Tensorlinx's mission, vision, and values"
+    },
+    "intro": {
+      "title": "Who We Are",
+      "content": [
+        "Tensorlinx is a technology company focused on computer infrastructure construction. We are committed to promoting computer science technology to global edge regions, funded and established by NAVF DAO.",
+        "We are building a depoliticized, multi-ethnic global technology company. While adhering to export controls and international compliance frameworks of various countries, we are dedicated to making technology and products benefit more countries and regions."
+      ]
+    },
+    "team": {
+      "title": "Corporate Governance",
+      "members": [
+        {
+          "name": "Wu Xiang",
+          "title": "Executive Director & CEO",
+          "bio": "Founded Tensorlinx on 2024/5/31 as the founder\nAppointed as Co-Chairman of NAVF DAO on 2026/2/25\nResponsible for Tensorlinx administrative affairs and technology R&D"
+        },
+        {
+          "name": "Yan Caixiang",
+          "title": "Supervisor (Resigned)",
+          "bio": "Joined Tensorlinx on 2024/5/31 as Supervisor and Auditor\nOfficially resigned from corporate governance on 2024/10/21"
+        },
+        {
+          "name": "Amit Patel",
+          "title": "Non-Executive Director",
+          "bio": "Joined Tensorlinx on 2024/5/31 as Non-Executive Director\nAppointed by NAVF DAO Co-Chairman to supervise company protocol personnel"
+        }
+      ]
+    },
+    "addresses": {
+      "title": "Company Addresses",
+      "songjiang": {
+        "title": "Songjiang R&D Center",
+        "address": "No. 74 Taogan Road, Sheshan Town, Songjiang District, Shanghai\nChina 201602",
+        "email": "Email: shanghai@tensorlinx.freeqiye.com"
+      },
+      "changning": {
+        "title": "Changning Business Center",
+        "address": "12B Yujia Building, No. 168 Pingwu Road, Changning District, Shanghai\nChina 200052",
+        "email": "Email: tensorlinx@tensorlinx.cn"
+      }
+    },
+    "cookie": {
+      "title": "Cookie Policy",
+      "description": "We use necessary cookies to ensure the website functions properly. We also use analytics cookies to understand how visitors interact with the website, which helps us improve our services. You can control cookie settings through the options below.",
+      "learnMore": "Learn More",
+      "acceptAll": "Accept All",
+      "reject": "Reject",
+      "customize": "Customize"
+    },
+    "footer": {
+      "about": "About Us",
+      "aboutDesc": "Tensorlinx is committed to providing leading AI solutions, empowering enterprises and developers to build an intelligent future.",
+      "productServices": "Product Services",
+      "products": {
+        "utopia": "Utopia AI Kernel",
+        "boxide": "BoxIDE",
+        "solutions": "AI Solutions",
+        "support": "Technical Support"
+      },
+      "quickLinks": "Quick Links",
+      "quickLinksList": {
+        "docs": "Product Docs",
+        "news": "News",
+        "jobs": "Careers",
+        "contact": "Contact Us"
+      },
+      "contactInfo": "Contact Information",
+      "emailLabel": "Email",
+      "addressLabel": "Address",
+      "email": "tensorlinx@tensorlinx.cn",
+      "address": "Zhongguancun Science Park, Haidian District, Beijing",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy",
+      "manageCookies": "Cookie Management",
+      "copyright": "© 2024 TensorLinx. All rights reserved."
+    }
+  }
+}

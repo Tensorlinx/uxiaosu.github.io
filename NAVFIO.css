@@ -442,9 +442,10 @@ footer {
 }
 
 .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
 }
 
 .footer-links a {

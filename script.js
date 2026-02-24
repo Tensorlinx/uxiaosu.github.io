@@ -3,6 +3,11 @@ let currentLanguage = 'zh';
 let isMenuOpen = false;
 let scrollY = 0;
 let mousePosition = { x: 0, y: 0 };
+let translations = {}; // 存储翻译数据
+
+// 暴露全局变量供其他脚本使用
+window.currentLanguage = currentLanguage;
+window.translations = translations;
 
 // 安全保护机制 - 已完全禁用
 // function createSecurityOverlay() {
@@ -33,7 +38,7 @@ let mousePosition = { x: 0, y: 0 };
 //   //   banner.innerHTML = `
 //   //     <div class="announcement-content">
 //   //       <h3>网站公告</h3>
-//   //       <p>网站正在公安备案中，暂不支持点击访问，详细请联系官方邮箱ym9981@qq.com</p>
+//   //       <p>网站正在公安备案中，暂不支持点击访问，详细请联系官方邮箱tensorlinx@tensorlinx.cn</p>
 //   //     </div>
 //   //   `;
 //   //   document.body.appendChild(banner);
@@ -92,337 +97,28 @@ let mousePosition = { x: 0, y: 0 };
 //   initSecurityMonitor();
 // }
 
-// 翻译数据
-const translations = {
-  zh: {
-    title: "TensorLinx - 领先的AI通用应用技术企业",
-    announcement: "近期有不法分子以我司招聘名义收取应聘者试题费用，我司面试题目不会对外公开，请应聘者悉知",
-    nav: {
-      home: "首页",
-      about: "关于我们",
-      products: "产品",
-      jobs: "岗位招聘",
-      community: "生态社区",
-
-    },
-    heroSlides: [
-      {
-        title: "构建智能未来的TensorLinx科技公司",
-        description: "TensorLinx致力于为全球企业提供前沿的人工智能解决方案，通过创新技术推动行业数字化转型",
-        cta: "了解更多"
-      },
-      {
-        title: "BoxUI测试版v.1.0正式发布",
-        description: "全新的UI组件库，专为开发者打造，现已开源发布",
-        cta: "立即体验"
-      },
-      {
-        title: "人工智能创新解决方案",
-        description: "从机器学习到深度学习，为企业提供全方位的AI技术支持",
-        cta: "查看方案"
-      }
-    ],
-    hero: {
-      badge: "🏢BoxUI测试版v.1.0正式发布在GitHub",
-      title: "构建智能未来的",
-      highlight: "TensorLinx",
-      subtitle: "科技公司",
-      description: "TensorLinx致力于为全球企业提供前沿的人工智能解决方案，通过创新技术推动行业数字化转型",
-      cta: {
-        primary: "了解更多",
-      },
-      demo: "开源项目展示",
-    },
-    showcase: {
-      title: "创新科技",
-      description: "我们专注于人工智能技术的研发与应用，为企业提供智能化解决方案，助力数字化转型。",
-      cta: "探索更多"
-    },
-
-    products: {
-      title: "最新产品展示",
-      subtitle: "探索我们的创新产品解决方案",
-      moreText: "更多产品",
-      items: [
-        {
-          title: "TensorFlow 企业版",
-          description: "企业级AI开发平台，提供完整的机器学习解决方案",
-          features: ["多框架支持", "企业级安全", "云端部署"],
-          gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-        },
-        {
-          title: "AI智能助手",
-          description: "基于大语言模型的智能对话系统，支持多轮对话和任务执行",
-          features: ["自然语言处理", "多轮对话", "任务自动化"],
-          gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
-        },
-        {
-          title: "数据分析平台",
-          description: "可视化数据分析工具，支持实时数据处理和智能洞察",
-          features: ["实时处理", "可视化图表", "智能分析"],
-          gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
-        },
-        {
-          title: "边缘计算引擎",
-          description: "超低延迟的边缘AI推理引擎，专为物联网设备优化",
-          features: ["超低延迟", "边缘部署", "物联网优化"],
-          gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
-        }
-      ]
-    },
-    about: {
-      title: "关于TensorLinx",
-      description1: "TensorLinx成立于2020年，是一家专注于人工智能技术研发与应用的创新型科技企业。我们拥有一支由资深AI专家和工程师组成的专业团队，致力于为各行业客户提供领先的AI解决方案。",
-      description2: "公司总部位于北京，在上海、深圳设有分支机构。我们已为超过200家企业提供AI技术服务，涵盖金融、制造、医疗、教育等多个行业领域。",
-      cta: "了解企业文化",
-      imageAlt: "企业团队",
-    },
-
-    community: {
-      title: "官方生态社区",
-      subtitle: "加入我们的技术社区，与全球开发者共同成长",
-      items: [
-        {
-          name: "TensorLinx开发者社区",
-          description: "专业的AI开发者交流平台，分享最新技术动态",
-          members: "10,000+",
-          type: "开发者社区",
-          gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-        },
-        {
-          name: "AI技术论坛",
-          description: "深度技术讨论，前沿算法分享，专家在线答疑",
-          members: "25,000+",
-          type: "技术论坛",
-          gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
-        },
-        {
-          name: "开源项目协作",
-          description: "参与开源项目开发，贡献代码，共建AI生态",
-          members: "5,000+",
-          type: "开源协作",
-          gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
-        },
-        {
-          name: "企业技术支持",
-          description: "为企业用户提供专业技术支持和解决方案咨询",
-          members: "500+",
-          type: "企业服务",
-          gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
-        }
-      ]
-    },
-    footer: {
-        description: "TensorLinx - 专业的人工智能技术服务商，为企业数字化转型提供强有力的技术支撑。",
-        support: "支持",
-        acknowledgments: "鸣谢支持",
-        productServices: "产品服务",
-        products: {
-          utopia: "乌托邦AI内核",
-          boxide: "BoxIDE",
-          aiSolution: "AI解决方案",
-          techSupport: "技术支持"
-        },
-        quickLinks: "快速链接",
-        links: {
-          productSeries: "产品系列",
-          news: "新闻动态",
-          jobs: "岗位招聘",
-          contact: "联系我们",
-          help: "帮助中心"
-        },
-  
-        contact: {
-          email: "邮箱: contact@tensorlinx.com",
-          phone: "电话: +86 400-123-4567",
-          address: "地址: 北京市海淀区中关村科技园"
-        },
-        partners: {
-          title: "感谢以下合作伙伴的支持",
-          items: [
-            {
-              name: "GitHub开源社区",
-              logo: "/images/logos/github-logo.svg",
-              url: "https://github.com",
-            },
-            {
-              name: "哔哩哔哩创作者社区",
-              logo: "/images/logos/bilibili-logo.svg",
-              url: "https://www.bilibili.com",
-            },
-            {
-              name: "NAVF新世家",
-              logo: "NAVF",
-              url: "#",
-            },
-          ],
-        },
-        copyright: "© 2024 TensorLinx科技有限公司. 保留所有权利。",
-      },
-  },
-  en: {
-    title: "TensorLinx - Leading AI General Application Technology Company",
-    announcement: "Recently, fraudsters have been collecting test fees from applicants under the guise of our company's recruitment. Our interview questions are not disclosed to the public. Please be aware.",
-    nav: {
-      home: "Home",
-      about: "About Us",
-      products: "Products",
-      jobs: "Careers",
-      community: "Community",
-
-    },
-    heroSlides: [
-      {
-        title: "Building the Intelligent Future with TensorLinx Technology",
-        description: "TensorLinx is committed to providing cutting-edge artificial intelligence solutions for global enterprises, driving industry digital transformation through innovative technology",
-        cta: "Learn More"
-      },
-      {
-        title: "BoxUI Beta v.1.0 Official Release",
-        description: "Brand new UI component library, designed for developers, now open source",
-        cta: "Try Now"
-      },
-      {
-        title: "AI Innovation Solutions",
-        description: "From machine learning to deep learning, providing comprehensive AI technical support for enterprises",
-        cta: "View Solutions"
-      }
-    ],
-    hero: {
-      badge: "🏢BoxUI Beta v.1.0 Released on GitHub",
-      title: "Building the Intelligent Future with",
-      highlight: "TensorLinx",
-      subtitle: "Technology",
-      description: "TensorLinx is committed to providing cutting-edge artificial intelligence solutions for global enterprises, driving industry digital transformation through innovative technology",
-      cta: {
-        primary: "Learn More",
-      },
-      demo: "Open Source Projects",
-    },
-    showcase: {
-      title: "Innovative Technology",
-      description: "We focus on the research and application of artificial intelligence technology, providing intelligent solutions for enterprises and helping digital transformation.",
-      cta: "Explore More"
-    },
-
-    products: {
-      title: "Latest Product Showcase",
-      subtitle: "Explore our innovative product solutions",
-      moreText: "More Products",
-      items: [
-        {
-          title: "TensorFlow Enterprise",
-          description: "Enterprise-grade AI development platform with complete machine learning solutions",
-          features: ["Multi-framework Support", "Enterprise Security", "Cloud Deployment"],
-          gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-        },
-        {
-          title: "AI Assistant",
-          description: "Intelligent dialogue system based on large language models with multi-turn conversations",
-          features: ["Natural Language Processing", "Multi-turn Dialogue", "Task Automation"],
-          gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
-        },
-        {
-          title: "Data Analytics Platform",
-          description: "Visual data analysis tool supporting real-time processing and intelligent insights",
-          features: ["Real-time Processing", "Visual Charts", "Smart Analytics"],
-          gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
-        },
-        {
-          title: "Edge Computing Engine",
-          description: "Ultra-low latency edge AI inference engine optimized for IoT devices",
-          features: ["Ultra-low Latency", "Edge Deployment", "IoT Optimized"],
-          gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
-        }
-      ]
-    },
-    about: {
-      title: "About TensorLinx",
-      description1: "Founded in 2020, TensorLinx is an innovative technology company focused on artificial intelligence research and application. We have a professional team of senior AI experts and engineers, dedicated to providing leading AI solutions for customers across industries.",
-      description2: "Headquartered in Beijing with branches in Shanghai and Shenzhen, we have provided AI technology services to over 200 enterprises across finance, manufacturing, healthcare, education and other industries.",
-      cta: "Corporate Culture",
-      imageAlt: "Corporate Team",
-    },
-
-    community: {
-      title: "Official Ecosystem Community",
-      subtitle: "Join our tech community and grow together with global developers",
-      items: [
-        {
-          name: "TensorLinx Developer Community",
-          description: "Professional AI developer communication platform sharing latest tech trends",
-          members: "10,000+",
-          type: "Developer Community",
-          gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-        },
-        {
-          name: "AI Technology Forum",
-          description: "In-depth technical discussions, cutting-edge algorithm sharing, expert Q&A",
-          members: "25,000+",
-          type: "Tech Forum",
-          gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
-        },
-        {
-          name: "Open Source Collaboration",
-          description: "Participate in open source development, contribute code, build AI ecosystem",
-          members: "5,000+",
-          type: "Open Source",
-          gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
-        },
-        {
-          name: "Enterprise Tech Support",
-          description: "Professional technical support and solution consulting for enterprise users",
-          members: "500+",
-          type: "Enterprise Service",
-          gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
-        }
-      ]
-    },
-    footer: {
-        description: "TensorLinx - Professional artificial intelligence technology service provider, providing strong technical support for enterprise digital transformation.",
-        productServices: "Product Services",
-        products: {
-          utopia: "Utopia AI Core",
-          boxide: "BoxIDE",
-          solutions: "AI Solutions",
-          support: "Technical Support"
-        },
-        quickLinks: "Quick Links",
-        contactInfo: "Contact Information",
-        contact: {
-          email: "Email: contact@tensorlinx.com",
-          phone: "Phone: +86 400-123-4567",
-          address: "Address: Zhongguancun Science Park, Haidian District, Beijing"
-        },
-        support: "Support",
-      acknowledgments: "Acknowledgments",
-      links: {
-          help: "Help Center",
-        },
-      partners: {
-        title: "Thanks to our partners for their support",
-        items: [
-          {
-            name: "GitHub Open Source Community",
-            logo: "/images/logos/github-logo.svg",
-            url: "https://github.com",
-          },
-          {
-            name: "Bilibili Creator Community",
-            logo: "/images/logos/bilibili-logo.svg",
-            url: "https://www.bilibili.com",
-          },
-          {
-            name: "NAVF New World",
-            logo: "/images/logos/navf-logo.svg",
-            url: "#",
-          },
-        ],
-      },
-      copyright: "© 2024 TensorLinx Technology Co., Ltd. All rights reserved.",
-    },
-  },
-};
+// 加载翻译文件
+async function loadTranslations() {
+  try {
+    const response = await fetch('translations.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    translations = await response.json();
+    window.translations = translations; // 同步更新全局变量
+    console.log('翻译文件加载成功');
+    // 加载完成后初始化页面
+    initializePage();
+    setupEventListeners();
+    setupLanguageButtons();
+    updateContent();
+  } catch (error) {
+    console.error('加载翻译文件失败:', error);
+    // 如果加载失败，使用默认的空对象，页面将显示原始HTML内容
+    translations = { zh: {}, en: {} };
+    window.translations = translations; // 同步更新全局变量
+  }
+}
 
 // 开源项目数据
 const openSourceProjects = [
@@ -508,15 +204,39 @@ const icons = {
   chart: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>`
 };
 
+// Cookie 操作函数
+function setCookie(name, value, days = 30) {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+}
+
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
 // 获取当前翻译
 function getTranslation() {
+  // 如果翻译数据未加载，返回空对象避免错误
+  if (!translations || !translations[currentLanguage]) {
+    return {};
+  }
   return translations[currentLanguage];
 }
 
 // 切换语言
 function toggleLanguage() {
   currentLanguage = currentLanguage === 'zh' ? 'en' : 'zh';
+  window.currentLanguage = currentLanguage; // 同步更新全局变量
   updateContent();
+  updateLanguageButtons();
 }
 
 // 更新内容
@@ -528,26 +248,36 @@ function updateContent() {
   
   // 更新导航
   const navHome = document.querySelector('[data-nav="home"]');
-  const navAbout = document.querySelector('[data-nav="about"]');
+  const navProducts = document.querySelector('[data-nav="products"]');
+  const navNews = document.querySelector('[data-nav="about"]');
+  const navFunding = document.querySelector('[data-nav="funding"]');
   const navJobs = document.querySelector('[data-nav="jobs"]');
+  const navAbout = document.querySelector('[data-nav="about-us"]');
   const navCommunity = document.querySelector('[data-nav="community"]');
   const navContact = document.querySelector('[data-nav="contact"]');
   
   if (navHome) navHome.textContent = t.nav.home;
-  if (navAbout) navAbout.textContent = t.nav.about;
+  if (navProducts) navProducts.textContent = t.nav.products;
+  if (navNews) navNews.textContent = t.nav.news;
+  if (navFunding) navFunding.textContent = t.nav.funding || '资助申请';
   if (navJobs) navJobs.textContent = t.nav.jobs;
+  if (navAbout) navAbout.textContent = t.nav.about;
   if (navCommunity) navCommunity.textContent = t.nav.community;
   if (navContact) navContact.textContent = t.nav.contact;
 
   
-  // 更新语言切换按钮
-  const langToggle = document.querySelector('.language-toggle');
-  if (langToggle) {
-    langToggle.innerHTML = `
-      ${icons.globe}
-      ${currentLanguage === 'zh' ? 'EN' : '中文'}
-    `;
-  }
+  // 更新语言切换按钮状态
+  const langBtns = document.querySelectorAll('.lang-btn');
+  langBtns.forEach(btn => {
+    if (btn.dataset.lang === currentLanguage) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  
+  // 触发语言变化事件，通知其他模块更新内容
+  window.dispatchEvent(new CustomEvent('languageChanged'));
   
   // 更新Hero轮播内容
   const heroSlides = document.querySelectorAll('.hero-slide');
@@ -565,6 +295,24 @@ function updateContent() {
     });
   }
   
+  // 更新主页轮播右侧内容 (id="heroText")
+  const heroTextElement = document.getElementById('heroText');
+  if (heroTextElement) {
+    const titleEl = heroTextElement.querySelector('h1[data-translate="hero.slideTitle"]');
+    const descEl = heroTextElement.querySelector('p[data-translate="hero.slideDescription"]');
+    const btnEl = heroTextElement.querySelector('a[data-translate="hero.cta.secondary"]');
+    
+    if (titleEl && t.hero && t.hero.slideTitle) {
+      titleEl.textContent = t.hero.slideTitle;
+    }
+    if (descEl && t.hero && t.hero.slideDescription) {
+      descEl.textContent = t.hero.slideDescription;
+    }
+    if (btnEl && t.hero && t.hero.cta && t.hero.cta.secondary) {
+      btnEl.textContent = t.hero.cta.secondary;
+    }
+  }
+  
   // 更新产品卡片区域
   const sectionTitle = document.querySelector('.section-title h2');
   if (sectionTitle) sectionTitle.textContent = t.products.title;
@@ -575,11 +323,20 @@ function updateContent() {
       if (productCards[index]) {
         const titleEl = productCards[index].querySelector('h3');
         const descEl = productCards[index].querySelector('p');
+        const dateEl = productCards[index].querySelector('.card-date');
         const linkEl = productCards[index].querySelector('a');
         
-        if (titleEl) titleEl.textContent = product.name;
+        if (titleEl) titleEl.textContent = product.title;
         if (descEl) descEl.textContent = product.description;
-        if (linkEl) linkEl.textContent = product.cta;
+        if (dateEl && product.date) dateEl.textContent = product.date;
+        if (linkEl) {
+          linkEl.textContent = product.cta;
+          if (product.url) {
+            linkEl.href = product.url;
+            linkEl.target = "_blank";
+            linkEl.rel = "noopener noreferrer";
+          }
+        }
       }
     });
   }
@@ -614,8 +371,14 @@ function updateContent() {
   const showcaseDesc = document.querySelector('.showcase-content p');
   const showcaseBtn = document.querySelector('.showcase-content .btn');
   if (showcaseTitle) showcaseTitle.textContent = t.showcase.title;
-  if (showcaseDesc) showcaseDesc.textContent = t.showcase.description;
+  if (showcaseDesc) showcaseDesc.textContent = t.showcase.subtitle || t.showcase.description;
   if (showcaseBtn) showcaseBtn.textContent = t.showcase.cta;
+  
+  // 更新最新动态标题区域
+  const sectionTitleH2 = document.querySelector('.section-title h2');
+  const sectionTitleP = document.querySelector('.section-title p');
+  if (sectionTitleH2) sectionTitleH2.textContent = t.sectionTitle?.latest || t.products?.title;
+  if (sectionTitleP) sectionTitleP.textContent = t.sectionTitle?.subtitle || '';
   
   // 更新关于我们
   const aboutTitle = document.querySelector('.about h2');
@@ -664,6 +427,10 @@ function updateContent() {
       element.textContent = value;
     }
   });
+  
+  // 更新导航栏搜索数据和placeholder
+  initNavSearchData();
+  updateSearchPlaceholder();
 }
 
 // 更新开源项目
@@ -793,10 +560,9 @@ function updateCommunity() {
         </div>
         <p class="community-description">${item.description}</p>
         <div class="community-stats">
-          <span class="community-members">${item.members} ${currentLanguage === 'zh' ? '成员' : 'Members'}</span>
           <span class="community-type">${item.type}</span>
         </div>
-        <button class="community-join-btn">${currentLanguage === 'zh' ? '加入社区' : 'Join Community'}</button>
+        ${(index === 0) ? `<a href="https://zenodo.org/communities/nvaf/records?q=&l=list&p=1&s=10&sort=newest" target="_blank" rel="noopener noreferrer" class="community-join-btn-link">${currentLanguage === 'zh' ? '加入社区' : 'Join Community'}</a>` : (index === 2) ? `<a href="https://github.com/orgs/Tensorlinx/repositories" target="_blank" rel="noopener noreferrer" class="community-join-btn-link">${currentLanguage === 'zh' ? '加入社区' : 'Join Community'}</a>` : (item.url) ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="community-join-btn-link">${currentLanguage === 'zh' ? '加入社区' : 'Join Community'}</a>` : `<button class="community-join-btn">${currentLanguage === 'zh' ? '加入社区' : 'Join Community'}</button>`}
       </div>
     `).join('');
   }
@@ -892,41 +658,102 @@ function getProjectIcon(language) {
   return iconMap[language] || icons.code;
 }
 
-// 更新页脚
-function updateFooter() {
+// 导航栏搜索功能
+let navSearchData = [];
+let isNavSearchOpen = false;
+
+// 初始化导航栏搜索数据
+function initNavSearchData() {
   const t = getTranslation();
   
-  // 更新鸣谢部分
-  document.querySelector('.acknowledgments h3').textContent = t.footer.acknowledgments;
-  document.querySelector('.acknowledgments .subtitle').textContent = t.footer.partners.title;
+  // 中文搜索数据
+  const zhContent = [
+    { title: '首页', url: 'index.html', content: 'Tensorlinx 上海灵兮矩阵 AI 人工智能' },
+    { title: '产品系列', url: 'products.html', content: '乌托邦AI内核 BoxIDE AI解决方案' },
+    { title: '新闻动态', url: 'news.html', content: '最新新闻 技术白皮书 行业分析' },
+    { title: '岗位招聘', url: 'NAVFIO.html', content: '技术岗位 产品岗位 管理岗位 招聘' },
+    { title: '关于我们', url: 'about.html', content: '公司简介 发展历程 企业文化 联系我们' },
+    { title: '吴翔接任联席主席', url: 'news-wuxiang.html', content: '吴翔 2月25日 新世家 香港 联席主席 投票' },
+    { title: 'Redox资助', url: 'news.html', content: 'Tensorlinx redox 开发小组 资助 开源' },
+    { title: '乌托邦3操作系统', url: 'products.html', content: '乌托邦3 x64 操作系统 AI WSL Linux' }
+  ];
   
-  // 更新合作伙伴
-  const partnersGrid = document.querySelector('.partners-grid');
-  partnersGrid.innerHTML = t.footer.partners.items.map(partner => `
-    <a href="${partner.url}" target="_blank" rel="noopener noreferrer" class="partner-card">
-      <div class="partner-logo">
-        <img src="${partner.logo}" alt="${partner.name} Logo" onerror="this.style.display='none'">
+  // 英文搜索数据
+  const enContent = [
+    { title: 'Home', url: 'index.html', content: 'Tensorlinx Shanghai Lingxi Matrix AI Artificial Intelligence' },
+    { title: 'Products', url: 'products.html', content: 'Utopia AI Kernel BoxIDE AI Solutions' },
+    { title: 'News', url: 'news.html', content: 'Latest News Technical Whitepapers Industry Analysis' },
+    { title: 'Careers', url: 'NAVFIO.html', content: 'Tech Positions Product Positions Management Positions Jobs' },
+    { title: 'About Us', url: 'about.html', content: 'Company Profile History Culture Contact' },
+    { title: 'Wu Xiang Assumes Co-Chairman', url: 'news-wuxiang.html', content: 'Wu Xiang February 25 New Shijia Hong Kong Co-Chairman Vote' },
+    { title: 'Redox Funding', url: 'news.html', content: 'Tensorlinx redox development team funding open source' },
+    { title: 'Utopia 3 Operating System', url: 'products.html', content: 'Utopia 3 x64 OS AI WSL Linux' }
+  ];
+  
+  // 根据当前语言选择搜索数据
+  navSearchData = currentLanguage === 'zh' ? zhContent : enContent;
+}
+
+// 导航栏搜索功能
+function handleNavSearch(event) {
+  const query = event.target.value.toLowerCase().trim();
+  const resultsDiv = document.getElementById('navSearchResults');
+  
+  if (!resultsDiv) return;
+  
+  if (query.length === 0) {
+    resultsDiv.innerHTML = '';
+    return;
+  }
+  
+  const results = navSearchData.filter(item => 
+    item.title.toLowerCase().includes(query) || 
+    item.content.toLowerCase().includes(query)
+  );
+  
+  if (results.length === 0) {
+    const noResultText = currentLanguage === 'zh' ? '未找到相关结果' : 'No results found';
+    resultsDiv.innerHTML = `<div class="nav-no-results">${noResultText}</div>`;
+  } else {
+    resultsDiv.innerHTML = results.map(item => `
+      <div class="nav-search-result-item" onclick="window.location.href='${item.url}'">
+        <div class="nav-result-title">${item.title}</div>
+        <div class="nav-result-content">${item.content}</div>
       </div>
-      <p class="partner-name">${partner.name}</p>
-    </a>
-  `).join('');
+    `).join('');
+  }
+}
+
+// 切换导航栏搜索
+function toggleNavSearch() {
+  const searchBox = document.getElementById('navSearchBox');
+  const searchInput = document.getElementById('navSearchInput');
   
-  // 更新页脚描述
-  document.querySelector('.footer-description').textContent = t.footer.description;
+  if (!searchBox || !searchInput) return;
   
-  // 更新页脚链接
-  document.querySelector('[data-footer="support"]').textContent = t.footer.support;
+  isNavSearchOpen = !isNavSearchOpen;
   
-  const footerLinks = document.querySelectorAll('.footer-links a');
-  const linkKeys = ['community', 'help'];
-  footerLinks.forEach((link, index) => {
-    if (linkKeys[index] && t.footer.links[linkKeys[index]]) {
-      link.textContent = t.footer.links[linkKeys[index]];
+  if (isNavSearchOpen) {
+    searchBox.classList.add('active');
+    searchInput.focus();
+    // 更新placeholder文本
+    updateSearchPlaceholder();
+  } else {
+    searchBox.classList.remove('active');
+    searchInput.value = '';
+    if (document.getElementById('navSearchResults')) {
+      document.getElementById('navSearchResults').innerHTML = '';
     }
-  });
-  
-  // 更新版权信息
-  document.querySelector('.footer-bottom').textContent = t.footer.copyright;
+  }
+}
+
+// 更新搜索框placeholder
+function updateSearchPlaceholder() {
+  const searchInput = document.getElementById('navSearchInput');
+  if (searchInput) {
+    const placeholderText = currentLanguage === 'zh' ? '搜索...' : 'Search...';
+    searchInput.placeholder = placeholderText;
+  }
 }
 
 // 创建背景装饰
@@ -945,36 +772,17 @@ function createBackgroundDecorations() {
   `;
   return decorations;
 }
-  
-  morphingBlobs.forEach((blob, index) => {
-    const element = document.createElement('div');
-    element.className = 'morphing-blob';
-    element.style.cssText = `
-      position: absolute;
-      width: ${blob.size};
-      height: ${blob.size};
-      background: linear-gradient(45deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
-      filter: blur(2rem);
-      ${blob.pos}
-      animation-delay: ${blob.delay};
-    `;
-    decorations.appendChild(element);
-  });
-  
-  decorations.appendChild(flow1);
-  decorations.appendChild(flow2);
-  decorations.appendChild(flow3);
-  decorations.appendChild(waveContainer);
-  decorations.appendChild(rippleContainer);
-  decorations.appendChild(pathContainer);
-  decorations.appendChild(particles);
-  
-  return decorations;
-}
 
 // 初始化页面
 function initializePage() {
   const root = document.getElementById('root');
+  
+  // 如果没有 root 元素，说明是静态页面，跳过动态生成
+  if (!root) {
+    console.log('静态页面模式：跳过动态页面生成');
+    return;
+  }
+  
   const t = getTranslation();
   
   root.innerHTML = `
@@ -990,9 +798,11 @@ function initializePage() {
         
         <ul class="nav-links">
           <li><a href="#home" data-nav="home">${t.nav.home}</a></li>
-          <li><a href="#about" data-nav="about">${t.nav.about}</a></li>
-          <li><a href="products-split.html">${t.nav.products}</a></li>
+          <li><a href="#home" data-nav="home">${t.nav.home}</a></li>
+          <li><a href="#products" data-nav="products">${t.nav.products}</a></li>
+          <li><a href="#about" data-nav="about">${t.nav.news}</a></li>
           <li><a href="NAVFIO.html" data-nav="jobs">${t.nav.jobs}</a></li>
+          <li><a href="#about-us" data-nav="about-us">${t.nav.about}</a></li>
           <li><a href="#community" data-nav="community">${t.nav.community}</a></li>
           <li><a href="#contact" data-nav="contact">${t.nav.contact}</a></li>
         </ul>
@@ -1012,9 +822,10 @@ function initializePage() {
       <div class="mobile-menu" id="mobileMenu">
         <ul class="nav-links">
          <li><a href="#home" data-nav="home" onclick="closeMobileMenu()">${t.nav.home}</a></li>
-         <li><a href="#about" data-nav="about" onclick="closeMobileMenu()">${t.nav.about}</a></li>
-         <li><a href="products-split.html" onclick="closeMobileMenu()">${t.nav.products}</a></li>
+         <li><a href="#products" data-nav="products" onclick="closeMobileMenu()">${t.nav.products}</a></li>
+         <li><a href="#about" data-nav="about" onclick="closeMobileMenu()">${t.nav.news}</a></li>
          <li><a href="NAVFIO.html" data-nav="jobs" onclick="closeMobileMenu()">${t.nav.jobs}</a></li>
+         <li><a href="#about-us" data-nav="about-us" onclick="closeMobileMenu()">${t.nav.about}</a></li>
          <li><a href="#community" data-nav="community" onclick="closeMobileMenu()">${t.nav.community}</a></li>
          <li><a href="#contact" data-nav="contact" onclick="closeMobileMenu()">${t.nav.contact}</a></li>
        </ul>
@@ -1137,12 +948,9 @@ function initializePage() {
           <div class="contact-info">
             <div class="contact-item">
               <h3>${t.contact.email}</h3>
-              <p>hello@tensorlinx.ai</p>
+              <p>tensorlinx@tensorlinx.cn</p>
             </div>
-            <div class="contact-item">
-              <h3>${t.contact.phone}</h3>
-              <p>+86 400-KERNEL</p>
-            </div>
+
             <div class="contact-item">
               <h3>${t.contact.support}</h3>
               <p>24/7 ${currentLanguage === 'zh' ? '开发者支持' : 'Developer Support'}</p>
@@ -1208,7 +1016,7 @@ function initializePage() {
         </div>
         
         <div class="footer-bottom">
-          <p>${t.footer.copyright} | 沪ICP备2025137506号-1</p>
+          <p>${t.footer.copyright} | 沪ICP备2025137506号-1 <a href="#" style="color: #0066cc !important;" onclick="alert('我们已经将该网站服务器迁至美国，根据中国法律规定，我们已经不再适合ICP备案'); return false;">(已废弃)</a></p>
         </div>
       </div>
     </footer>
@@ -1221,9 +1029,46 @@ function initializePage() {
 }
 
 function updateFooter() {
-  const t = translations[currentLanguage];
+  const t = getTranslation();
+  
+  // 更新页脚关于我们
+  const footerAboutTitle = document.querySelector('.footer-section h3');
+  const footerAboutDesc = document.querySelector('.footer-section p');
+  if (footerAboutTitle && t.footer?.about) footerAboutTitle.textContent = t.footer.about;
+  if (footerAboutDesc && t.footer?.aboutDesc) footerAboutDesc.textContent = t.footer.aboutDesc;
+  
+  // 更新产品服务
+  const productServicesTitle = document.querySelector('[data-translate="footer.productServices"]');
+  if (productServicesTitle && t.footer?.productServices) {
+    productServicesTitle.textContent = t.footer.productServices;
+  }
+  
+  // 更新快速链接
+  const quickLinksTitle = document.querySelector('.footer-section h3:nth-of-type(2)');
+  if (quickLinksTitle && t.footer?.quickLinks) {
+    quickLinksTitle.textContent = t.footer.quickLinks;
+  }
+  
+  // 更新联系方式
+  const contactInfoTitle = document.querySelector('.footer-section h3:nth-of-type(3)');
+  if (contactInfoTitle && t.footer?.contactInfo) {
+    contactInfoTitle.textContent = t.footer.contactInfo;
+  }
+  
+  // 更新联系信息列表 - 更精确地更新各个部分而不是整个元素
+  const emailElement = document.querySelector('.footer-section:last-child ul li:first-child span[data-translate="footer.emailLabel"]');
+  const emailTextElement = document.querySelector('.footer-section:last-child ul li:first-child');
+  
+  if (t.footer && emailTextElement) {
+    // 更新邮箱标签
+    if (emailElement && t.footer.emailLabel) {
+      emailElement.textContent = t.footer.emailLabel;
+    }
+  }
+  
+  // 更新合作伙伴网格
   const partnersGrid = document.querySelector('.partners-grid');
-  if (partnersGrid) {
+  if (partnersGrid && t.footer?.partners) {
     partnersGrid.innerHTML = t.footer.partners.items.map(item => `
       <a href="${item.url}" class="partner-card" target="_blank" rel="noopener noreferrer">
         <div class="partner-logo">
@@ -1233,8 +1078,34 @@ function updateFooter() {
       </a>
     `).join('');
   }
-
-
+  
+  // 更新版权信息
+  const copyrightCn = document.querySelector('.copyright-cn');
+  const copyrightEn = document.querySelector('.copyright-en');
+  if (copyrightCn && copyrightEn) {
+    if (currentLanguage === 'zh') {
+      copyrightCn.style.display = 'block';
+      copyrightEn.style.display = 'none';
+    } else {
+      copyrightCn.style.display = 'none';
+      copyrightEn.style.display = 'block';
+    }
+  }
+  
+  // 更新Cookie政策、Cookie管理和隐私政策链接
+  const cookiePolicyLink = document.querySelector('[data-translate="footer.cookiePolicy"]');
+  const manageCookiesLink = document.querySelector('[data-translate="footer.manageCookies"]');
+  const privacyPolicyLink = document.querySelector('[data-translate="footer.privacyPolicy"]');
+  
+  if (cookiePolicyLink && t.footer?.cookiePolicy) {
+    cookiePolicyLink.textContent = t.footer.cookiePolicy;
+  }
+  if (manageCookiesLink && t.footer?.manageCookies) {
+    manageCookiesLink.textContent = t.footer.manageCookies;
+  }
+  if (privacyPolicyLink && t.footer?.privacyPolicy) {
+    privacyPolicyLink.textContent = t.footer.privacyPolicy;
+  }
 }
 
 // 移动端菜单控制
@@ -1242,6 +1113,8 @@ function toggleMobileMenu() {
   isMenuOpen = !isMenuOpen;
   const mobileMenu = document.getElementById('mobileMenu');
   const menuButton = document.querySelector('.mobile-menu-button');
+  
+  if (!mobileMenu || !menuButton) return;
   
   if (isMenuOpen) {
     mobileMenu.classList.add('open');
@@ -1257,19 +1130,43 @@ function closeMobileMenu() {
   const mobileMenu = document.getElementById('mobileMenu');
   const menuButton = document.querySelector('.mobile-menu-button');
   
-  mobileMenu.classList.remove('open');
-  menuButton.innerHTML = icons.menu;
+  if (mobileMenu) {
+    mobileMenu.classList.remove('open');
+  }
+  if (menuButton) {
+    menuButton.innerHTML = icons.menu;
+  }
 }
 
 // 滚动事件处理
 function handleScroll() {
   scrollY = window.scrollY;
   const header = document.querySelector('header');
+  const grayBanner = document.querySelector('.gray-banner');
+  const hero = document.querySelector('.hero');
   
   if (scrollY > 50) {
     header.classList.add('scrolled');
+    // 向下滚动时隐藏横幅
+    if (grayBanner) {
+      grayBanner.style.transform = 'translateY(-100%)';
+      grayBanner.style.opacity = '0';
+    }
+    // 轮播图 margin 调整为导航栏高度
+    if (hero) {
+      hero.style.marginTop = '64px';
+    }
   } else {
     header.classList.remove('scrolled');
+    // 回到顶部时显示横幅
+    if (grayBanner) {
+      grayBanner.style.transform = 'translateY(0)';
+      grayBanner.style.opacity = '1';
+    }
+    // 轮播图 margin 恢复为导航栏 + 横幅高度
+    if (hero) {
+      hero.style.marginTop = '102px';
+    }
   }
 }
 
@@ -1320,8 +1217,8 @@ function setupEventListeners() {
 
 // 页面加载完成后初始化
 document.addEventListener('DOMContentLoaded', () => {
-  initializePage();
-  setupEventListeners();
+  // 加载翻译文件，加载完成后会自动初始化页面
+  loadTranslations();
   
   // 添加加载动画
   setTimeout(() => {
@@ -1332,6 +1229,220 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     document.body.classList.add('animations-ready');
   }, 500);
+});
+
+// 设置语言切换按钮事件
+function setupLanguageButtons() {
+  const langBtns = document.querySelectorAll('.lang-btn');
+  
+  langBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const lang = this.dataset.lang;
+      
+      // 如果点击的是当前语言，不做任何操作
+      if (lang === currentLanguage) return;
+      
+      // 直接设置为指定的语言
+      currentLanguage = lang;
+      window.currentLanguage = currentLanguage; // 同步更新全局变量
+      window.userMadeSelection = true;  // 标记用户已做选择
+      updateContent();
+      updateLanguageButtons();
+      
+      // 添加切换动画效果
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = 'scale(1)';
+      }, 150);
+    });
+  });
+  
+  // 加载保存的语言偏好（优先检查cookie，然后是localStorage）
+  // 仅在页面首次加载时应用保存的偏好，后续用户手动选择的语言优先
+  const savedLang = getCookie('preferredLanguage') || localStorage.getItem('preferredLanguage');
+  if (savedLang && typeof window.userMadeSelection === 'undefined') {
+    currentLanguage = savedLang;
+    window.currentLanguage = currentLanguage; // 同步更新全局变量
+    updateContent();
+  }
+  
+  // 同步按钮状态
+  updateLanguageButtons();
+}
+
+// 更新语言按钮状态
+function updateLanguageButtons() {
+  const langBtns = document.querySelectorAll('.lang-btn');
+  langBtns.forEach(btn => {
+    if (btn.dataset.lang === currentLanguage) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  
+  // 保存语言偏好到 localStorage 和 cookie
+  localStorage.setItem('preferredLanguage', currentLanguage);
+  setCookie('preferredLanguage', currentLanguage);
+  
+  // 更新页面语言属性
+  document.documentElement.lang = currentLanguage;
+}
+
+// Cookie 政策相关函数
+function showCookieConsent() {
+  // 检查用户是否已经同意过
+  const cookieConsent = getCookie('cookie_consent');
+  if (!cookieConsent) {
+    // 显示Cookie同意弹窗
+    const cookieConsentElement = document.getElementById('cookie-consent');
+    if (cookieConsentElement) {
+      cookieConsentElement.style.display = 'block';
+    }
+  }
+}
+
+function handleCookieConsent(consentType) {
+  // 设置Cookie同意状态
+  setCookie('cookie_consent', consentType, 365); // 保存一年
+  
+  // 隐藏Cookie同意弹窗
+  const cookieConsentElement = document.getElementById('cookie-consent');
+  if (cookieConsentElement) {
+    cookieConsentElement.style.display = 'none';
+  }
+  
+  // 根据用户选择执行相应操作
+  if (consentType === 'accept_all') {
+    // 用户接受所有Cookie
+    console.log('用户接受了所有Cookie');
+  } else if (consentType === 'reject') {
+    // 用户拒绝Cookie，可能需要清除某些Cookie
+    console.log('用户拒绝了Cookie');
+  } else if (consentType === 'customize') {
+    // 用户选择自定义，显示详细的Cookie设置面板
+    showCustomizeCookiePanel();
+  } else if (consentType === 'customize_saved') {
+    // 用户已保存自定义设置
+    console.log('用户已保存自定义Cookie设置');
+  }
+}
+
+// 显示自定义Cookie设置面板
+function showCustomizeCookiePanel() {
+  // 创建自定义Cookie设置面板
+  const existingPanel = document.getElementById('cookie-customize-panel');
+  if (existingPanel) {
+    existingPanel.remove();
+  }
+  
+  const t = getTranslation();
+  
+  const customizePanel = document.createElement('div');
+  customizePanel.id = 'cookie-customize-panel';
+  customizePanel.className = 'cookie-customize-panel';
+  customizePanel.innerHTML = `
+    <div class="cookie-customize-content">
+      <div class="cookie-customize-header">
+        <h4>\${t.cookie?.customizeTitle || '自定义 Cookie 设置'}</h4>
+        <button id="close-cookie-panel" class="close-cookie-panel-btn">×</button>
+      </div>
+      <div class="cookie-options">
+        <div class="cookie-option">
+          <input type="checkbox" id="necessary-cookies" checked disabled>
+          <label for="necessary-cookies">\${t.cookie?.necessaryLabel || '必要 Cookie'} <small>\${t.cookie?.necessaryDesc || '(无法关闭)'}</small></label>
+        </div>
+        <div class="cookie-option">
+          <input type="checkbox" id="analytics-cookies" checked>
+          <label for="analytics-cookies">\${t.cookie?.analyticsLabel || '分析 Cookie'}</label>
+        </div>
+        <div class="cookie-option">
+          <input type="checkbox" id="marketing-cookies">
+          <label for="marketing-cookies">\${t.cookie?.marketingLabel || '营销 Cookie'}</label>
+        </div>
+        <div class="cookie-option">
+          <input type="checkbox" id="language-preferences" checked>
+          <label for="language-preferences">\${t.cookie?.languageLabel || '语言偏好 Cookie'}</label>
+        </div>
+      </div>
+      <div class="cookie-customize-actions">
+        <button id="save-cookie-settings" class="btn btn-primary">\${t.cookie?.saveSettings || t.cookie?.customize || '保存设置'}</button>
+        <button id="accept-all-from-customize" class="btn btn-secondary">\${t.cookie?.acceptAll || '接受全部'}</button>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(customizePanel);
+  
+  // 添加事件监听器
+  document.getElementById('close-cookie-panel').addEventListener('click', function() {
+    document.getElementById('cookie-customize-panel').remove();
+  });
+  
+  document.getElementById('save-cookie-settings').addEventListener('click', function() {
+    saveCustomizedCookieSettings();
+  });
+  
+  document.getElementById('accept-all-from-customize').addEventListener('click', function() {
+    handleCookieConsent('accept_all');
+  });
+}
+
+// 保存自定义Cookie设置
+function saveCustomizedCookieSettings() {
+  const analyticsChecked = document.getElementById('analytics-cookies').checked;
+  const marketingChecked = document.getElementById('marketing-cookies').checked;
+  const languageChecked = document.getElementById('language-preferences').checked;
+  
+  // 保存详细的Cookie偏好
+  const cookiePreferences = {
+    necessary: true, // 必要Cookie总是启用
+    analytics: analyticsChecked,
+    marketing: marketingChecked,
+    language: languageChecked
+  };
+  
+  setCookie('cookie_preferences', JSON.stringify(cookiePreferences), 365);
+  
+  // 隐藏自定义面板
+  const customizePanel = document.getElementById('cookie-customize-panel');
+  if (customizePanel) {
+    customizePanel.remove();
+  }
+  
+  // 记录用户选择
+  handleCookieConsent('customize_saved');
+}
+
+// 页面加载完成后显示Cookie政策
+document.addEventListener('DOMContentLoaded', function() {
+  // 延迟显示Cookie同意弹窗，让用户先看到主要内容
+  setTimeout(showCookieConsent, 2000);
+});
+
+// 为Cookie同意按钮添加事件监听器
+document.addEventListener('DOMContentLoaded', function() {
+  const acceptAllBtn = document.getElementById('accept-all-cookies');
+  const rejectBtn = document.getElementById('reject-cookies');
+  const customizeBtn = document.getElementById('customize-cookies');
+  
+  if (acceptAllBtn) {
+    acceptAllBtn.addEventListener('click', function() {
+      handleCookieConsent('accept_all');
+    });
+  }
+  
+  if (rejectBtn) {
+    rejectBtn.addEventListener('click', function() {
+      handleCookieConsent('reject');
+    });
+  }
+  
+  if (customizeBtn) {
+    customizeBtn.addEventListener('click', function() {
+      handleCookieConsent('customize');
+    });
+  }
 });
 
 // 导出函数供全局使用

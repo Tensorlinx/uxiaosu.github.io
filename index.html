@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <title>Tensorlinx-上海灵兮矩阵</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 标签页 Logo -->
+  <link rel="icon" type="image/png" href="img/NAVFOS-removebg-preview.png" />
   <!-- 国内字体资源 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,158 +13,78 @@
   <!-- 自定义样式 -->
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* 维护公告遮盖层 */
-    .maintenance-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      pointer-events: all;
-      user-select: none;
-    }
-
-    .maintenance-notice {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 40px 60px;
-      text-align: center;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      color: white;
-      max-width: 500px;
-    }
-
-    .maintenance-notice h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .maintenance-notice p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      margin-bottom: 30px;
-    }
-
-    .maintenance-spinner {
-      width: 50px;
-      height: 50px;
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      border-top: 3px solid white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* 防止页面交互 */
-    body.maintenance-mode {
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    body.maintenance-mode * {
-      pointer-events: none;
-    }
-
-    body.maintenance-mode .maintenance-overlay {
-      pointer-events: all;
-    }
   </style>
 </head>
 
-<body class="maintenance-mode">
-  <!-- 维护公告遮盖层 -->
-  <div class="maintenance-overlay">
-    <div class="maintenance-notice">
-      <h2>官网正在维护中</h2>
-      <p>我们正在对网站进行升级维护，请稍后再访问</p>
-      <div class="maintenance-spinner"></div>
-    </div>
-  </div>
+<body>
   <!-- 顶部导航 -->
   <header class="top-nav">
     <a class="logo" href="#">
         <img src="img/remove.photos-removed-background.png" alt="Logo" style="height: 40px; width: auto;">
       </a>
+    <span class="nav-divider">|</span>
     <nav class="nav-links">
-       <a href="index.html" data-nav="home" class="active">首页</a>
-       <a href="products.html" data-nav="products">产品系列</a>
-       <a href="news.html" data-nav="about">新闻动态</a>
-       <a href="NAVFIO.html" data-nav="jobs">岗位招聘</a>
-       <a href="about.html" data-nav="about-us">关于我们</a>
-
+       <a href="index.html" data-nav="home" class="active" data-translate="nav.home">首页</a>
+       <a href="products.html" data-nav="products" data-translate="nav.products">产品文档</a>
+       <a href="news.html" data-nav="news" data-translate="nav.news">新闻动态</a>
+       <a href="NAVFIO.html" data-nav="jobs" data-translate="nav.jobs">岗位招聘</a>
+       <a href="about.html" data-nav="about-us" data-translate="nav.about">关于我们</a>
+     
      </nav>
     <div class="right">
         <div class="language-toggle">
-          <button class="lang-btn active" data-lang="zh" onclick="toggleLanguage()">中</button>
-          <button class="lang-btn" data-lang="en" onclick="toggleLanguage()">EN</button>
+          <button class="lang-btn active" data-lang="zh">中</button>
+          <button class="lang-btn" data-lang="en">EN</button>
         </div>
-        <a href="#" class="search-icon">
-          <svg viewBox="0 0 24 24" fill="#000000" width="30" height="30">
-            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-          </svg>
-        </a>
+        <div class="nav-search-container">
+          <a href="#" class="search-icon" onclick="toggleNavSearch(); return false;">
+            <svg viewBox="0 0 24 24" fill="#000000" width="30" height="30">
+              <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+          </a>
+          <div class="nav-search-box" id="navSearchBox">
+            <input type="text" class="nav-search-input" id="navSearchInput" placeholder="搜索..." data-translate="nav.searchPlaceholder" onkeyup="handleNavSearch(event)">
+            <div class="nav-search-results" id="navSearchResults"></div>
+          </div>
+        </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle">所有Tensorlinx</a>
+          <a href="#" class="dropdown-toggle" data-translate="dropdown.title">所有Tensorlinx</a>
           <div class="dropdown-menu">
             <div class="mega-menu">
               <div class="menu-column">
-                <h3>🏠 首页</h3>
-                <a href="index.html">最新动态</a>
-                <a href="index.html">热门推荐</a>
-                <a href="index.html">特色服务</a>
+                <h3><span class="menu-divider">|</span> <span data-translate="dropdown.home">首页</span></h3>
+                <a href="index.html#section1" data-translate="dropdown.open_source">开源动态</a>
+                <a href="index.html#section2" data-translate="dropdown.community">生态社区</a>
+                <a href="index.html#feature-showcase" data-translate="dropdown.featured_showcase">特色展示</a>
               </div>
               
               <div class="menu-column">
-                <h3>📱 产品系列</h3>
-                <a href="products.html">人工智能</a>
-                <a href="products.html">云计算</a>
-                <a href="products.html">大数据</a>
-                <a href="products.html">物联网</a>
+                <h3><span class="menu-divider">|</span> <span data-translate="footer.productServices">产品文档</span></h3>
+                <a href="products.html" data-translate="dropdown.intro">产品介绍</a>
+                <a href="products.html" data-translate="dropdown.specs">技术规格</a>
+                <a href="products.html" data-translate="dropdown.guide">使用指南</a>
               </div>
               
               <div class="menu-column">
-                <h3>📊 新闻动态</h3>
-                <a href="news.html">技术白皮书</a>
-                <a href="news.html">行业分析</a>
-                <a href="news.html">市场趋势</a>
+                <h3><span class="menu-divider">|</span> <span data-translate="footer.links.news">新闻动态</span></h3>
+                <a href="news.html" data-translate="dropdown.company_news">公司新闻</a>
+                <a href="news.html" data-translate="dropdown.industry">行业资讯</a>
+                <a href="news.html" data-translate="dropdown.media">媒体报道</a>
               </div>
               
               <div class="menu-column">
-                <h3>💼 岗位招聘</h3>
-                <a href="NAVFIO.html">技术岗位</a>
-                <a href="NAVFIO.html">产品岗位</a>
-                <a href="NAVFIO.html">管理岗位</a>
+                <h3><span class="menu-divider">|</span> <span data-translate="footer.links.jobs">岗位招聘</span></h3>
+                <a href="NAVFIO.html" data-translate="dropdown.tech">技术岗位</a>
+                <a href="NAVFIO.html" data-translate="dropdown.product">产品岗位</a>
+                <a href="NAVFIO.html" data-translate="dropdown.management">管理岗位</a>
               </div>
               
               <div class="menu-column">
-                <h3>🏢 关于我们</h3>
-                <a href="about.html">公司简介</a>
-                <a href="about.html">发展历程</a>
-                <a href="about.html">企业文化</a>
-                <a href="about.html">联系我们</a>
-              </div>
-              
-              <div class="menu-column">
-                <h3>🛠️ 技术支持</h3>
-                <a href="#">在线文档</a>
-                <a href="#">视频教程</a>
-                <a href="#">技术论坛</a>
+                <h3><span class="menu-divider">|</span> <span data-translate="footer.links.about">关于我们</span></h3>
+                <a href="about.html" data-translate="dropdown.company">公司简介</a>
+                <a href="about.html" data-translate="dropdown.history">发展历程</a>
+                <a href="about.html" data-translate="dropdown.team">团队介绍</a>
+                <a href="about.html" data-translate="dropdown.contact">联系我们</a>
               </div>
             </div>
           </div>
@@ -170,30 +92,27 @@
       </div>
   </header>
 
+  <!-- 灰色横幅 -->
+  <div class="gray-banner">
+    <p><span data-translate="banner.fundingText">Tensorlinx正在资助学生、开发者、开源项目参与计算机基础设施建设，如符合条件→</span><a href="funding-application.html" class="banner-link" data-translate="banner.fundingLink">点击资助申请</a></p>
+  </div>
+
   <!-- Hero 轮播 -->
   <section class="hero">
     <div class="hero-carousel">
+      <!-- 左侧图片轮播 -->
       <div class="hero-slides">
-        <div class="hero-slide active">
-          <div class="hero-text">
-            <h1>我们正在建设一家去政治化、多元人种的全球性科技企业</h1>
-            <p>在遵循各国出口管制与国际合规框架的前提下，我们致力于让技术与产品惠及更多国家和地区 </p>
-            <button class="btn">查看政策</button>
-          </div>
-        </div>
-        <div class="hero-slide">
-          <div class="hero-text">
-            <h1>最新版乌托邦AI内核-机器人</h1>
-            <p>专为操作系统、机器人等工作设计的AI微内核</p>
-            <button class="btn">立即体验</button>
-          </div>
-        </div>
-        <div class="hero-slide">
-          <div class="hero-text">
-            <h1>内测版BoxIDE发布</h1>
-            <p>功能更加丰富的AI编程应用，面向中小企业和个人团队</p>
-            <button class="btn">立即体验</button>
-          </div>
+        <div class="hero-slide-image active" style="background-image: url('img/NAVF.png')" data-slide="0"></div>
+        <div class="hero-slide-image" style="background-image: url('img/NAVF (1).png')" data-slide="1"></div>
+        <div class="hero-slide-image" style="background-image: url('img/NAVF (2).png')" data-slide="2"></div>
+      </div>
+      
+      <!-- 右侧固定内容框 -->
+      <div class="hero-slide-content" style="background: #000">
+        <div class="hero-text" id="heroText">
+          <h1 data-translate="hero.slideTitle">"吴翔"于2月25日正式接任新世家（香港）联席主席</h1>
+          <p data-translate="hero.slideDescription">17日联席举行投票，右派候选人"吴翔"获得BTC赞成票0.81枚，ETH赞成票0.3枚，获票数领先左派候选人。意味着右派长达3年的治理结束，新世家将步入新的秩序治理中。</p>
+          <a href="news-wuxiang.html" class="btn" data-translate="hero.cta.secondary">查看新闻</a>
         </div>
       </div>
       
@@ -206,60 +125,63 @@
     </div>
   </section>
 
-  <!-- 最新产品标题 -->
+  <!-- 开源动态标题 -->
   <section class="section-title">
-    <h2>最新动态</h2>
-    <p>探索我们最新的产品和技术创新</p>
+    <h2 data-translate="sectionTitle.latest">开源动态</h2>
+    <p data-translate="sectionTitle.subtitle">探索我们最新的开源项目和技术分享</p>
   </section>
 
   <!-- 产品卡片 -->
   <section class="cards">
     <div class="card">
-      <div class="card-image m365"></div>
-      <h3>Microsoft 365</h3>
-      <p>高级 Office 应用、额外的云存储、高级安全功能，一站式体验。</p>
-      <a href="#">了解更多 ></a>
+      <div class="card-image" style="background: url('img/simplephp.png') center/cover;"></div>
+      <h3>simplePHP</h3>
+      <p data-translate="products.items.0.description">SimplePHP 是一个注重安全性和性能的轻量级 PHP 框架。它提供了简洁且强大的MVC架构，同时引入了缓存系统、前端资源优化和安全措施等现代化功能，使开发者能够快速构建高质量的网页应用。</p>
+      <div class="card-date" data-translate="products.items.0.date">2025年4月17日</div>
+      <a href="https://github.com/Tensorlinx/Simple-PHP" target="_blank" rel="noopener noreferrer" data-translate="products.useNow">立即使用</a>
     </div>
     <div class="card">
-      <div class="card-image surface"></div>
-      <h3>Surface Laptop 5</h3>
-      <p>优雅轻薄，强劲性能，搭载第 12 代 Intel® Core™ 处理器。</p>
-      <a href="#">立即购买 ></a>
+      <div class="card-image" style="background: url('img/yugu.PNG') center/cover;"></div>
+      <h3>ZenodoCPU推理通用数据库和推理脚本</h3>
+      <p data-translate="products.items.1.description">快速剖析大型语言模型的技术基础，使用UoomiNumPy，然后直接在CPU上运行，无需任何框架即可即时测试。</p>
+      <div class="card-date" data-translate="products.items.1.date">2025年05月08日</div>
+      <a href="https://zenodo.org/records/16723903" target="_blank" rel="noopener noreferrer" data-translate="products.viewNow">立即查看</a>
     </div>
     <div class="card">
-      <div class="card-image xbox"></div>
-      <h3>Xbox Game Pass Ultimate</h3>
-      <p>首月仅需 ¥10，畅玩 100+ 款高品质游戏。</p>
-      <a href="#">立即加入 ></a>
+      <div class="card-image" style="background: url('img/jio.PNG') center bottom/cover;"></div>
+      <h3>uoomi-v1-1.7b</h3>
+      <p data-translate="products.items.2.description">uoomi-v1-1.7b 的Model Card 这是一个小型模型，拥有17.8亿个参数，源自Qwen大型模型。其参数大小较小，不适合回答复杂问题。uoomi-v1-1.7b 模型专为个人开发者设计，用于嵌入、优化或进一步微调。它允许用户创建自定义对话模板。</p>
+      <div class="card-date" data-translate="products.items.2.date">2025年02月03日</div>
+      <a href="https://huggingface.co/Uoomi-ai/uoomi-v1-1.78B" target="_blank" rel="noopener noreferrer" data-translate="products.useNow">立即使用</a>
     </div>
     <div class="card">
-      <div class="card-image windows"></div>
-      <h3>Windows 11</h3>
-      <p>全新开始菜单、多任务处理、游戏体验，全面升级。</p>
-      <a href="#">了解更多 ></a>
+      <div class="card-image" style="background: url('img/hjh.PNG') center/cover;"></div>
+      <h3 data-translate="products.items.3.title">乌托邦微内核v1.0版本</h3>
+      <p data-translate="products.items.3.description">乌托邦微内核1.0版本主要兼容于x64、x86,是一个用 Rust 编写的现代操作系统内核项目，支持 VGA 显示、串口通信和日志系统。</p>
+      <div class="card-date" data-translate="products.items.3.date">2025年07月20日</div>
+      <a href="https://github.com/Tensorlinx/utopia" target="_blank" rel="noopener noreferrer" data-translate="products.useNow">立即使用</a>
     </div>
   </section>
 
   <!-- 官方生态社区 -->
   <section class="community-section">
-    <h3>官方生态社区</h3>
-    <p class="subtitle">加入我们的技术社区，与全球开发者共同成长</p>
+    <h3 data-translate="community.title">官方生态社区</h3>
+    <p class="subtitle" data-translate="community.subtitle">加入我们的技术社区，与全球开发者共同成长</p>
     <div class="community-layout">
-      <div class="community-card" style="--gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+      <div class="community-card" style="--gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
         <div class="community-header">
-          <div class="community-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+          <div class="community-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 21.568c-1.2.336-2.568.504-4.568.504-2 0-3.368-.168-4.568-.504-1.2-.336-2.232-1.008-3.096-2.016-.864-1.008-1.464-2.184-1.8-3.528S4 13.736 4 12.232c0-2.016.552-3.768 1.656-5.256C4.848 8.232 4.2 7.816 4.2 7.816c-.864-.744-.744-2.016-.744-2.016.336-.336.504-.744.504-1.224 0-.48-.168-.888-.504-1.224 0 0 .336-.504 1.008-1.512.672-1.008 1.512-1.008 1.512-1.008.336-.336.744-.504 1.224-.504h.504c.48 0 .888.168 1.224.504 0 0 .84 0 1.512 1.008.672 1.008 1.008 1.512 1.008 1.512-.336.336-.504.744-.504 1.224 0 .48.168.888.504 1.224 0 0 .864.744.744 2.016 0 0 .864.336 1.512.504.648.168 1.296.336 1.944.504.336.336.504.744.504 1.224v.504c0 .48-.168.888-.504 1.224 0 0 .336.504 1.008 1.512.672 1.008 1.512 1.008 1.512 1.008z"/>
+              <path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4zm0 6C9.24 9 7 8.1 7 7s2.24-2 5-2 5 .9 5 2-.24 2-5 2zm0 2c-4.42 0-8 1.79-8 4v3h16v-3c0-2.21-3.58-4-8-4z"/>
             </svg>
           </div>
-          <h4 class="community-title">TensorLinx开发者社区</h4>
+          <h4 class="community-title" data-translate="community.items.0.name">zenodo数据库</h4>
         </div>
-        <p class="community-description">专业的AI开发者交流平台，分享最新技术动态</p>
+        <p class="community-description" data-translate="community.items.0.description">开放的科学数据存储库，支持研究数据的共享和发现</p>
         <div class="community-stats">
-          <span class="community-members">10,000+ 成员</span>
-          <span class="community-type">开发者社区</span>
+          <span class="community-type" data-translate="community.types.openDatabase">开放数据库</span>
         </div>
-        <button class="community-join-btn">加入社区</button>
+        <a href="https://zenodo.org/communities/nvaf/records?q=&l=list&p=1&s=10&sort=newest" target="_blank" rel="noopener noreferrer" class="community-join-btn-link" data-translate="community.joinBtn">加入社区</a>
       </div>
 
       <div class="community-card" style="--gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
@@ -269,48 +191,43 @@
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
             </svg>
           </div>
-          <h4 class="community-title">AI技术论坛</h4>
+          <h4 class="community-title" data-translate="community.items.1.name">AI技术论坛</h4>
         </div>
-        <p class="community-description">深度技术讨论，前沿算法分享，专家在线答疑</p>
+        <p class="community-description" data-translate="community.items.1.description">深度技术讨论，前沿算法分享，专家在线答疑</p>
         <div class="community-stats">
-          <span class="community-members">25,000+ 成员</span>
-          <span class="community-type">技术论坛</span>
+          <span class="community-type" data-translate="community.types.techForum">技术论坛</span>
         </div>
-        <button class="community-join-btn">加入社区</button>
+        <button class="community-join-btn" data-translate="community.joinBtn">加入社区</button>
       </div>
 
-      <div class="community-card" style="--gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
+      <div class="community-card" style="--gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
         <div class="community-header">
-          <div class="community-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
+          <div class="community-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
           </div>
-          <h4 class="community-title">开源项目协作</h4>
+          <h4 class="community-title" data-translate="community.items.2.name">开源项目协作</h4>
         </div>
-        <p class="community-description">参与开源项目开发，贡献代码，共建AI生态</p>
+        <p class="community-description" data-translate="community.items.2.description">参与开源项目开发，贡献代码，共建AI生态</p>
         <div class="community-stats">
-          <span class="community-members">5,000+ 成员</span>
-          <span class="community-type">开源协作</span>
+          <span class="community-type" data-translate="community.types.openSource">开源协作</span>
         </div>
-        <button class="community-join-btn">加入社区</button>
+        <a href="https://github.com/orgs/Tensorlinx/repositories" target="_blank" rel="noopener noreferrer" class="community-join-btn-link" data-translate="community.joinBtn">加入社区</a>
       </div>
 
       <div class="community-card" style="--gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)">
         <div class="community-header">
           <div class="community-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
+            <img src="img/NAVFOS__1_-removebg-preview.png" alt="企业技术支持" width="24" height="24">
           </div>
-          <h4 class="community-title">企业技术支持</h4>
+          <h4 class="community-title" data-translate="community.items.3.name">NAVF新世家</h4>
         </div>
-        <p class="community-description">为企业用户提供专业技术支持和解决方案咨询</p>
+        <p class="community-description" data-translate="community.items.3.description">为企业用户提供专业技术支持和解决方案咨询</p>
         <div class="community-stats">
-          <span class="community-members">500+ 企业</span>
-          <span class="community-type">企业服务</span>
+          <span class="community-type" data-translate="community.types.daoCommunity">DAO社区</span>
         </div>
-        <button class="community-join-btn">加入社区</button>
+        <a href="https://discord.gg/WpG2ZgUc" target="_blank" rel="noopener noreferrer" class="community-join-btn-link" data-translate="community.joinBtn">加入社区</a>
       </div>
     </div>
   </section>
@@ -320,15 +237,15 @@
     <div class="showcase-container">
       <div class="showcase-card">
         <div class="showcase-image">
-          <img src="https://picsum.photos/800/400?random=100" alt="特色展示" />
+          <img src="img/R.jpg" alt="技术出口合规" style="width:100%; height:400px; object-fit:cover;">
+        </div>
           <div class="showcase-overlay">
             <div class="showcase-content">
-              <h3>创新科技</h3>
-              <p>探索前沿技术，引领AI创新</p>
-              <button class="btn">立即体验</button>
+              <h3 data-translate="showcase.title">Tensorlinx正在进行中国技术出口合规，以避免法律纠纷</h3>
+          <p data-translate="showcase.subtitle">Tensorlinx正在积极响应中国技术出口合规要求，确保我们的产品和服务符合相关法律法规，避免潜在的法律纠纷...</p>
+          <a href="compliance-news.html" class="btn showcase-btn-inline" data-translate="showcase.cta">查看详情</a>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </section>
@@ -375,14 +292,29 @@
   
 
 
+  <!-- Cookie 政策弹窗 -->
+  <div id="cookie-consent" class="cookie-consent" style="display: none;">
+    <div class="cookie-consent-content">
+      <div class="cookie-consent-text">
+        <h4 data-translate="cookie.title">Cookie 政策</h4>
+        <p><span data-translate="cookie.description">我们使用必要的 Cookie 来确保网站正常运行。我们也使用分析 Cookie 来了解访客如何与网站互动，这有助于我们改进服务。您可以通过下面的选项来控制 Cookie 设置。</span><a href="cookie-policy.html" class="cookie-policy-link" data-translate="cookie.learnMore">了解更多</a></p>
+      </div>
+      <div class="cookie-consent-buttons">
+        <button id="accept-all-cookies" class="btn btn-primary" data-translate="cookie.acceptAll">接受全部</button>
+        <button id="reject-cookies" class="btn btn-secondary" data-translate="cookie.reject">拒绝</button>
+        <button id="customize-cookies" class="btn btn-outline" data-translate="cookie.customize">自定义</button>
+      </div>
+    </div>
+  </div>
+
   <!-- 网站底部 -->
   <footer class="site-footer" id="about-us">
     <div class="footer-content">
       <div class="footer-section">
-        <h3>关于我们</h3>
-        <p>Tensorlinx 致力于提供领先的AI解决方案，赋能企业和开发者构建智能化的未来。</p>
+        <h3 data-translate="footer.about">关于我们</h3>
+        <p data-translate="footer.aboutDesc">Tensorlinx是一家专注于计算机基础设施建设的科技企业，我们致力于推动计算机科学技术到全球边缘地带。</p>
         <div class="social-links">
-          <a href="#" aria-label="GitHub">
+          <a href="https://github.com/orgs/Tensorlinx/repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
@@ -397,43 +329,50 @@
               <path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L11.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.765.28 1.396.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.497.769-1.128.786-1.893v-7.52c-.017-.765-.28-1.397-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373z"/>
             </svg>
           </a>
+          <a href="https://discord.gg/WpG2ZgUc" target="_blank" rel="noopener noreferrer" aria-label="NAVFOS" class="navfos-link">
+            <img src="img/NAVFOS__1_-removebg-preview.png" alt="NAVFOS" width="20" height="20">
+          </a>
         </div>
       </div>
       
       <div class="footer-section">
         <h3 data-translate="footer.productServices">产品服务</h3>
         <ul>
-          <li><a href="#" data-translate="footer.products.utopia">乌托邦AI内核</a></li>
-          <li><a href="#" data-translate="footer.products.boxide">BoxIDE</a></li>
-          <li><a href="#" data-translate="footer.products.solutions">AI解决方案</a></li>
-          <li><a href="#" data-translate="footer.products.support">技术支持</a></li>
+          <li><a href="https://github.com/Tensorlinx/Simple-PHP" target="_blank" rel="noopener noreferrer" data-translate="footer.products.simplePHP">simplePHP</a></li>
+          <li><a href="https://zenodo.org/communities/nvaf/records?q=&l=list&p=1&s=10&sort=newest" target="_blank" rel="noopener noreferrer" data-translate="footer.products.zenodo">zenodo</a></li>
+          <li><a href="https://github.com/Tensorlinx/utopia" target="_blank" rel="noopener noreferrer" data-translate="footer.products.utopia">乌托邦内核</a></li>
+          <li><a href="#" data-translate="footer.products.uoomiv1">uoomiv1</a></li>
         </ul>
       </div>
       
       <div class="footer-section">
         <h3 data-translate="footer.quickLinks">快速链接</h3>
         <ul>
-          <li><a href="#">产品系列</a></li>
-          <li><a href="#">新闻动态</a></li>
-          <li><a href="#">岗位招聘</a></li>
-          <li><a href="#">联系我们</a></li>
+          <li><a href="products.html" data-translate="footer.links.products">产品文档</a></li>
+          <li><a href="news.html" data-translate="footer.links.news">新闻动态</a></li>
+          <li><a href="NAVFIO.html" data-translate="footer.links.jobs">岗位招聘</a></li>
+          <li><a href="about.html" data-translate="footer.links.about">关于我们</a></li>
         </ul>
       </div>
       
       <div class="footer-section">
         <h3 data-translate="footer.contactInfo">联系方式</h3>
         <ul>
-          <li>邮箱: contact@tensorlinx.com</li>
-          <li>电话: +86 400-123-4567</li>
-          <li>地址: 北京市海淀区中关村科技园</li>
-        </ul>
+            <li><span data-translate="footer.emailLabel">邮箱</span>: tensorlinx@tensorlinx.cn</li>
+
+          </ul>
       </div>
 
     </div>
     
     <div class="footer-bottom">
-      <p class="copyright-cn">&copy; 2024 灵兮矩阵（上海）计算机系统有限公司. 保留所有权利 | 沪ICP备2025137506号-1</p>
-      <p class="copyright-en" style="display: none;">&copy; 2024 TensorLinx. 保留权利</p>
+      <p class="copyright-cn">&copy; 2024 灵兮矩阵（上海）计算机系统有限公司. 保留所有权利 | 沪ICP备2025137506号-1 <a href="#" style="color: #0066cc !important;" onclick="alert('我们已经将该网站服务器迁至美国，根据中国法律规定，我们已经不再适合ICP备案'); return false;">(已废弃)</a></p>
+      <p class="copyright-en" style="display: none;" data-translate="copyright">© 2024 TensorLinx. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="cookie-policy.html" data-translate="footer.cookiePolicy">Cookie政策</a>
+        <a href="#" onclick="showCustomizeCookiePanel(); return false;" id="manage-cookies-link" data-translate="footer.manageCookies">Cookie管理</a>
+        <a href="privacy-policy.html" data-translate="footer.privacyPolicy">隐私政策</a>
+      </div>
     </div>
   </footer>
 
@@ -506,13 +445,40 @@
       color: #fff;
     }
     
+    .social-links .navfos-link img {
+      filter: grayscale(100%) brightness(0.7);
+      transition: filter 0.3s ease;
+    }
+    
+    .social-links .navfos-link:hover img {
+      filter: grayscale(0%) brightness(1);
+    }
+    
     .footer-bottom {
       text-align: center;
-      padding-top: 40px;
+      padding-top: 20px;  /* 减少间距，让分割线离版权信息更近 */
       border-top: 1px solid #333;
       color: #888;
       margin: 0 auto;
       max-width: 1200px;
+    }
+    
+    .footer-links {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .footer-links a {
+      color: #888;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: #fff;
     }
     
     @media (max-width: 768px) {
@@ -541,6 +507,162 @@
         text-align: center;
       }
     }
+    
+    /* Cookie 政策链接 */
+    .cookie-policy-link {
+        color: #000;
+        text-decoration: underline;
+        margin-left: 5px;
+        font-weight: 500;
+    }
+
+    .cookie-policy-link:hover {
+        color: #333;
+        text-decoration: none;
+    }
+
+    /* 自定义 Cookie 面板 */
+    .cookie-customize-panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 10001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+    }
+
+    .cookie-customize-content {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        width: 90%;
+        max-width: 500px;
+        max-height: 80vh;
+        overflow-y: auto;
+        border: 1px solid #000;
+    }
+
+    .cookie-customize-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .cookie-customize-header h4 {
+        margin: 0;
+        font-size: 18px;
+        color: #000;
+    }
+
+    .close-cookie-panel-btn {
+        background: none;
+        border: 1px solid #000;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        color: #000;
+        background: white;
+    }
+
+    .cookie-options {
+        padding: 20px 24px;
+    }
+
+    .cookie-option {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .cookie-option input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+        accent-color: #000;
+    }
+
+    .cookie-option label {
+        margin: 0;
+        color: #000;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .cookie-option label small {
+        margin-left: 6px;
+        color: #666;
+        font-size: 12px;
+    }
+
+    .cookie-customize-actions {
+        padding: 0 24px 24px;
+        display: flex;
+        gap: 12px;
+    }
+
+    .cookie-customize-actions .btn {
+        flex: 1;
+        padding: 12px;
+        text-align: center;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        border: 1px solid #000;
+        transition: all 0.3s ease;
+    }
+
+    .cookie-customize-actions .btn.btn-primary {
+        background: #000;
+        color: white;
+    }
+
+    .cookie-customize-actions .btn.btn-secondary {
+        background: #fff;
+        color: #000;
+    }
+
+    @media (max-width: 600px) {
+        .cookie-customize-content {
+            width: 95%;
+            margin: 20px;
+        }
+        
+        .cookie-customize-actions {
+            flex-direction: column;
+        }
+    }
   </style>
+
+  <script>
+    // 点击页面其他地方关闭搜索框
+    document.addEventListener('click', function(e) {
+      const searchContainer = document.querySelector('.nav-search-container');
+      if (isNavSearchOpen && !searchContainer.contains(e.target)) {
+        toggleNavSearch();
+      }
+    });
+
+    // ESC键关闭搜索框
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isNavSearchOpen) {
+        toggleNavSearch();
+      }
+    });
+  </script>
 </body>
 </html>

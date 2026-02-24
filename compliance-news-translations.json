@@ -1,0 +1,74 @@
+{
+  "zh": {
+    "title": "Tensorlinx积极履行技术出口合规义务，确保业务可持续发展 - Tensorlinx",
+    "nav": {
+      "home": "首页",
+      "products": "产品文档",
+      "news": "新闻动态",
+      "jobs": "岗位招聘",
+      "about": "关于我们"
+    },
+    "pageTitle": "新闻动态",
+    "pageSubtitle": "了解Tensorlinx最新动态、技术突破和行业洞察",
+    "article": {
+      "title": "Tensorlinx积极响应中国技术出口合规要求，确保业务长期稳健发展",
+      "meta": "发布时间：2026年1月11日 | 作者：Tensorlinx新闻团队 | 分类：企业公告",
+      "content": [
+        "面对日益复杂的国际技术贸易环境，Tensorlinx近日宣布正式启动全面的技术出口合规项目，以确保公司的产品和服务严格遵守中国相关法律法规，避免潜在的法律风险，保障业务的可持续发展。",
+        "随着中国政府加强对技术进出口的监管，特别是对涉及人工智能、大数据等前沿技术的出口管控，越来越多的科技企业需要建立完善的合规体系。Tensorlinx作为领先的AI技术企业，主动承担起合规责任，成立了专项合规工作组，由公司高层直接领导，确保合规工作得到充分重视和资源支持。",
+        "此次合规工作涵盖多个关键领域，包括技术评估、出口许可申请、客户尽职调查和交易监控等环节。Tensorlinx将对现有技术和产品进行全面梳理，识别可能涉及出口管制的技术要素，并建立相应的内部管控流程。公司还将加强员工培训，提高全员合规意识，确保每一笔交易都符合国家相关规定。",
+        "Tensorlinx首席法务官表示：「技术出口合规不仅是法律要求，更是企业社会责任的体现。我们将持续投入资源完善合规体系，确保在服务全球客户的同时，严格遵守各国法律法规。」此项举措将进一步增强客户信心，为Tensorlinx在全球市场的长期发展奠定坚实基础。"
+      ],
+      "shareTitle": "分享这篇新闻",
+      "shareButton": "分享",
+      "copySuccess": "链接已复制到剪贴板！"
+    },
+    "footer": {
+      "about": "关于我们",
+      "aboutDesc": "Tensorlinx是一家专注于计算机基础设施建设的科技企业",
+      "productServices": "产品服务",
+      "quickLinks": "快速链接",
+      "contactInfo": "联系方式",
+      "emailLabel": "邮箱",
+      "privacyPolicy": "隐私政策",
+      "cookiePolicy": "Cookie政策",
+      "manageCookies": "Cookie管理"
+    }
+  },
+  "en": {
+    "title": "Tensorlinx Actively Fulfills Technology Export Compliance Obligations to Ensure Sustainable Business Development - Tensorlinx",
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "news": "News",
+      "jobs": "Careers",
+      "about": "About Us"
+    },
+    "pageTitle": "News & Updates",
+    "pageSubtitle": "Stay informed about Tensorlinx's latest developments, technical breakthroughs, and industry insights",
+    "article": {
+      "title": "Tensorlinx Actively Responds to China's Technology Export Compliance Requirements to Ensure Long-term Stable Business Development",
+      "meta": "Published: January 11, 2026 | Author: Tensorlinx News Team | Category: Company Announcement",
+      "content": [
+        "Facing an increasingly complex international technology trade environment, Tensorlinx recently announced the official launch of a comprehensive technology export compliance program to ensure that the company's products and services strictly comply with Chinese laws and regulations, avoid potential legal risks, and ensure sustainable business development.",
+        "As the Chinese government strengthens its supervision of technology imports and exports, particularly regarding export controls on cutting-edge technologies such as artificial intelligence and big data, an increasing number of technology companies need to establish comprehensive compliance systems. As a leading AI technology company, Tensorlinx has proactively taken on compliance responsibilities, establishing a dedicated compliance working group directly led by senior management to ensure that compliance work receives sufficient attention and resource support.",
+        "This compliance work covers multiple key areas, including technology assessment, export license applications, customer due diligence, and transaction monitoring. Tensorlinx will conduct a comprehensive review of existing technologies and products, identify technical elements that may be subject to export controls, and establish corresponding internal control processes. The company will also strengthen employee training to improve overall compliance awareness and ensure that every transaction complies with national regulations.",
+        "Tensorlinx's Chief Legal Officer stated: 'Technology export compliance is not only a legal requirement but also a reflection of corporate social responsibility. We will continue to invest resources to improve our compliance system, ensuring that we serve global customers while strictly adhering to the laws and regulations of all countries.' This initiative will further enhance customer confidence and lay a solid foundation for Tensorlinx's long-term development in the global market."
+      ],
+      "shareTitle": "Share This News",
+      "shareButton": "Share",
+      "copySuccess": "Link copied to clipboard!"
+    },
+    "footer": {
+      "about": "About Us",
+      "aboutDesc": "Tensorlinx is a technology company focused on computer infrastructure construction",
+      "productServices": "Product Services",
+      "quickLinks": "Quick Links",
+      "contactInfo": "Contact Information",
+      "emailLabel": "Email",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy",
+      "manageCookies": "Cookie Management"
+    }
+  }
+}

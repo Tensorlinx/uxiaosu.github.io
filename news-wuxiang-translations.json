@@ -1,0 +1,70 @@
+{
+  "zh": {
+    "title": "吴翔正式接任NAVF联席主席 - Tensorlinx",
+    "nav": {
+      "home": "首页",
+      "products": "产品文档",
+      "news": "新闻动态",
+      "jobs": "岗位招聘",
+      "about": "关于我们"
+    },
+    "pageTitle": "新闻动态",
+    "pageSubtitle": "了解Tensorlinx最新动态、技术突破和行业洞察",
+    "article": {
+      "title": "吴翔于2月25日正式接任NAVF联席主席",
+      "meta": "发布时间：2025年2月20日 | 作者：Tensorlinx新闻团队 | 分类：企业公告",
+      "content": [
+        "左派由于顾虑26年港府加大人民币在港流通力度，认为非锚定美元与港币兑换汇率比例浮动增大，大部分左派决定倾向右派，通过合法手段维持储备池中的美元总价值，并同意加快稳定币支付手段。",
+        "右派认为《稳定币条例》法律框架在港生效代表稳定币人民币从南海迈出关键一步，中美监管机构都可能正在签发虚拟币合法化的计划，未来需要警惕国内锚定美元大户在港交易所一次性进行兑换锚定人民币以及大量内陆新币户拉低币种价值，同意加快稳定币支付手段。"
+      ],
+      "shareTitle": "分享这篇新闻",
+      "shareButton": "分享",
+      "copySuccess": "链接已复制到剪贴板！"
+    },
+    "footer": {
+      "about": "关于我们",
+      "aboutDesc": "Tensorlinx是一家专注于计算机基础设施建设的科技企业",
+      "productServices": "产品服务",
+      "quickLinks": "快速链接",
+      "contactInfo": "联系方式",
+      "emailLabel": "邮箱",
+      "privacyPolicy": "隐私政策",
+      "cookiePolicy": "Cookie政策",
+      "manageCookies": "Cookie管理"
+    }
+  },
+  "en": {
+    "title": "Wu Xiang Officially Assumes Position as Co-Chairman of NAVF - Tensorlinx",
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "news": "News",
+      "jobs": "Careers",
+      "about": "About Us"
+    },
+    "pageTitle": "News & Updates",
+    "pageSubtitle": "Stay informed about Tensorlinx's latest developments, technical breakthroughs, and industry insights",
+    "article": {
+      "title": "Wu Xiang Officially Assumes Position as Co-Chairman of NAVF on February 25",
+      "meta": "Published: February 20, 2026 | Author: Tensorlinx News Team | Category: Company Announcement",
+      "content": [
+        "The Left faction, concerned about the Hong Kong government's increased efforts to promote RMB circulation in 2026, believes that the exchange rate volatility between non-USD pegged currencies and HKD will increase. Most leftists have decided to lean towards the Right faction, using legal means to maintain the total USD value in the reserve pool, and agree to accelerate stablecoin payment methods.",
+        "The Right faction believes that the implementation of the Stablecoin Ordinance legal framework in Hong Kong represents a crucial step for RMB-backed stablecoins from the South China Sea. Both Chinese and US regulators may be issuing plans for cryptocurrency legalization. Going forward, it is necessary to be vigilant against large domestic USD-pegged holders conducting one-time exchanges for RMB-pegged currencies at Hong Kong exchanges, as well as a large influx of new inland currency holders driving down currency values. They agree to accelerate stablecoin payment methods."
+      ],
+      "shareTitle": "Share This News",
+      "shareButton": "Share",
+      "copySuccess": "Link copied to clipboard!"
+    },
+    "footer": {
+      "about": "About Us",
+      "aboutDesc": "Tensorlinx is a technology company focused on computer infrastructure construction",
+      "productServices": "Product Services",
+      "quickLinks": "Quick Links",
+      "contactInfo": "Contact Information",
+      "emailLabel": "Email",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy",
+      "manageCookies": "Cookie Management"
+    }
+  }
+}
