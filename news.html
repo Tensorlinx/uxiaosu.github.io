@@ -55,7 +55,7 @@
           <article class="news-card featured" data-news-index="0">
             <div class="news-image">
               <img src="img/NAVF.png" alt="新世家领导变更" style="width:100%; height: 100%; object-fit: cover;">
-              <div class="news-category" data-translate="newsList.0.category">企业公告</div>
+              <div class="news-category" data-translate="newsList.0.category">新闻动态</div>
             </div>
             <div class="news-content">
               <div class="news-meta">
@@ -71,7 +71,7 @@
           <article class="news-card" data-news-index="1">
             <div class="news-image">
               <img src="img/NAVF (1).png" alt="Redox资助" style="width:100%; height:200px; object-fit:cover;">
-              <div class="news-category" data-translate="newsList.1.category">企业公告</div>
+              <div class="news-category" data-translate="newsList.1.category">新闻动态</div>
             </div>
             <div class="news-content">
               <div class="news-meta">
@@ -362,7 +362,7 @@
     // 加载新闻页面翻译文件
     async function loadNewsTranslations() {
       try {
-        const response = await fetch('news-translations.json');
+        const response = await fetch('news-translations.json?v=2');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
