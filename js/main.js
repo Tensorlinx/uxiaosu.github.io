@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     title: '"吴翔"于2月25日正式接任NAVF（香港）联席主席',
                     desc: '17日联席举行投票，右派候选人"吴翔"获得BTC赞成票0.81枚，ETH赞成票0.3枚，获票数领先左派候选人。意味着右派长达3年的治理结束，NAVF将步入新的秩序治理中。',
                     btn: '查看新闻',
-                    link: 'news-wuxiang.html'
+                    link: 'd4'
                 },
                 {
                     title: 'Tensorlinx正在向redox开发小组进行资助',
                     desc: 'Tensorlinx正在使用NAVF流动储备向redox开发小组进行资助，包括参与维护。这一行为不代表政治目的，是我们社会使命的一部分。',
                     btn: '查看详情',
-                    link: 'news-redox.html'
+                    link: 'e5'
                 },
                 {
                     title: '即将发布乌托邦3的x64平台操作系统',
@@ -42,13 +42,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 title: langData.hero.slideTitle || '"吴翔"于2月25日正式接任NAVF（香港）联席主席',
                 desc: langData.hero.slideDescription || '17日联席举行投票，右派候选人"吴翔"获得BTC赞成票0.81枚，ETH赞成票0.3枚，获票数领先左派候选人。意味着右派长达3年的治理结束，NAVF将步入新的秩序治理中。',
                 btn: langData.hero.cta.secondary || '查看新闻',
-                link: 'news-wuxiang.html'
+                link: 'd4'
             },
             {
                 title: langData.hero.slide2Title || 'Tensorlinx正在向redox开发小组进行资助',
                 desc: langData.hero.slide2Description || 'Tensorlinx正在使用NAVF流动储备向redox开发小组进行资助，包括参与维护。这一行为不代表政治目的，是我们社会使命的一部分。',
                 btn: langData.hero.cta.viewDetails || '查看详情',
-                link: 'news-redox.html'
+                link: 'e5'
             },
             {
                 title: langData.hero.slide3Title || '即将发布乌托邦3的x64平台操作系统',
@@ -66,10 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
         slideContents = getSlideContents();
         // 如果当前是这个幻灯片，更新显示内容
         if (heroText) {
+            const link = slideContents[currentSlide].link;
+            const isExternal = link.startsWith('http');
             heroText.innerHTML = `
                 <h1>${slideContents[currentSlide].title}</h1>
                 <p>${slideContents[currentSlide].desc}</p>
-                <a href="${slideContents[currentSlide].link}" class="btn">${slideContents[currentSlide].btn}</a>
+                ${isExternal 
+                    ? `<a href="${link}" class="btn">${slideContents[currentSlide].btn}</a>`
+                    : `<a href="javascript:navigate('${link}')" class="btn">${slideContents[currentSlide].btn}</a>`
+                }
             `;
         }
     }
@@ -90,10 +95,15 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 更新右侧内容框
           if (heroText) {
+              const link = slideContents[index].link;
+              const isExternal = link.startsWith('http');
               heroText.innerHTML = `
                   <h1>${slideContents[index].title}</h1>
                   <p>${slideContents[index].desc}</p>
-                  <a href="${slideContents[index].link}" class="btn">${slideContents[index].btn}</a>
+                  ${isExternal 
+                      ? `<a href="${link}" class="btn">${slideContents[index].btn}</a>`
+                      : `<a href="javascript:navigate('${link}')" class="btn">${slideContents[index].btn}</a>`
+                  }
               `;
           }
     }

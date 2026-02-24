@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- 自定义样式 -->
   <link rel="stylesheet" href="css/style.css" />
+  <!-- 路由混淆系统 -->
+  <script src="js/router.js"></script>
   <style>
   </style>
 </head>
@@ -19,16 +21,16 @@
 <body>
   <!-- 顶部导航 -->
   <header class="top-nav">
-    <a class="logo" href="index.html">
+    <a class="logo" href="javascript:navigate('a1')">
         <img src="img/remove.photos-removed-background.png" alt="Logo" style="height: 40px; width: auto;">
       </a>
     <span class="nav-divider">|</span>
     <nav class="nav-links">
-       <a href="index.html" data-nav="home" data-translate="nav.home">首页</a>
-       <a href="products.html" data-nav="products" data-translate="nav.products">产品文档</a>
-       <a href="news.html" data-nav="news" class="active" data-translate="nav.news">新闻动态</a>
-       <a href="NAVFIO.html" data-nav="jobs" data-translate="nav.jobs">岗位招聘</a>
-       <a href="about.html" data-nav="about-us" data-translate="nav.about">关于我们</a>
+       <a href="javascript:navigate('a1')" data-nav="home" data-translate="nav.home">首页</a>
+       <a href="javascript:navigate('g7')" data-nav="products" data-translate="nav.products">产品文档</a>
+       <a href="javascript:navigate('c3')" data-nav="news" class="active" data-translate="nav.news">新闻动态</a>
+       <a href="javascript:navigate('h8')" data-nav="jobs" data-translate="nav.jobs">岗位招聘</a>
+       <a href="javascript:navigate('b2')" data-nav="about-us" data-translate="nav.about">关于我们</a>
      </nav>
     <div class="right">
         <div class="language-toggle">
@@ -64,7 +66,7 @@
               </div>
               <h3 class="news-title" data-translate="newsList.0.title">吴翔于2月25日正式接任新世家联席主席</h3>
               <p class="news-excerpt" data-translate="newsList.0.excerpt">左派由于顾虑26年港府加大人民币在港流通力度，认为非锚定美元与港币兑换汇率比例浮动增大，大部分左派决定倾向右派，通过合法手段维持储备池中的美元总价值，并同意加快稳定币支付手段。</p>
-              <a href="news-wuxiang.html" class="read-more" data-translate="newsList.0.readMore">阅读全文 →</a>
+              <a href="javascript:navigate('d4')" class="read-more" data-translate="newsList.0.readMore">阅读全文 →</a>
             </div>
           </article>
 
@@ -80,7 +82,7 @@
               </div>
               <h3 class="news-title" data-translate="newsList.1.title">Tensorlinx正在向redox开发小组进行资助</h3>
               <p class="news-excerpt" data-translate="newsList.1.excerpt">Tensorlinx正在使用NAVF流动储备向redox开发小组进行资助，包括参与维护。这一行为不代表政治目的，是我们社会使命的一部分。</p>
-              <a href="news-redox.html" class="read-more" data-translate="newsList.1.readMore">阅读全文 →</a>
+              <a href="javascript:navigate('e5')" class="read-more" data-translate="newsList.1.readMore">阅读全文 →</a>
             </div>
           </article>
 
@@ -96,7 +98,7 @@
               </div>
               <h3 class="news-title" data-translate="newsList.2.title">Tensorlinx正在进行中国技术出口合规，以避免法律纠纷</h3>
               <p class="news-excerpt" data-translate="newsList.2.excerpt">Tensorlinx正在积极响应中国技术出口合规要求，确保我们的产品和服务符合相关法律法规，避免潜在的法律纠纷...</p>
-              <a href="compliance-news.html" class="read-more" data-translate="newsList.2.readMore">阅读全文 →</a>
+              <a href="javascript:navigate('f6')" class="read-more" data-translate="newsList.2.readMore">阅读全文 →</a>
             </div>
           </article>
 

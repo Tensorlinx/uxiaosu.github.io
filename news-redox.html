@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- 自定义样式 -->
   <link rel="stylesheet" href="css/style.css" />
+  <!-- 路由混淆系统 -->
+  <script src="js/router.js"></script>
   <style>
     .news-main {
       min-height: 80vh;
@@ -126,16 +128,16 @@
 <body>
   <!-- 顶部导航 -->
   <header class="top-nav">
-    <a class="logo" href="index.html">
+    <a class="logo" href="javascript:navigate('a1')">
         <img src="img/remove.photos-removed-background.png" alt="Logo" style="height: 40px; width: auto;">
       </a>
     <span class="nav-divider">|</span>
     <nav class="nav-links">
-       <a href="index.html" data-nav="home" data-translate="nav.home">首页</a>
-       <a href="products.html" data-nav="products" data-translate="nav.products">产品文档</a>
-       <a href="news.html" class="active" data-nav="news" data-translate="nav.news">新闻动态</a>
-       <a href="NAVFIO.html" data-nav="jobs" data-translate="nav.jobs">岗位招聘</a>
-       <a href="about.html" data-nav="about" data-translate="nav.about">关于我们</a>
+       <a href="javascript:navigate('a1')" data-nav="home" data-translate="nav.home">首页</a>
+       <a href="javascript:navigate('g7')" data-nav="products" data-translate="nav.products">产品文档</a>
+       <a href="javascript:navigate('c3')" class="active" data-nav="news" data-translate="nav.news">新闻动态</a>
+       <a href="javascript:navigate('h8')" data-nav="jobs" data-translate="nav.jobs">岗位招聘</a>
+       <a href="javascript:navigate('b2')" data-nav="about" data-translate="nav.about">关于我们</a>
      </nav>
     <div class="right">
         <div class="language-toggle">

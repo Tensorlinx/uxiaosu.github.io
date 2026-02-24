@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- 路由混淆系统 -->
+  <script src="js/router.js"></script>
   <style>
     * {
       margin: 0;
@@ -153,13 +155,13 @@
 <body>
   <header class="header">
     <div class="header-content">
-      <a href="index.html" class="logo">Tensorlinx</a>
+      <a href="javascript:navigate('a1')" class="logo">Tensorlinx</a>
       <nav class="nav-links">
-        <a href="index.html" data-nav="home">首页</a>
-        <a href="products.html" data-nav="products">产品文档</a>
-        <a href="news.html" data-nav="news">新闻动态</a>
-        <a href="NAVFIO.html" data-nav="jobs">岗位招聘</a>
-        <a href="about.html" data-nav="about">关于我们</a>
+        <a href="javascript:navigate('a1')" data-nav="home">首页</a>
+        <a href="javascript:navigate('g7')" data-nav="products">产品文档</a>
+        <a href="javascript:navigate('c3')" data-nav="news">新闻动态</a>
+        <a href="javascript:navigate('h8')" data-nav="jobs">岗位招聘</a>
+        <a href="javascript:navigate('b2')" data-nav="about">关于我们</a>
       </nav>
     </div>
   </header>
@@ -215,7 +217,7 @@
       <p>如果您对本 Cookie 政策有任何疑问，请通过以下方式与我们联系：</p>
       <p>邮箱: tensorlinx@tensorlinx.cn</p>
 
-<a href="index.html" class="back-to-home">返回首页</a>
+<a href="javascript:navigate('a1')" class="back-to-home">返回首页</a>
     </div>
   </div>
 
