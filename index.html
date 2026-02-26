@@ -2,8 +2,52 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>Tensorlinx-上海灵兮矩阵</title>
+  <title>Tensorlinx - 专注于计算机基础设施建设的科技企业</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Tensorlinx（上海灵兮矩阵）是一家专注于计算机基础设施建设的科技企业，致力于推动计算机科学技术到全球边缘地带。我们提供simplePHP框架、乌托邦微内核、AI模型等开源项目。" />
+  <meta name="keywords" content="Tensorlinx,灵兮矩阵,计算机基础设施,开源项目,PHP框架,微内核,AI模型,科技企业" />
+  <meta name="author" content="Tensorlinx" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tensorlinx.online/#/home" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tensorlinx.online/#/home" />
+  <meta property="og:title" content="Tensorlinx - 专注于计算机基础设施建设的科技企业" />
+  <meta property="og:description" content="Tensorlinx（上海灵兮矩阵）是一家专注于计算机基础设施建设的科技企业，致力于推动计算机科学技术到全球边缘地带。" />
+  <meta property="og:image" content="https://tensorlinx.online/img/remove.photos-removed-background.png" />
+  <meta property="og:site_name" content="Tensorlinx" />
+  <meta property="og:locale" content="zh_CN" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://tensorlinx.online/#/home" />
+  <meta property="twitter:title" content="Tensorlinx - 专注于计算机基础设施建设的科技企业" />
+  <meta property="twitter:description" content="Tensorlinx（上海灵兮矩阵）是一家专注于计算机基础设施建设的科技企业，致力于推动计算机科学技术到全球边缘地带。" />
+  <meta property="twitter:image" content="https://tensorlinx.online/img/remove.photos-removed-background.png" />
+  
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tensorlinx",
+    "alternateName": "上海灵兮矩阵",
+    "url": "https://tensorlinx.online",
+    "logo": "https://tensorlinx.online/img/remove.photos-removed-background.png",
+    "description": "专注于计算机基础设施建设的科技企业",
+    "sameAs": [
+      "https://github.com/Tensorlinx"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "上海",
+      "addressCountry": "CN"
+    }
+  }
+  </script>
   <!-- 标签页 Logo -->
   <link rel="icon" type="image/png" href="img/NAVFOS-removebg-preview.png" />
   <!-- 国内字体资源 -->
@@ -14,6 +58,13 @@
   <link rel="stylesheet" href="css/style.css" />
   <!-- 路由混淆系统 -->
   <script src="js/router.js"></script>
+  <!-- 强制使用 hash 路由 -->
+  <script>
+    // 如果直接访问 index.html 且没有 hash，重定向到 #/home
+    if (window.location.pathname.endsWith('index.html') && !window.location.hash) {
+      window.location.replace('/#/home');
+    }
+  </script>
   <style>
   </style>
 </head>
