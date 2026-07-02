@@ -22,22 +22,25 @@ document.addEventListener('DOMContentLoaded', function() {
             // 默认内容（中文）
             return [
                 {
-                    title: '"吴翔"于2月25日正式接任NAVF（香港）联席主席',
-                    desc: '17日联席举行投票，右派候选人"吴翔"获得BTC赞成票0.81枚，ETH赞成票0.3枚，获票数领先左派候选人。意味着右派长达3年的治理结束，NAVF将步入新的秩序治理中。',
+                    title: 'Tensorlinx发布1.3v版本开题报告模板，新增盲文模板',
+                    desc: 'Tensorlinx正式发布《开题报告模板格式规范》V1.3版本，本次更新新增了盲文制版模板，旨在提升文档的无障碍访问性，满足视障人士的阅读需求。',
                     btn: '查看新闻',
-                    link: 'd4'
+                    link: 'p6',
+                    image: 'img/image.png'
                 },
                 {
-                    title: '关于董事批准了Utopia项目迁移境外和成立技术委员会',
-                    desc: 'Utopia项目已经完全从盈利公司中剥离出去，正式成为一个独立的开源组织。',
+                    title: '上海Tensorlinx发布2027年暑期本科生/研究生夏令营企业研究课题组及研究课题',
+                    desc: 'Tensorlinx现面向全球招募有经验者参与2027年暑期夏令营企业研究课题组，不限国籍。本次夏令营设立CSRG与BERG两大课题组，涵盖操作系统内核、大规模语言模型分布式训练、系统安全、生物信息学等前沿研究方向。',
                     btn: '查看详情',
-                    link: 'e5'
+                    link: 'l2',
+                    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80'
                 },
                 {
                     title: '即将发布乌托邦3的x64平台操作系统',
                     desc: '为AI全新定制的操作系统将改变您的生活，我们通过增加类WSL来兼容Linux的软件生态，将应用程序与内核施行更加安全的设计！',
                     btn: '预约下载',
-                    link: 'https://github.com/Tensorlinx/utopia'
+                    link: 'https://github.com/Tensorlinx/utopia',
+                    image: 'img/NAVF (2).png'
                 }
             ];
         }
@@ -45,22 +48,25 @@ document.addEventListener('DOMContentLoaded', function() {
         // 返回基于当前语言的翻译内容
         return [
             {
-                title: langData.hero.slideTitle || '"吴翔"于2月25日正式接任NAVF（香港）联席主席',
-                desc: langData.hero.slideDescription || '17日联席举行投票，右派候选人"吴翔"获得BTC赞成票0.81枚，ETH赞成票0.3枚，获票数领先左派候选人。意味着右派长达3年的治理结束，NAVF将步入新的秩序治理中。',
+                title: langData.hero.slideTitle || 'Tensorlinx发布1.3v版本开题报告模板，新增盲文模板',
+                desc: langData.hero.slideDescription || 'Tensorlinx正式发布《开题报告模板格式规范》V1.3版本，本次更新新增了盲文制版模板，旨在提升文档的无障碍访问性，满足视障人士的阅读需求。',
                 btn: langData.hero.cta.secondary || '查看新闻',
-                link: 'd4'
+                link: 'p6',
+                image: langData.hero.slideImage || 'img/image.png'
             },
             {
-                title: langData.hero.slide2Title || '关于董事批准了Utopia项目迁移境外和成立技术委员会',
-                desc: langData.hero.slide2Description || 'Utopia项目已经完全从盈利公司中剥离出去，正式成为一个独立的开源组织。',
+                title: langData.hero.slide2Title || '上海Tensorlinx发布2027年暑期本科生/研究生夏令营企业研究课题组及研究课题',
+                desc: langData.hero.slide2Description || 'Tensorlinx现面向全球招募有经验者参与2027年暑期夏令营企业研究课题组，不限国籍。本次夏令营设立CSRG与BERG两大课题组，涵盖操作系统内核、大规模语言模型分布式训练、系统安全、生物信息学等前沿研究方向。',
                 btn: langData.hero.cta.viewDetails || '查看详情',
-                link: 'e5'
+                link: 'l2',
+                image: langData.hero.slide2Image || 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80'
             },
             {
                 title: langData.hero.slide3Title || '即将发布乌托邦3的x64平台操作系统',
                 desc: langData.hero.slide3Description || '为AI全新定制的操作系统将改变您的生活，我们通过增加类WSL来兼容Linux的软件生态，将应用程序与内核施行更加安全的设计！',
                 btn: langData.hero.cta.download || '预约下载',
-                link: 'https://github.com/Tensorlinx/utopia'
+                link: 'https://github.com/Tensorlinx/utopia',
+                image: langData.hero.slide3Image || 'img/NAVF (2).png'
             }
         ];
     }
@@ -96,19 +102,25 @@ document.addEventListener('DOMContentLoaded', function() {
         slideImages.forEach(img => img.classList.remove('active'));
         indicators.forEach(indicator => indicator.classList.remove('active'));
         
+        // 更新图片
+        const slideContent = slideContents[index];
+        if (slideContent.image) {
+            slideImages[index].style.backgroundImage = `url('${slideContent.image}')`;
+        }
+        
         slideImages[index].classList.add('active');
         indicators[index].classList.add('active');
         
         // 更新右侧内容框
           if (heroText) {
-              const link = slideContents[index].link;
+              const link = slideContent.link;
               const isExternal = link.startsWith('http');
               heroText.innerHTML = `
-                  <h1>${slideContents[index].title}</h1>
-                  <p>${slideContents[index].desc}</p>
+                  <h1>${slideContent.title}</h1>
+                  <p>${slideContent.desc}</p>
                   ${isExternal 
-                      ? `<a href="${link}" class="btn">${slideContents[index].btn}</a>`
-                      : `<a href="javascript:navigate('${link}')" class="btn">${slideContents[index].btn}</a>`
+                      ? `<a href="${link}" class="btn">${slideContent.btn}</a>`
+                      : `<a href="javascript:navigate('${link}')" class="btn">${slideContent.btn}</a>`
                   }
               `;
           }

@@ -20,11 +20,11 @@
     "latest": "最新新闻",
     "newsList": [
       {
-        "date": "2026年6月19日",
-        "author": "Tensorlinx人力资源部",
+        "date": "2026年7月1日",
+        "author": "Tensorlinx技术文档部",
         "category": "企业公告",
-        "title": "上海Tensorlinx发布2027年暑期本科生/研究生夏令营企业研究课题组及研究课题",
-        "excerpt": "Tensorlinx现面向全球招募有经验者参与2027年暑期夏令营企业研究课题组，不限国籍。本次夏令营设立CSRG与BERG两大课题组，涵盖操作系统内核、大规模语言模型分布式训练、系统安全、生物信息学等前沿研究方向。",
+        "title": "Tensorlinx发布1.3v版本开题报告模板，新增盲文模板",
+        "excerpt": "Tensorlinx正式发布《开题报告模板格式规范》V1.3版本，本次更新新增了盲文制版模板，旨在提升文档的无障碍访问性，满足视障人士的阅读需求。同时提供DOCX和PDF两种格式供下载。",
         "readMore": "阅读全文 →"
       },
       {
@@ -64,7 +64,7 @@
         "author": "Tensorlinx人力资源部",
         "category": "企业公告",
         "title": "上海Tensorlinx调整新入职员工《竞业限制协议》",
-        "excerpt": "自2026年5月30日起，Tensorlinx删除《竞业限制协议》第三章第五条三款中关于"转正入职的应届本科毕业生接受1年竞业限制"的条款。应届本科毕业生不再纳入竞业协议签订范围。",
+        "excerpt": "自2026年5月30日起，Tensorlinx删除《竞业限制协议》第三章第五条三款中关于\"转正入职的应届本科毕业生接受1年竞业限制\"的条款。应届本科毕业生不再纳入竞业协议签订范围。",
         "readMore": "阅读全文 →"
       },
       {
@@ -74,8 +74,15 @@
         "title": "Tensorlinx董事发布拟在6月初制定公司行政规定",
         "excerpt": "Tensorlinx董事发布公告，拟在6月初制定新的公司行政规定，要求对在职经理以上的高管（含董事）每年开展智力筛查与性格筛查并形成报告留档。两轮次不符合标准的，公司应加强培训或转岗。同时，各部门不得以《筛查报告》为由向董事、人事提交开除申请，除非造成经济损失。",
         "readMore": "阅读全文 →"
+      },
+      {
+        "date": "2026年6月19日",
+        "author": "Tensorlinx人力资源部",
+        "category": "企业公告",
+        "title": "上海Tensorlinx发布2027年暑期本科生/研究生夏令营企业研究课题组及研究课题",
+        "excerpt": "Tensorlinx现面向全球招募有经验者参与2027年暑期夏令营企业研究课题组，不限国籍。本次夏令营设立CSRG与BERG两大课题组，涵盖操作系统内核、大规模语言模型分布式训练、系统安全、生物信息学等前沿研究方向。",
+        "readMore": "阅读全文 →"
       }
-
     ],
     "pagination": {
       "prev": "上一页",
@@ -114,11 +121,11 @@
     "latest": "Latest News",
     "newsList": [
       {
-        "date": "June 19, 2026",
-        "author": "Tensorlinx HR Department",
+        "date": "July 1, 2026",
+        "author": "Tensorlinx Technical Documentation Department",
         "category": "Company Announcement",
-        "title": "Shanghai Tensorlinx Announces 2027 Summer Research Camp Programs for Undergraduate and Graduate Students",
-        "excerpt": "Tensorlinx is recruiting experienced candidates worldwide to participate in the 2027 Summer Research Camp, with no nationality restrictions. The camp features two research groups: CSRG and BERG, covering cutting-edge research areas including operating system kernels, large-scale language model distributed training, system security, and bioinformatics.",
+        "title": "Tensorlinx Releases V1.3 Opening Report Template, Adds Braille Template",
+        "excerpt": "Tensorlinx officially releases the V1.3 version of the Opening Report Template Format Specification. This update adds a braille template to enhance document accessibility for visually impaired users. Both DOCX and PDF formats are available for download.",
         "readMore": "Read More →"
       },
       {
@@ -168,8 +175,15 @@
         "title": "Tensorlinx Board Announces Proposed Company Administrative Regulations to be Formulated in Early June",
         "excerpt": "The Tensorlinx Board of Directors announced that new company administrative regulations will be formulated in early June, requiring annual intelligence and personality screening for executives at the manager level and above (including directors), with reports filed for record. Those who fail to meet standards for two consecutive rounds shall receive enhanced training or be transferred to other positions. Additionally, departments are prohibited from submitting dismissal applications to the board or HR based on screening reports, except in cases of economic loss.",
         "readMore": "Read More →"
+      },
+      {
+        "date": "June 19, 2026",
+        "author": "Tensorlinx HR Department",
+        "category": "Company Announcement",
+        "title": "Shanghai Tensorlinx Announces 2027 Summer Research Camp Programs for Undergraduate and Graduate Students",
+        "excerpt": "Tensorlinx is recruiting experienced candidates worldwide to participate in the 2027 Summer Research Camp, with no nationality restrictions. The camp features two research groups: CSRG and BERG, covering cutting-edge research areas including operating system kernels, large-scale language model distributed training, system security, and bioinformatics.",
+        "readMore": "Read More →"
       }
-
     ],
     "pagination": {
       "prev": "Previous",

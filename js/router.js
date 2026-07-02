@@ -2,7 +2,7 @@
 const routeMap = {
   'a1': { url: 'index.html', title: '首页', hash: '#/home', translation: 'translations.json' },
   'b2': { url: 'about.html', title: '关于我们', hash: '#/about', translation: 'about-translations.json' },
-  'c3': { url: 'news.html', title: '新闻动态', hash: '#/news', translation: 'news-translations.json?v=2' },
+  'c3': { url: 'news.html', title: '新闻动态', hash: '#/news', translation: 'news-translations.json?v=3' },
   'd4': { url: 'news-wuxiang.html', title: '新闻详情', hash: '#/article/1', translation: 'news-wuxiang-translations.json' },
   'e5': { url: 'news-redox.html', title: '新闻详情', hash: '#/article/2', translation: 'news-redox-translations.json' },
   'f6': { url: 'compliance-news.html', title: '新闻详情', hash: '#/article/3', translation: 'compliance-news-translations.json' },
@@ -14,7 +14,8 @@ const routeMap = {
   'l2': { url: 'news-summercamp.html', title: '新闻详情', hash: '#/article/4', translation: 'news-summercamp-translations.json' },
   'm3': { url: 'news-rnd-investment.html', title: '新闻详情', hash: '#/article/5', translation: 'news-rnd-investment-translations.json' },
   'n4': { url: 'news-noncompete.html', title: '新闻详情', hash: '#/article/6', translation: 'news-noncompete-translations.json' },
-  'o5': { url: 'news-admin-regulations.html', title: '新闻详情', hash: '#/article/7', translation: 'news-admin-regulations-translations.json' }
+  'o5': { url: 'news-admin-regulations.html', title: '新闻详情', hash: '#/article/7', translation: 'news-admin-regulations-translations.json' },
+  'p6': { url: 'news-template-v13.html', title: '新闻详情', hash: '#/article/8', translation: 'news-template-v13-translations.json' }
 };
 
 // 当前是否使用动态加载模式

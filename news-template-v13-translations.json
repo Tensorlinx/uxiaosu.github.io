@@ -1,0 +1,62 @@
+{
+  "zh": {
+    "title": "Tensorlinx发布1.3v版本开题报告模板，新增盲文模板 - Tensorlinx新闻",
+    "nav": {
+      "home": "首页",
+      "products": "产品文档",
+      "news": "新闻动态",
+      "jobs": "岗位招聘",
+      "about": "关于我们"
+    },
+    "pageTitle": "新闻动态",
+    "pageSubtitle": "了解Tensorlinx最新动态、技术突破和行业洞察",
+    "article": {
+      "title": "Tensorlinx发布1.3v版本开题报告模板，新增盲文模板",
+      "meta": "发布时间：2026年7月1日 | 作者：Tensorlinx技术文档部 | 分类：企业公告",
+      "content": [
+        "2026年7月1日，Tensorlinx技术文档部正式发布《开题报告模板格式规范》V1.3版本。本次更新是继V1.2版本后的又一次重要升级，重点引入了盲文制版模板，旨在提升文档的无障碍访问性，满足视障人士的阅读需求。",
+        "盲文模板采用A4黑色打孔盲文制版标准，将原有中文内容完整转换为盲文格式，确保视障用户能够通过触觉阅读开题报告。该模板经过专业盲文翻译人员审核，保证了内容的准确性和可读性。",
+        "此外，V1.3版本还对原有模板进行了以下优化：统一了文档字体和字号规范，调整了页面边距和段落间距，优化了图表和公式的排版格式，使整个模板更加标准化和规范化。",
+        "Tensorlinx始终致力于打造无障碍的工作环境和文档体系。本次盲文模板的发布，标志着公司在无障碍信息传播方面迈出了重要一步。未来，Tensorlinx将继续关注无障碍技术发展，为更多有特殊需求的用户提供优质的文档服务。"
+      ],
+      "downloadTitle": "下载附件",
+      "docxName": "TensorLinx_开题报告模板格式规范_V1.3.docx",
+      "docxDesc": "Word格式，可编辑",
+      "pdfName": "TensorLinx_开题报告模板格式规范_V1.3_A4黑色打孔盲文制版.pdf",
+      "pdfDesc": "PDF格式，盲文制版",
+      "shareTitle": "分享这篇新闻",
+      "shareButton": "分享",
+      "copySuccess": "链接已复制到剪贴板！"
+    }
+  },
+  "en": {
+    "title": "Tensorlinx Releases V1.3 Opening Report Template, Adds Braille Template - Tensorlinx News",
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "news": "News",
+      "jobs": "Careers",
+      "about": "About Us"
+    },
+    "pageTitle": "News & Updates",
+    "pageSubtitle": "Stay informed about Tensorlinx's latest developments, technology breakthroughs, and industry insights",
+    "article": {
+      "title": "Tensorlinx Releases V1.3 Opening Report Template, Adds Braille Template",
+      "meta": "Published: July 1, 2026 | Author: Tensorlinx Technical Documentation Department | Category: Company Announcement",
+      "content": [
+        "On July 1, 2026, Tensorlinx Technical Documentation Department officially released Version V1.3 of the Opening Report Template Format Specification. This update represents another important upgrade following V1.2, with a focus on introducing a braille printing template to enhance document accessibility and meet the reading needs of visually impaired individuals.",
+        "The braille template adopts A4 black perforated braille printing standards, converting the original Chinese content into braille format to ensure visually impaired users can read the opening report through touch. The template has been reviewed by professional braille translators to ensure content accuracy and readability.",
+        "In addition, V1.3 also optimizes the original template in the following aspects: unified document font and font size specifications, adjusted page margins and paragraph spacing, and optimized the layout of charts and formulas, making the entire template more standardized.",
+        "Tensorlinx is committed to creating an accessible work environment and document system. The release of this braille template marks an important step forward in accessible information dissemination. In the future, Tensorlinx will continue to focus on accessibility technology development to provide quality document services for more users with special needs."
+      ],
+      "downloadTitle": "Download Attachments",
+      "docxName": "TensorLinx_Opening_Report_Template_Specification_V1.3.docx",
+      "docxDesc": "Word format, editable",
+      "pdfName": "TensorLinx_Opening_Report_Template_Specification_V1.3_A4_Black_Perforated_Braille.pdf",
+      "pdfDesc": "PDF format, braille printing",
+      "shareTitle": "Share this news",
+      "shareButton": "Share",
+      "copySuccess": "Link copied to clipboard!"
+    }
+  }
+}
