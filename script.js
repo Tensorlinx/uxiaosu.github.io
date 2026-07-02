@@ -106,7 +106,7 @@ if (window.scriptJsLoaded) {
 // 加载翻译文件
 async function loadTranslations() {
   try {
-    const response = await fetch('translations.json?v=2');
+    const response = await fetch('translations.json?v=4', { cache: 'no-cache' });
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

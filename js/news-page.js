@@ -5,7 +5,7 @@ let currentNewsLanguage = 'zh';
 // 加载新闻页面翻译文件
 async function loadNewsTranslations() {
   try {
-    const response = await fetch('news-translations.json?v=3');
+    const response = await fetch('news-translations.json?v=4', { cache: 'no-cache' });
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

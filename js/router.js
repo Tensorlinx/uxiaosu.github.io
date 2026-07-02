@@ -2,7 +2,7 @@
 const routeMap = {
   'a1': { url: 'index.html', title: '首页', hash: '#/home', translation: 'translations.json' },
   'b2': { url: 'about.html', title: '关于我们', hash: '#/about', translation: 'about-translations.json' },
-  'c3': { url: 'news.html', title: '新闻动态', hash: '#/news', translation: 'news-translations.json?v=3' },
+  'c3': { url: 'news.html', title: '新闻动态', hash: '#/news', translation: 'news-translations.json?v=4' },
   'd4': { url: 'news-wuxiang.html', title: '新闻详情', hash: '#/article/1', translation: 'news-wuxiang-translations.json' },
   'e5': { url: 'news-redox.html', title: '新闻详情', hash: '#/article/2', translation: 'news-redox-translations.json' },
   'f6': { url: 'compliance-news.html', title: '新闻详情', hash: '#/article/3', translation: 'compliance-news-translations.json' },
@@ -127,7 +127,7 @@ function deepMerge(target, source) {
 async function loadPageTranslation(translationFile) {
   try {
     console.log('加载翻译文件:', translationFile);
-    const response = await fetch(translationFile);
+    const response = await fetch(translationFile, { cache: 'no-cache' });
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
